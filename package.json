@@ -7,6 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "gen-bundle-android": "react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/src/main/res",
+    "remove-dublicate": "rm -rf ./android/app/src/main/res/raw && rm -rf ./android/app/src/main/res/drawable-*",
+    "build-debug-android-dev": "cd android && ./gradlew clean && ./gradlew assembleDebug",
+    "build-android-dev": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "build-android-bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'  --assets-dest ios",
     "lint": "eslint ."
   },
   "dependencies": {
