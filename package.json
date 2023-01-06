@@ -14,6 +14,7 @@
     "build-android-bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease",
     "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'  --assets-dest ios",
     "podx": "cd ios && pod install && cd ..",
+    "iosDriveData": "rm -rf ~/Library/Developer/Xcode/DerivedData",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -24,6 +25,11 @@
     "@react-navigation/native-stack": "6.9.1",
     "@react-navigation/stack": "6.3.4",
     "axios": "^1.2.2",
+    "date-fns": "^2.29.3",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "prettier": "^2.8.1",
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-flash-message": "^0.4.0",
@@ -31,11 +37,14 @@
     "react-native-paper": "4.0.1",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.10.2",
+    "react-native-vector-icons": "8.1.0",
     "react-native-video": "5.1.1",
     "react-redux": "8.0.5",
     "redux": "4.0.5",
     "redux-thunk": "2.4.1",
-    "rn-progress-loader": "1.0.8"
+    "rn-progress-loader": "1.0.8",
+    "use-debounce": "^9.0.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
