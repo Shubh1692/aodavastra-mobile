@@ -22,7 +22,7 @@ import {
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import paperTheme from './src/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
-
+import LoginScreen from './src/screens/login';
 
 
 
@@ -34,15 +34,11 @@ const App = () => {
   };
 
   return (
-     <PaperProvider theme={paperTheme}>
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-              
-      </ScrollView>
-    </SafeAreaView>
+    <PaperProvider theme={paperTheme}>
+      <SafeAreaView >
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+          <LoginScreen />
+      </SafeAreaView>
     </PaperProvider>
   );
 };

@@ -1,6 +1,6 @@
 
 const theme = {
-    Primary: '#C5AFDA',
+    Primary: '#A585C1',
     Pink: '#EEBBCC',
     Peach: '#FFD5CC',
     Star: '#FFBC03',
