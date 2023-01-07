@@ -11,7 +11,8 @@ const theme = {
     TextBlack: '#3C3C3C',
     WarningYellow: '#A49D00',
     White: '#FFFFFF',
-    Black: '#000'
+    Black: '#000',
+    Eclipse :'#3C3C3C'
 }
 
 

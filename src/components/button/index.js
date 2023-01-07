@@ -3,15 +3,14 @@ import { StyleSheet } from 'react-native'
 import { Button as PaperButton } from 'react-native-paper'
 import theme from '../../theme/resources';
 
-export default function Button({ mode, style, ...props }) {
+export default function Button({ mode, style,textStyle, ...props }) {
   return (
     <PaperButton
       style={[
         styles.button,
-        mode === 'outlined' && { backgroundColor: theme.Primary },
         style,
       ]}
-      labelStyle={styles.text}
+      labelStyle={[styles.text,textStyle]}
       mode={mode}
       {...props}
     />

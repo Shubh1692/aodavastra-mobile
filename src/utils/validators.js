@@ -43,3 +43,12 @@ export const validateRequiredPasswordLogin = () =>
     .string()
     .required('Password is required')
     .min(3, 'Password must be 3+ characters');
+
+export const validateName = () =>
+    yup.string().matches(nameRegExp, "Invalid Name");
+  
+export const validateRequiredName = () =>
+    validateName()
+      .required("Name is required")
+      .max(25, "Not more than 25 character's");
+  

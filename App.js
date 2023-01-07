@@ -23,6 +23,7 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import paperTheme from './src/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
 import LoginScreen from './src/screens/login';
+import RegisterScreen from './src/screens/regitser';
 
 
 
@@ -35,9 +36,14 @@ const App = () => {
 
   return (
     <PaperProvider theme={paperTheme}>
-      <SafeAreaView >
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-          <LoginScreen />
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <SafeAreaView
+        style={{ flex: 0, backgroundColor: isDarkMode ? '#c4c4c4' : '#c4c4c4' }}
+      />
+      <SafeAreaView
+        style={{ flex: 1, }}>
+        {/* <LoginScreen /> */}
+        <RegisterScreen />
       </SafeAreaView>
     </PaperProvider>
   );
