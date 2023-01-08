@@ -15,8 +15,6 @@ import theme from '../../theme/resources';
 import IconComponent from '../../components/icon';
 
 
-
-
 function LoginScreen() {
     const [email, setEmail] = useState({ value: '', error: '' });
     const [password, setPassword] = useState({ value: '', error: '' });
@@ -24,6 +22,7 @@ function LoginScreen() {
 
     const onSubmit = (values) => {
         const { email, password } = values;
+        console.log('hiii values login',values)
     }
 
 
@@ -44,7 +43,6 @@ function LoginScreen() {
                                     <TextInput
                                         placeholder="E-mail"
                                         returnKeyType="next"
-                                        value={email.value}
                                         onChangeText={handleChange('email')}
                                         onBlur={handleBlur('email')}
                                         value={values.email}
@@ -60,7 +58,6 @@ function LoginScreen() {
                                     <TextInput
                                         placeholder="Password"
                                         returnKeyType="done"
-                                        value={password.value}
                                         onChangeText={handleChange('password')}
                                         onBlur={handleBlur('password')}
                                         value={values.password}

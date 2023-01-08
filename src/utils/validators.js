@@ -13,7 +13,7 @@ export const insta = /(?:http:\/\/)?(?:www\.)?instagram\.com\/(?:(?:\w)*#!\/)?(?
 export const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
 
 
-export const validateRequired = (messages= { required }) =>
+export const validateRequired = (messages = { required }) =>
   yup
     .string()
     .required(messages?.required || 'Field is required')
@@ -45,10 +45,13 @@ export const validateRequiredPasswordLogin = () =>
     .min(3, 'Password must be 3+ characters');
 
 export const validateName = () =>
-    yup.string().matches(nameRegExp, "Invalid Name");
-  
+  yup.string().matches(nameRegExp, "Invalid Name");
+
 export const validateRequiredName = () =>
-    validateName()
-      .required("Name is required")
-      .max(25, "Not more than 25 character's");
-  
+  validateName()
+    .required("Name is required")
+    .max(25, "Not more than 25 character's");
+
+export const userBio = () =>{
+  yup.string().max(20, "Bio not more than 200 character's").optional();
+}

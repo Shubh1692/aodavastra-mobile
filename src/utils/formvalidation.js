@@ -2,7 +2,8 @@ import * as yup from 'yup';
 import {
     validateRequiredEmail,
     validateRequiredPasswordLogin,
-    validateRequiredName
+    validateRequiredName,
+    userBio
 } from './validators';
 
 import memoize from "lodash/memoize";
@@ -21,4 +22,9 @@ export const registerValidationSchema = yup.object().shape({
       .string()
       .oneOf([yup.ref("password")], "Password does not match")
       .required("Password is required"),
-  });
+});
+
+export const nonInfluencerValidationSchema = yup.object().shape({
+    userName:validateRequiredName(),
+    bio:userBio()
+})

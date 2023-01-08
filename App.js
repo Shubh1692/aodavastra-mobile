@@ -24,6 +24,7 @@ import paperTheme from './src/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
 import LoginScreen from './src/screens/login';
 import RegisterScreen from './src/screens/regitser';
+import NonInfluencerEditProfile from './src/screens/nonInfluencer/editProfile';
 
 
 
@@ -43,7 +44,8 @@ const App = () => {
       <SafeAreaView
         style={{ flex: 1, }}>
         {/* <LoginScreen /> */}
-        <RegisterScreen />
+        {/* <RegisterScreen /> */}
+        <NonInfluencerEditProfile />
       </SafeAreaView>
     </PaperProvider>
   );
