@@ -27,6 +27,7 @@ import RegisterScreen from './src/screens/regitser';
 import NonInfluencerEditProfile from './src/screens/nonInfluencer/editProfile';
 import AddAddress from './src/screens/address/addAddress';
 import EditAddress from './src/screens/address/editAddress';
+import ForgotScreen from './src/screens/forgotPassword';
 
 
 
@@ -49,7 +50,8 @@ const App = () => {
         {/* <RegisterScreen /> */}
         {/* <NonInfluencerEditProfile /> */}
         {/* <AddAddress /> */}
-        <EditAddress />
+        {/* <EditAddress /> */}
+        <ForgotScreen />
       </SafeAreaView>
     </PaperProvider>
   );

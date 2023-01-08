@@ -19,6 +19,10 @@ export const loginValidationSchema = yup.object().shape({
     password: validateRequiredPasswordLogin(),
 });
 
+export const forgotPasswordValidationSchema=  yup.object().shape({
+    email: validateRequiredEmail()
+});
+
 export const registerValidationSchema = yup.object().shape({
     userName:validateRequiredName(),
     email: validateRequiredEmail(),
