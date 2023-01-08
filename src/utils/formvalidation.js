@@ -47,3 +47,12 @@ export const addAddressValidationSchema = yup.object().shape({
     address2:validateRequiredStreet()
 })
 
+export const changePasswordValidationSchema = yup.object().shape({
+    oldPassword: validateRequiredPasswordLogin(),
+    newPassword: validateRequiredPasswordLogin(),
+    confirmNewPassword: yup
+      .string()
+      .oneOf([yup.ref("newPassword")], "Password does not match")
+      .required("Password is required"),
+});
+
