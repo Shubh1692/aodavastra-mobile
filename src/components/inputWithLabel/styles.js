@@ -4,7 +4,7 @@ import theme from '../../theme/resources';
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        marginVertical: 5,
+        marginVertical: 8,
     },
     input: {
         backgroundColor: theme.White,

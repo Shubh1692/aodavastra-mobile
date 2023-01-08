@@ -22,84 +22,84 @@ function LoginScreen() {
 
     const onSubmit = (values) => {
         const { email, password } = values;
-        console.log('hiii values login',values)
+        console.log('hiii values login', values)
     }
 
 
     return (
         <View>
             <ScrollView>
-            <Header />
-            <Logo />
-            <Formik
-                validationSchema={loginValidationSchema}
-                initialValues={{ email: '', password: '' }}
-                onSubmit={onSubmit}>
-                {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
-                    return (
-                        <View style={{ paddingHorizontal: 20 }}>
-                            <View>
+                <Header />
+                <Logo />
+                <Formik
+                    validationSchema={loginValidationSchema}
+                    initialValues={{ email: '', password: '' }}
+                    onSubmit={onSubmit}>
+                    {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
+                        return (
+                            <View style={{ paddingHorizontal: 20 }}>
                                 <View>
-                                    <TextInput
-                                        placeholder="E-mail"
-                                        returnKeyType="next"
-                                        onChangeText={handleChange('email')}
-                                        onBlur={handleBlur('email')}
-                                        value={values.email}
-                                        error={errors.email && touched.email}
-                                        errorText={errors.email}
-                                        autoCapitalize="none"
-                                        autoCompleteType="email"
-                                        textContentType="emailAddress"
-                                        keyboardType="email-address"
-                                    />
+                                    <View>
+                                        <TextInput
+                                            placeholder="E-mail"
+                                            returnKeyType="next"
+                                            onChangeText={handleChange('email')}
+                                            onBlur={handleBlur('email')}
+                                            value={values.email}
+                                            error={errors.email && touched.email}
+                                            errorText={errors.email}
+                                            autoCapitalize="none"
+                                            autoCompleteType="email"
+                                            textContentType="emailAddress"
+                                            keyboardType="email-address"
+                                        />
+                                    </View>
+                                    <View>
+                                        <TextInput
+                                            placeholder="Password"
+                                            returnKeyType="done"
+                                            onChangeText={handleChange('password')}
+                                            onBlur={handleBlur('password')}
+                                            value={values.password}
+                                            error={errors.password && touched.password}
+                                            errorText={errors.password}
+                                            secureTextEntry={eyeView}
+                                            right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                        />
+                                    </View>
                                 </View>
-                                <View>
-                                    <TextInput
-                                        placeholder="Password"
-                                        returnKeyType="done"
-                                        onChangeText={handleChange('password')}
-                                        onBlur={handleBlur('password')}
-                                        value={values.password}
-                                        error={errors.password && touched.password}
-                                        errorText={errors.password}
-                                        secureTextEntry={eyeView}
-                                        right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
-                                    />
+                                <View style={styles.forgotPassword}>
+                                    <TouchableOpacity onPress={() => { () => console.log("forgotPassword") }}>
+                                        <Text style={styles.forgot}>Forgot Password?</Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={{ alignItems: 'center' }}>
+                                    <Button mode="contained" style={{ width: 200, height: 50, }} onPress={handleSubmit}> Log in </Button>
                                 </View>
                             </View>
-                            <View style={styles.forgotPassword}>
-                                <TouchableOpacity onPress={() => { () => console.log("forgotPassword") }}>
-                                    <Text style={styles.forgot}>Forgot Password?</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <Button mode="contained" style={{ width: 200, height: 50, }} onPress={handleSubmit}> Log in </Button>
-                            </View>
-                        </View>
-                    )
-                }}
-            </Formik>
+                        )
+                    }}
+                </Formik>
 
-            <Divider title={'or login with'} />
+                <Divider title={'or login with'} />
 
-            <View style={{marginVertical:10}}>
-                <View style={{ alignItems: 'center' }}>
-                    <Button mode="contained" style={{ width: 240, height: 50, }} onPress={() =>  console.log("google login")}> Continue with Google  </Button>
+                <View style={{ marginVertical: 10 }}>
+                    <View style={{ alignItems: 'center' }}>
+                        <Button mode="contained" style={{ width: 240, height: 50, }} onPress={() => console.log("google login")}> Continue with Google  </Button>
+                    </View>
+                    <View style={{ alignItems: 'center' }}>
+                        <Button mode="contained" style={{ width: 240, height: 50, }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
+                    </View>
                 </View>
-                <View style={{ alignItems: 'center' }}>
-                    <Button mode="contained" style={{ width: 240, height: 50, }} onPress={() =>  console.log("google login")}> Sign-in with Apple  </Button>
-                </View>
-            </View>
 
-            <View style={{ alignItems: 'center', marginVertical: 14 }}>
-                <View>
-                    <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
+                <View style={{ alignItems: 'center', marginVertical: 14 }}>
+                    <View>
+                        <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
+                    </View>
+                    <View style={{ alignItems: 'center' }}>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => console.log('hii')}> Create Account </Button>
+                    </View>
                 </View>
-                <View style={{ alignItems: 'center' }}>
-                    <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => console.log('hii')}> Create Account </Button>
-                </View>
-            </View>
             </ScrollView>
         </View>
 

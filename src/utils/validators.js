@@ -52,6 +52,39 @@ export const validateRequiredName = () =>
     .required("Name is required")
     .max(25, "Not more than 25 character's");
 
-export const userBio = () =>{
+export const userBio = () => {
   yup.string().max(20, "Bio not more than 200 character's").optional();
 }
+export const validatePhone = () =>
+  yup
+    .string()
+    .required('Phone is required')
+    .matches(onlyNumber, "Phone is not valid")
+    .max(10, "Max 10 digits allowed")
+    .min(10, "Min 10 digits required");
+
+
+export const validateRequiredCity = () =>
+  yup
+    .string()
+    .required("City is required")
+    .max(50, "Not more than 50 character's")
+    .matches(nameRegExp, "City is invalid");
+
+export const validateRequiredState = () =>
+  yup
+    .string()
+    .required("State is required")
+    .max(50, "Not more than 50 character's")
+    .matches(nameRegExp, "State is invalid");
+
+export const validateRequiredPincode = () =>
+  yup
+    .string()
+    .matches(onlyNumber, "Must be numeric")
+    .required("Pin code is required")
+    .max(6, "Must be 6 digits")
+    .min(5, "Must be 5 digits");
+
+    export const validateRequiredStreet = () =>
+    yup.string().required("Address is required");
