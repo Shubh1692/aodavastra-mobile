@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { View, TextInput } from 'react-native';
+import { View } from 'react-native';
 import Header from '../../../components/header';
 import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';
 import Button from '../../../components/button';
 import TextInputWithLabel from '../../../components/inputWithLabel';
-import { Formik, FormikHelpers } from 'formik';
+import { Formik } from 'formik';
 import { nonInfluencerValidationSchema } from '../../../utils/formvalidation';
 import FooterButton from '../../../components/footerButton';
 import { deviceWidth } from '../../../utils/device';
 import styles from './styles';
-import { Fragment } from 'react-is';
 
 
 
