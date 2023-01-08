@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import Logo from '../../components/logo';
+import Logo from '../../../components/logo';
 import { View, TouchableOpacity, ScrollView, } from 'react-native';
-import Header from '../../components/header';
-import Button from '../../components/button';
-import TextInput from '../../components/input';
+import Header from '../../../components/header';
+import Button from '../../../components/button';
+import TextInput from '../../../components/input';
 import { Formik, FormikHelpers } from 'formik';
 import { Text } from 'react-native-paper';
-import { loginValidationSchema } from '../../utils/formvalidation';
+import { loginValidationSchema } from '../../../utils/formvalidation';
 import styles from './styles';
-import Icon from '../../components/icon';
+import Icon from '../../../components/icon';
 import { TextInput as Input } from 'react-native-paper';
-import Divider from '../../components/divider';
-import theme from '../../theme/resources';
-import IconComponent from '../../components/icon';
+import Divider from '../../../components/divider';
+import theme from '../../../theme/resources';
+import IconComponent from '../../../components/icon';
 
 
 function LoginScreen() {

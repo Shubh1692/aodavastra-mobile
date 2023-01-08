@@ -22,13 +22,13 @@ import {
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import paperTheme from './src/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
-import LoginScreen from './src/screens/login';
+import LoginScreen from './src/screens/auth/login';
 import RegisterScreen from './src/screens/regitser';
 import NonInfluencerEditProfile from './src/screens/nonInfluencer/editProfile';
 import AddAddress from './src/screens/address/addAddress';
 import EditAddress from './src/screens/address/editAddress';
-import ForgotScreen from './src/screens/forgotPassword';
-import ChangePasswordScreen from './src/screens/changePassword';
+import ForgotScreen from './src/screens/auth/forgotPassword';
+import ChangePasswordScreen from './src/screens/auth/changePassword';
 
 
 

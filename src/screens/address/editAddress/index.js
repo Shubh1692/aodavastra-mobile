@@ -8,7 +8,7 @@ import {deviceWidth} from '../../../utils/device';
 import {addAddressValidationSchema} from '../../../utils/formvalidation';
 
 
-function EditAddress() {
+function EditAddressScreen() {
     const onSubmit = (values) => {
         // const { username, bio } = values;
         console.log("values", values)
@@ -143,4 +143,4 @@ function EditAddress() {
     )
 }
 
-export default EditAddress;
+export default EditAddressScreen;

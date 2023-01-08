@@ -1,11 +1,11 @@
 import { Formik } from 'formik';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import Button from '../../components/button';
-import Header from '../../components/header';
-import TextInput from '../../components/input';
-import Logo from '../../components/logo';
-import { forgotPasswordValidationSchema } from '../../utils/formvalidation';
+import Button from '../../../components/button';
+import Header from '../../../components/header';
+import TextInput from '../../../components/input';
+import Logo from '../../../components/logo';
+import { forgotPasswordValidationSchema } from '../../../utils/formvalidation';
 
 
 function ForgotScreen() {

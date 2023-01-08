@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import { View } from 'react-native';
-import Header from '../../components/header';
+import Header from '../../../components/header';
 import { Formik } from 'formik';
-import TextInputWithLabel from '../../components/inputWithLabel';
+import TextInputWithLabel from '../../../components/inputWithLabel';
 import { TextInput as Input } from 'react-native-paper';
-import Button from '../../components/button';
-import {changePasswordValidationSchema} from '../../utils/formvalidation';
+import Button from '../../../components/button';
+import {changePasswordValidationSchema} from '../../../utils/formvalidation';
 
 
 

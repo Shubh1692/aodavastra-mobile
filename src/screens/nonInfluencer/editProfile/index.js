@@ -13,7 +13,7 @@ import styles from './styles';
 
 
 
-function NonInfluencerEditProfile() {
+function NonInfluencerEditProfileScreen() {
     const [height, setHeight] = useState(undefined)
 
     const onSubmit = (values) => {
@@ -81,4 +81,4 @@ function NonInfluencerEditProfile() {
     )
 }
 
-export default NonInfluencerEditProfile;
+export default NonInfluencerEditProfileScreen;
