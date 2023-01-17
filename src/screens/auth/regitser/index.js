@@ -131,10 +131,10 @@ function RegisterScreen() {
 
                 <View style={{ marginVertical: 10 }}>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" style={styles.btn} onPress={() => console.log("google login")}> Continue with Google  </Button>
+                        <Button mode="contained" textStyle={{color:theme.TextBlack}} style={[styles.btn,{backgroundColor:'#fff'}]} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" style={styles.btn} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
+                        <Button mode="contained" style={[styles.btn,{backgroundColor:'#2c2c2c'}]} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
                     </View>
                 </View>
 
