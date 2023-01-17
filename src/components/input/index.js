@@ -10,6 +10,7 @@ export default function TextInput({ errorText, description,mode, ...props}) {
         <Input
         theme={{ roundness: 4 }} 
           style={styles.input}
+          contentStyle={{padding:0,paddingVertical:0}}
           selectionColor={theme.TextBlack}
           underlineColor="transparent"
           mode={mode? mode: "outlined"}

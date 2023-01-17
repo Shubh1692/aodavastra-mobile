@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,19 +17,34 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import paperTheme from './src/theme/theme';
+import { Main } from './src/services/rootnavigation';
 import { ThemeProvider } from '@shopify/restyle';
 import LoginScreen from './src/screens/auth/login';
-import RegisterScreen from './src/screens/regitser';
+import RegisterScreen from './src/screens/auth/regitser';
 import NonInfluencerEditProfile from './src/screens/nonInfluencer/editProfile';
 import AddAddress from './src/screens/address/addAddress';
 import EditAddress from './src/screens/address/editAddress';
 import ForgotScreen from './src/screens/auth/forgotPassword';
 import ChangePasswordScreen from './src/screens/auth/changePassword';
+import NonInfluencerProfile from './src/screens/nonInfluencer/myAccount';
+import FollowingList from './src/screens/nonInfluencer/followingList';
+import Wishlist from './src/screens/wishlist';
+import AddressList from './src/screens/address/addressList';
+import Orders from './src/screens/orders';
 
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
+
+import { navigationRef } from './src/services/NavigationService';
+
+const NAVIGATION_STATE_KEY = `NAVIGATION_STATE_KEY-${1}`;
 
 
 const App = () => {
@@ -39,22 +54,40 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const [initialState, setInitialState] = useState();
+  const onStateChange = useCallback(
+    state => AsyncStorage.setItem(NAVIGATION_STATE_KEY, JSON.stringify(state)),
+    [],
+  );
+
   return (
     <PaperProvider theme={paperTheme}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <SafeAreaView
         style={{ flex: 0, backgroundColor: isDarkMode ? '#c4c4c4' : '#c4c4c4' }}
       />
-      <SafeAreaView
-        style={{ flex: 1, }}>
-        {/* <LoginScreen /> */}
-        {/* <RegisterScreen /> */}
-        {/* <NonInfluencerEditProfile /> */}
-        {/* <AddAddress /> */}
-        {/* <EditAddress /> */}
-        {/* <ForgotScreen /> */}
-        <ChangePasswordScreen />
-      </SafeAreaView>
+
+      <NavigationContainer
+        ref={navigationRef}
+        {...{ onStateChange, initialState }}>
+        <SafeAreaView style={{flex:1}}>
+          <Main />
+        </SafeAreaView>
+
+      </NavigationContainer>
+      {/* <FollowingList /> */}
+      {/* <Orders /> */}
+      {/* <AddressList /> */}
+      {/* <Wishlist /> */}
+      {/* <NonInfluencerProfile /> */}
+      {/* <LoginScreen /> */}
+      {/* <RegisterScreen /> */}
+      {/* <NonInfluencerEditProfile /> */}
+      {/* <AddAddress /> */}
+      {/* <EditAddress /> */}
+      {/* <ForgotScreen /> */}
+      {/* <ChangePasswordScreen /> */}
+      {/* </SafeAreaView> */}
     </PaperProvider>
   );
 };

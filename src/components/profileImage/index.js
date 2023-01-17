@@ -1,11 +1,12 @@
 import React from 'react';
 import { Avatar } from 'react-native-paper';
+import FastImage from 'react-native-fast-image';
 
 
-function ProfileImage() {
+function ProfileImage({ size = 120 }) {
 
     return (
-        <Avatar.Image size={120} source={require('../../assets/images/demo_image.png')} />
+        <FastImage style={{ width: size, height: size }} source={require('../../assets/images/demo_image.png')} />
     )
 }
 

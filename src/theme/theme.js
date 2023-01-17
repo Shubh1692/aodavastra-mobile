@@ -8,6 +8,7 @@ const paperTheme = {
       ...DefaultTheme.colors,
       primary: theme.Primary,
       accent: "#f1c40f",
+      error: theme.Red
     },
     fonts: {
       regular: { fontFamily: "Poppins-Regular" },

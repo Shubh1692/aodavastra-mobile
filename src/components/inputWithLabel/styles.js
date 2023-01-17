@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     input: {
         backgroundColor: theme.White,
         padding: 0,
-        height: 40
+        // height: 40
+        fontSize:14
     },
     description: {
         fontSize: 11,

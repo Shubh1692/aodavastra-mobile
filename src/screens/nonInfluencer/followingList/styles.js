@@ -1,0 +1,60 @@
+import { StyleSheet } from 'react-native';
+import theme from '../../../theme/resources';
+
+const styles = StyleSheet.create({
+    container: {
+        justifyContent: 'center',
+        flex: 1,
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        marginTop: 30,
+    },
+    item: {
+        //   padding: 10,
+        fontSize: 14,
+        //   height: 44,
+    },
+    itemSection: {
+        flexDirection: 'row',
+        backgroundColor: theme.background,
+        paddingHorizontal: 8,
+        paddingVertical: 8
+    },
+    contentSection: {
+        flexDirection: 'column',
+        overflow: 'hidden',
+        width: '90%'
+    },
+    titleSection: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '90%'
+    },
+    descSection: {
+        width: '85%',
+        marginLeft: '3%',
+        marginTop: 4
+    },
+    innerTitleSection: {
+        marginHorizontal: 8
+    },
+    btnStyle: {
+        height: 40,
+        width: 120,
+        paddingVertical: 0,
+        marginVertical: 0
+    },
+    btnTextStyle: {
+        fontSize: 14,
+        lineHeight: 22
+    },
+    separator: {
+        height: 2.5,
+        width: '100%',
+        marginBottom: 2,
+        backgroundColor: '#fff'
+    }
+});
+
+export default styles;

@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import Logo from '../../components/logo';
+import Logo from '../../../components/logo';
 import { View, TouchableOpacity, ScrollView, } from 'react-native';
-import Header from '../../components/header';
-import Button from '../../components/button';
-import TextInput from '../../components/input';
+import Header from '../../../components/header';
+import Button from '../../../components/button';
+import TextInput from '../../../components/input';
 import { Formik, FormikHelpers } from 'formik';
 import { Text } from 'react-native-paper';
-import { registerValidationSchema } from '../../utils/formvalidation';
-import Icon from '../../components/icon';
+import { registerValidationSchema } from '../../../utils/formvalidation';
+import Icon from '../../../components/icon';
 import { TextInput as Input, Checkbox } from 'react-native-paper';
-import Divider from '../../components/divider';
-import theme from '../../theme/resources';
-import IconComponent from '../../components/icon';
+import Divider from '../../../components/divider';
+import theme from '../../../theme/resources';
+import IconComponent from '../../../components/icon';
 import styles from './styles';
+import { navigate } from '../../../services/NavigationService';
+import FastImage from 'react-native-fast-image';
 
 
 
@@ -26,9 +28,8 @@ function RegisterScreen() {
 
     const onSubmit = (values) => {
         const { email, password } = values;
+        navigate('nonInfluencerProfile')
     }
-
-
     return (
         <View>
             <ScrollView>
@@ -96,14 +97,25 @@ function RegisterScreen() {
                                             right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
                                         />
                                     </View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'center', width:'80%',marginVertical:5,marginBottom:8 }}>
-                                        <Checkbox
+                                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', width: '80%', marginVertical: 7, marginBottom: 8 }}>
+                                        {/* <View style={{borderWidth:2,borderColor:theme.TextBlack ,backgroundColor:checked ? theme.Primary :theme.White,width:20,height:20 }}> */}
+                                        <TouchableOpacity onPress={() => {
+                                            setChecked(!checked);
+                                        }} >
+                                            {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={{ width: 20, height: 20 }} />}
+                                            {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={{ width: 20, height: 20 }} />}
+                                        </TouchableOpacity>
+
+                                        {/* <Checkbox
                                             status={checked ? 'checked' : 'unchecked'}
+                                            color={theme.White}
+                                            style={{height:15,width:15}}
                                             onPress={() => {
                                                 setChecked(!checked);
-                                            }} />
-                                        <View style={{flexDirection:'row',flexWrap:'wrap',marginLeft:5}}>
-                                            <Text>I accept</Text><Text style={{ color: theme.Primary,paddingHorizontal:4,fontWeight:'600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary,paddingHorizontal:4,fontWeight:'600' }}>Privacy Policy</Text>
+                                            }} /> */}
+                                        {/* </View> */}
+                                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 5 }}>
+                                            <Text>I accept</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>Privacy Policy</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -131,7 +143,7 @@ function RegisterScreen() {
                         <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>Already have an account?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => console.log('hii')}> Log in </Button>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => navigate('login')}> Log in </Button>
                     </View>
                 </View>
             </ScrollView>

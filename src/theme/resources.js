@@ -12,7 +12,14 @@ const theme = {
     WarningYellow: '#A49D00',
     White: '#FFFFFF',
     Black: '#000',
-    Eclipse :'#3C3C3C'
+    Eclipse :'#3C3C3C',
+    background:'#F9F9F9',
+    divider:'#C4C4C4',
+    gray: '#777777',
+    lightPurple:'#EEDCFF',
+    orange:'#FF7C61',
+    lightOrange:'#FFBFB2'
+
 }
 
 

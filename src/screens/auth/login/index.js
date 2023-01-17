@@ -13,6 +13,7 @@ import { TextInput as Input } from 'react-native-paper';
 import Divider from '../../../components/divider';
 import theme from '../../../theme/resources';
 import IconComponent from '../../../components/icon';
+import { navigate } from '../../../services/NavigationService';
 
 
 function LoginScreen() {
@@ -23,6 +24,7 @@ function LoginScreen() {
     const onSubmit = (values) => {
         const { email, password } = values;
         console.log('hiii values login', values)
+        navigate('nonInfluencerProfile')
     }
 
 
@@ -69,7 +71,7 @@ function LoginScreen() {
                                     </View>
                                 </View>
                                 <View style={styles.forgotPassword}>
-                                    <TouchableOpacity onPress={() => { () => console.log("forgotPassword") }}>
+                                    <TouchableOpacity onPress={() => navigate('forgot')}>
                                         <Text style={styles.forgot}>Forgot Password?</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -97,7 +99,7 @@ function LoginScreen() {
                         <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => console.log('hii')}> Create Account </Button>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() =>  navigate('register')}> Create Account </Button>
                     </View>
                 </View>
             </ScrollView>
