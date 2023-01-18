@@ -3,12 +3,12 @@ import Logo from '../../../components/logo';
 import { View, TouchableOpacity, ScrollView, } from 'react-native';
 import Header from '../../../components/header';
 import Button from '../../../components/button';
-import TextInput from '../../../components/input';
+import TextInputComponent from '../../../components/input';
 import { Formik, FormikHelpers } from 'formik';
 import { Text } from 'react-native-paper';
 import { registerValidationSchema } from '../../../utils/formvalidation';
 import Icon from '../../../components/icon';
-import { TextInput as Input, Checkbox } from 'react-native-paper';
+// import { TextInput as Input, Checkbox } from 'react-native-paper';
 import Divider from '../../../components/divider';
 import theme from '../../../theme/resources';
 import IconComponent from '../../../components/icon';
@@ -33,7 +33,9 @@ function RegisterScreen() {
     return (
         <View>
             <Header />
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ paddingBottom: 90 }}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}>
                 <Logo />
                 <Formik
                     validationSchema={registerValidationSchema}
@@ -44,7 +46,7 @@ function RegisterScreen() {
                             <View style={{ paddingHorizontal: 20 }}>
                                 <View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="Full Name"
                                             returnKeyType="next"
                                             onChangeText={handleChange('userName')}
@@ -57,7 +59,7 @@ function RegisterScreen() {
                                         />
                                     </View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="E-mail"
                                             returnKeyType="next"
                                             onChangeText={handleChange('email')}
@@ -72,7 +74,7 @@ function RegisterScreen() {
                                         />
                                     </View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="Password"
                                             returnKeyType="done"
                                             onChangeText={handleChange('password')}
@@ -81,11 +83,14 @@ function RegisterScreen() {
                                             error={errors.password && touched.password}
                                             errorText={errors.password}
                                             secureTextEntry={eyeView}
-                                            right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={eyeView}
+                                            handleToggleIcon={() => setEyeView(!eyeView)}
+                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="Confirm Password"
                                             returnKeyType="done"
                                             onChangeText={handleChange('confirmPassword')}
@@ -94,7 +99,10 @@ function RegisterScreen() {
                                             error={errors.confirmPassword && touched.confirmPassword}
                                             errorText={errors.confirmPassword}
                                             secureTextEntry={confirmEyeView}
-                                            right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={confirmEyeView}
+                                            handleToggleIcon={() => setconfirmEyeView(!confirmEyeView)}
+                                            // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View style={{ flexDirection: 'row', alignItems: 'flex-start', width: '80%', marginVertical: 7, marginBottom: 8 }}>

@@ -29,25 +29,27 @@ const styles = StyleSheet.create({
     titleSection: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '90%'
+        width: '84%'
     },
     descSection: {
-        width: '85%',
+        width: '100%%',
         marginLeft: '3%',
-        marginTop: 4
+        marginTop: 3,
+        // borderWidth:1
     },
     innerTitleSection: {
-        marginHorizontal: 8
+        marginHorizontal: 8,
+        width:'60%',
     },
     btnStyle: {
-        height: 40,
+        height: 36,
         width: 120,
         paddingVertical: 0,
         marginVertical: 0
     },
     btnTextStyle: {
-        fontSize: 14,
-        lineHeight: 22
+        fontSize: 12,
+        lineHeight: 20
     },
     separator: {
         height: 2.5,

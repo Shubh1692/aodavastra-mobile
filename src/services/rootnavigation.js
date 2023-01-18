@@ -22,7 +22,7 @@ const MainStack = createStackNavigator();
 export const Main = () => {
     return (
         <MainStack.Navigator
-            initialRouteName="login"
+            initialRouteName="nonInfluencerProfile"
             screenOptions={{
                 headerShown: false,
             }}>

@@ -35,6 +35,8 @@ function Wishlist() {
                         data={listItems}
                         //data defined in constructor
                         ItemSeparatorComponent={ItemSeparatorView}
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
                         //Item Separator View
                         renderItem={() => <WishlistComponents />}
                         keyExtractor={(item, index) => index.toString()}

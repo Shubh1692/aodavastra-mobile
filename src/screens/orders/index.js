@@ -25,6 +25,8 @@ function Orders() {
                         data={[{status:'Cancel'},{status:'Complete'},{status:'Done'}]}
                         //data defined in constructor
                         ItemSeparatorComponent={() => <SeparatorComponent />}
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
                         //Item Separator View
                         renderItem={({item}) => <OrderListComponents status={item.status} />}
                         keyExtractor={(item, index) => index.toString()}

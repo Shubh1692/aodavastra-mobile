@@ -4,13 +4,19 @@ import theme from '../../theme/resources';
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        marginVertical: 8,
+        marginVertical: 10,
+        position:'relative',
     },
     input: {
         backgroundColor: theme.White,
         padding: 0,
-        // height: 40
-        fontSize:14
+        height: 40,
+        paddingLeft:10,
+        paddingVertical:10,
+        paddingTop:10,
+        fontSize:14,
+        borderWidth:1.2,
+        borderRadius:4
     },
     description: {
         fontSize: 11,
@@ -25,8 +31,8 @@ const styles = StyleSheet.create({
     titleStyle: {
         fontSize: 18,
         color: theme.TextBlack,
-        marginLeft: 8,
-        paddingBottom: 4
+        marginLeft: 5,
+        paddingBottom: 6
     }
 });
 

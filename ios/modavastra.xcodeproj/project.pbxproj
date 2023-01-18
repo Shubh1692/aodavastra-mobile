@@ -32,7 +32,6 @@
 		E646C62D2969EA21004FD4D5 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E646C61B2969EA21004FD4D5 /* Poppins-ExtraBoldItalic.ttf */; };
 		E646C62E2969EA21004FD4D5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E646C61C2969EA21004FD4D5 /* Poppins-Black.ttf */; };
 		E646C62F2969EA21004FD4D5 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E646C61D2969EA21004FD4D5 /* Poppins-BoldItalic.ttf */; };
-		E68C7F22296A171D00F6C490 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E68C7F21296A171D00F6C490 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +80,6 @@
 		E646C61B2969EA21004FD4D5 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-ExtraBoldItalic.ttf"; path = "fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		E646C61C2969EA21004FD4D5 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Black.ttf"; path = "fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
 		E646C61D2969EA21004FD4D5 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-BoldItalic.ttf"; path = "fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E68C7F21296A171D00F6C490 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = icomoon.ttf; path = fonts/icomoon.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -166,7 +164,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				E68C7F21296A171D00F6C490 /* icomoon.ttf */,
 				E646C61C2969EA21004FD4D5 /* Poppins-Black.ttf */,
 				E646C6142969EA20004FD4D5 /* Poppins-BlackItalic.ttf */,
 				E646C61A2969EA21004FD4D5 /* Poppins-Bold.ttf */,
@@ -299,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68C7F22296A171D00F6C490 /* icomoon.ttf in Resources */,
 				E646C61E2969EA21004FD4D5 /* Poppins-Italic.ttf in Resources */,
 				E646C61F2969EA21004FD4D5 /* Poppins-Light.ttf in Resources */,
 				E646C6202969EA21004FD4D5 /* Poppins-ExtraLight.ttf in Resources */,

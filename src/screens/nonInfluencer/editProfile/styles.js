@@ -19,7 +19,20 @@ const styles = StyleSheet.create({
         height: 50, 
         borderWidth: 1, 
         borderColor: theme.TextBlack 
-    }
+    },
+    forgotPassword: {
+        marginTop:8,
+        width: '100%',
+        alignItems: 'flex-start',
+        marginBottom: 24,
+    },
+    forgot: {
+        fontSize: 14,
+        color:theme.Primary,
+        textDecorationLine:'underline',
+        fontWeight:'600',
+        fontFamily:'Poppins-Regular'
+    },
 });
 
 export default styles;

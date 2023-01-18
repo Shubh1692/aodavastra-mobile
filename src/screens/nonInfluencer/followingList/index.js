@@ -6,9 +6,10 @@ import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';
 import Title from '../../../components/title';
 import Button from '../../../components/button';
+import { goBack } from '../../../services/NavigationService';
 
 const dummyArray = [
-    { id: '1', value: 'Ahasgjagsgashjghgashjdjhgashjdgjgsajdgjgajsdgjgsajgjasgjhdhjjsahjgdjhasj' },
+    { id: '1', value: 'In a world where you can be a king...' },
     { id: '2', value: 'In a world where you can be a king... ' },
     { id: '3', value: 'In a world where you can be a king... ' },
     { id: '4', value: 'In a world where you can be a king... ' },
@@ -22,19 +23,20 @@ function FollowingList() {
     const ItemView = ({ item }) => {
         return (
             <View style={styles.itemSection}>
-                <ProfileImage size={56} />
+                <ProfileImage size={72} />
                 <View style={styles.contentSection}>
                     <View style={styles.titleSection}>
                         <View style={styles.innerTitleSection}>
                             <Title name="Sonali" />
+                            <View style={styles.descSection}>
+                                <Text numberOfLines={2} style={styles.item}>
+                                    {item.value}
+                                </Text>
+                            </View>
                         </View>
-                        <Button mode="contained" textStyle={styles.btnTextStyle} style={styles.btnStyle}>Unfollow</Button>
+                        <Button mode="contained" onPress={() => console.log('hiii')} textStyle={styles.btnTextStyle} style={styles.btnStyle}>Unfollow</Button>
                     </View>
-                    <View style={styles.descSection}>
-                        <Text numberOfLines={1} style={styles.item}>
-                            {item.value}
-                        </Text>
-                    </View>
+
                 </View>
             </View>
         );
@@ -53,15 +55,17 @@ function FollowingList() {
         alert('Id: ' + item.id + ' Value: ' + item.value);
     };
     return (
-        <View>
+        <View style={{flex:1}}>
             <Appbar.Header style={{ backgroundColor: '#fff' }} >
-                <Appbar.BackAction onPress={() => console.log('back')} />
+                <Appbar.BackAction onPress={() => goBack()} />
                 <Appbar.Content title="Following" style={{ alignItems: 'center' }} />
             </Appbar.Header>
 
-            <View style={{ marginTop: '4%' }}>
+            <View style={{ marginTop: '4%',flex:1 }}>
                 <FlatList
                     data={listItems}
+                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
                     //data defined in constructor
                     ItemSeparatorComponent={ItemSeparatorView}
                     //Item Separator View

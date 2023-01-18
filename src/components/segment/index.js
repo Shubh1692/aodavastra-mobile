@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet,Image } from 'react-native';
 import SegmentedControl from "./plugin";
 import Icon from '../icon';
 
@@ -11,18 +11,27 @@ const SegmentComponent = ({handleChanges}) => {
             style={{
                 width: 25,
                 height: 25,
-                color:  "#000",
             }}
         />
     );
+
+    const renderGrid = () => (
+        <Image source={require('../../assets/images/grid.png')} style={{width: 22,
+            height: 22,}} />
+    )
+    const renderEmptyHeart = () => (
+        <Image source={require('../../assets/images/emptyHeart.png')} style={{width: 22,
+            height: 22,}} resizeMode="contain" />
+    )
 
     return (
         <SafeAreaView style={styles.container}>
             <SegmentedControl
                 style={{ width: '100%' }}
-                tabStyle={{background:'#fff'}}
-                activeTabColor={'#ECECEC'}
-                tabs={[renderAdd('grid'), renderAdd('heart')]}
+                // tabStyle={{backgroundColor:'#ececec'}}
+                inActiveTabColor={'#ececec'}
+                activeTabColor={'#f9f9f9'}
+                tabs={[renderGrid('grid'), renderEmptyHeart('heart1')]}
                 onChange={(index) => handleChanges(index)}
             />
         </SafeAreaView>

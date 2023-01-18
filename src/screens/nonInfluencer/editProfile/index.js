@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View,TouchableOpacity,Text } from 'react-native';
 import Header from '../../../components/header';
 import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';
@@ -10,6 +10,7 @@ import { nonInfluencerValidationSchema } from '../../../utils/formvalidation';
 import FooterButton from '../../../components/footerButton';
 import { deviceWidth } from '../../../utils/device';
 import styles from './styles';
+import { navigate } from '../../../services/NavigationService';
 
 
 
@@ -33,9 +34,10 @@ function NonInfluencerEditProfileScreen() {
             <View style={{ marginTop: '8%',  flex: 1 }}>
                 <Formik
                     validationSchema={nonInfluencerValidationSchema}
-                    initialValues={{ userName: '', bio: '' }}
+                    initialValues={{ userName: 'Anjali Verma', bio: '' }}
+                    enableReinitialize
                     onSubmit={onSubmit}>
-                    {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
+                    {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values, }) => {
                         return (
                             <View style={{ flex: 1 }}>
                                 <View style={{ paddingHorizontal: 20, }}>
@@ -44,6 +46,7 @@ function NonInfluencerEditProfileScreen() {
                                             title="Name"
                                             placeholder="Name"
                                             returnKeyType="next"
+                                            value={values.userName}
                                             onChangeText={handleChange('userName')}
                                             onBlur={handleBlur('userName')}
                                             error={errors.userName && touched.userName}
@@ -58,7 +61,7 @@ function NonInfluencerEditProfileScreen() {
                                             multiline={true}
                                             numberOfLines={4}
                                             placeholderStyle={{ borderWidth: 1, borderColor: 'red', textAlignVertical: 'top', }}
-                                            inputStyle={{ height: 120, textAlignVertical: 'top', }}
+                                            inputStyle={{  textAlignVertical: 'top', height:120,paddingTop:10 }}
                                             returnKeyType="next"
                                             onChangeText={handleChange('bio')}
                                             onBlur={handleBlur('bio')}
@@ -67,6 +70,11 @@ function NonInfluencerEditProfileScreen() {
                                             errorText={errors.bio}
                                         />
                                     </View>
+                                    <View style={styles.forgotPassword}>
+                                    <TouchableOpacity onPress={() => navigate('changePassword')}>
+                                        <Text style={styles.forgot}>Change Password</Text>
+                                    </TouchableOpacity>
+                                </View>
                                 </View>
                                 <FooterButton mode="contained" style={{ width: deviceWidth, height: 50, }} onPress={handleSubmit}>Save Changes</FooterButton>
                             </View>

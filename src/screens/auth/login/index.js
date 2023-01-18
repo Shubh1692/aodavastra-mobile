@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import Logo from '../../../components/logo';
-import { View, TouchableOpacity, ScrollView, } from 'react-native';
+import { View, TouchableOpacity, ScrollView } from 'react-native';
 import Header from '../../../components/header';
 import Button from '../../../components/button';
-import TextInput from '../../../components/input';
+import TextInputComponent from '../../../components/input';
 import { Formik, FormikHelpers } from 'formik';
 import { Text } from 'react-native-paper';
 import { loginValidationSchema } from '../../../utils/formvalidation';
 import styles from './styles';
 import Icon from '../../../components/icon';
-import { TextInput as Input } from 'react-native-paper';
+// import { TextInput as Input } from 'react-native-paper';
 import Divider from '../../../components/divider';
 import theme from '../../../theme/resources';
 import IconComponent from '../../../components/icon';
@@ -31,7 +31,10 @@ function LoginScreen() {
     return (
         <View>
             <Header />
-            <ScrollView>
+            <ScrollView contentContainerStyle={{paddingBottom:90}} 
+            showsVerticalScrollIndicator={false} 
+            showsHorizontalScrollIndicator={false}
+            >
                 <Logo />
                 <Formik
                     validationSchema={loginValidationSchema}
@@ -42,7 +45,7 @@ function LoginScreen() {
                             <View style={{ paddingHorizontal: 20 }}>
                                 <View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="E-mail"
                                             returnKeyType="next"
                                             onChangeText={handleChange('email')}
@@ -57,7 +60,7 @@ function LoginScreen() {
                                         />
                                     </View>
                                     <View>
-                                        <TextInput
+                                        <TextInputComponent
                                             placeholder="Password"
                                             returnKeyType="done"
                                             onChangeText={handleChange('password')}
@@ -66,7 +69,11 @@ function LoginScreen() {
                                             error={errors.password && touched.password}
                                             errorText={errors.password}
                                             secureTextEntry={eyeView}
-                                            right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={eyeView}
+                                            handleToggleIcon={() => setEyeView(!eyeView)}
+                                            
+                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                 </View>

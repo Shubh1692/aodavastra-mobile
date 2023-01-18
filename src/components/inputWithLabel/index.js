@@ -1,24 +1,38 @@
-import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
-import { TextInput as Input } from 'react-native-paper';
+import React, { useState } from 'react'
+import { View, StyleSheet, Text, TextInput,TouchableOpacity } from 'react-native'
+// import { TextInput as Input } from 'react-native-paper';
+import FastImage from 'react-native-fast-image';
 import theme from '../../theme/resources';
 import styles from './styles';
 
-export default function TextInputWithLabel({ title,inputStyle ,textStyle ,errorText, description, mode, ...props }) {
+export default function TextInputWithLabel({ onBlur, isIcon,handleToggleIcon,isIconToggle,title, inputStyle, textStyle, errorText, description, mode, ...props }) {
+    const [isFocus, setIsFocus] = useState(false)
     return (
         <View style={styles.container}>
             <View>
-                <Text style={[styles.titleStyle,textStyle]}>{title}</Text>
+                <Text style={[styles.titleStyle, textStyle]}>{title}</Text>
             </View>
-            <Input
+            <TextInput
                 theme={{ roundness: 4 }}
-                style={[styles.input,inputStyle]}
+                onFocus={() => setIsFocus(true)}
+                style={[styles.input, inputStyle, { borderColor: isFocus ? theme.Primary : theme.TextBlack }]}
                 selectionColor={theme.TextBlack}
+                onBlur={() => {
+                    onBlur,
+                        setIsFocus(false)
+                }}
                 underlineColor="transparent"
+                placeholderTextColor={theme.gray}
                 mode={mode ? mode : "outlined"}
                 placeholder={props.label}
                 {...props}
             />
+            {isIcon &&
+                <TouchableOpacity onPress={handleToggleIcon} style={{ position: 'absolute', right: 8, top:25 ,alignItems: 'center', height: 40, justifyContent: 'center' }}>
+                    {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={{ width: 20, height: 14 }} resizeMode="contain" />}
+                    {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={{ width: 20, height: 14 }} resizeMode="contain" />}
+                </TouchableOpacity>
+            }
             {description && !errorText ? (
                 <Text style={styles.description}>{description}</Text>
             ) : null}

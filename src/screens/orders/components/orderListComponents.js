@@ -41,7 +41,7 @@ function OrderListComponents({status = 'Cancel'}) {
                     {status == 'Complete' &&  <View style={{ paddingVertical: '2%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                         <View style={{ backgroundColor: theme.lightPurple, height: 24, paddingVertical: 5, width: 100, borderRadius: 45, alignItems: 'center', flexDirection: 'row' }}>
                             <View style={{ backgroundColor: theme.White, width: 18, height: 18, borderRadius: 90, marginLeft: 4, alignItems: 'center', justifyContent: 'center' }}>
-                                <FastImage source={require('../../../assets/images/doubleDone.png')} style={{ width: 10, height: 10 }} />
+                                <FastImage source={require('../../../assets/images/doubleDone.png')} style={{ width: 12, height: 12 }}  resizeMode="contain"/>
                             </View>
                             <View style={{ paddingLeft: 6 }}>
                                 <Text style={{ fontSize: 11, fontWeight: '400', color: theme.Primary }}>Delivered</Text>

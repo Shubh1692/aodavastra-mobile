@@ -1,13 +1,13 @@
 import { Dimensions, StyleSheet } from "react-native";
 const { width: ScreenWidth } = Dimensions.get("screen");
-export const _containerStyle = (width) => ({
+export const _containerStyle = (width,inActiveTabColor) => ({
     height: 50,
     width: width || ScreenWidth - 32,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    backgroundColor: "#f9f9f9",
+    // backgroundColor: inActiveTabColor,
 });
 export const _selectedTabStyle = (tabs, activeTabColor, translateXAnimation, width) => [
     {
@@ -16,7 +16,7 @@ export const _selectedTabStyle = (tabs, activeTabColor, translateXAnimation, wid
         marginVertical: 2,
         marginHorizontal: 2,
         width: (width ? width - 8 : ScreenWidth ) / tabs?.length,
-        backgroundColor: activeTabColor,
+        // backgroundColor: activeTabColor,
         shadowOpacity: 0.2,
         shadowRadius: 3,
         transform: [

@@ -41,7 +41,10 @@ function ChangePasswordScreen() {
                                             errorText={errors.oldPassword}
                                             autoCapitalize="none"
                                             secureTextEntry={eyeView}
-                                            right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={eyeView}
+                                            handleToggleIcon={() => setEyeView(!eyeView)}
+                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -55,7 +58,10 @@ function ChangePasswordScreen() {
                                             errorText={errors.newPassword}
                                             autoCapitalize="none"
                                             secureTextEntry={newPasswordeyeView}
-                                            right={<Input.Icon icon={newPasswordeyeView ? "eye" : 'eye-off'} onPress={() => setNewPasswordeyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={newPasswordeyeView}
+                                            handleToggleIcon={() => setNewPasswordeyeView(!newPasswordeyeView)}
+                                            // right={<Input.Icon icon={newPasswordeyeView ? "eye" : 'eye-off'} onPress={() => setNewPasswordeyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -69,7 +75,10 @@ function ChangePasswordScreen() {
                                             errorText={errors.confirmNewPassword}
                                             autoCapitalize="none"
                                             secureTextEntry={confirmEyeView}
-                                            right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setConfirmEyeView(!eyeView)} />}
+                                            isIcon={true}
+                                            isIconToggle={confirmEyeView}
+                                            handleToggleIcon={() => setConfirmEyeView(!confirmEyeView)}
+                                            // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setConfirmEyeView(!confirmEyeView)} />}
                                         />
                                     </View>
                                 </View>

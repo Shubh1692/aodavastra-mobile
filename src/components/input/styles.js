@@ -4,15 +4,21 @@ import theme from '../../theme/resources';
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        marginVertical: 5,
+        marginVertical: 12,
+        position:'relative',
       //   borderWidth:4
       },
       input: {
         backgroundColor: theme.White,
-        padding:0,
-        // paddingVertical:0,
-        // height:40,
+        backgroundColor: theme.White,
+        padding: 0,
+        height: 40,
+        paddingLeft:10,
+        paddingVertical:10,
+        paddingTop:10,
         fontSize:14,
+        borderWidth:1.2,
+        borderRadius:4
       },
       description: {
         fontSize: 11,

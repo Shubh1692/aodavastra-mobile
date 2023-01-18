@@ -28,6 +28,8 @@ function AddressList() {
                     <View style={{ height: '62%', paddingBottom: 20 }}>
                         <FlatList
                             data={[1, 2,3]}
+                            showsHorizontalScrollIndicator={false}
+                            showsVerticalScrollIndicator={false}
                             ItemSeparatorComponent={() => <SeparatorComponent />}
                             renderItem={() => <AddressListComponent />}
                             keyExtractor={(item, index) => index.toString()}
