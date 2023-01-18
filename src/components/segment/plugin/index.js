@@ -25,7 +25,6 @@ const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabS
     }, [currentIndex]);
     const renderSelectedTab = () => (<Animated.View style={[_selectedTabStyle(tabs, activeTabColor, slideAnimation, width)]} />);
     const renderTab = (tab, index) => {
-        console.log("hii renderTab",tab,index,currentIndex === index,(currentIndex === index) ? activeTabColor : inActiveTabColor)
         const isActiveTab = currentIndex === index;
         const isTabText = typeof tab === "string";
         return (<TouchableOpacity key={index} activeOpacity={0.5} style={[styles.tab, tabStyle,{backgroundColor:(currentIndex === index) ? activeTabColor : inActiveTabColor}]} onPress={() => handleTabPress(index)}>
