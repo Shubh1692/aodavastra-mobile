@@ -30,8 +30,8 @@ function LoginScreen() {
 
     return (
         <View>
+            <Header />
             <ScrollView>
-                <Header />
                 <Logo />
                 <Formik
                     validationSchema={loginValidationSchema}
@@ -87,10 +87,10 @@ function LoginScreen() {
 
                 <View style={{ marginVertical: 10 }}>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" textStyle={{color:theme.TextBlack}} style={{ width: 240, height: 50, backgroundColor:'#fff' }} onPress={() => console.log("google login")}> Continue with Google  </Button>
+                        <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 50, backgroundColor: '#fff' }} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" style={{ width: 240, height: 50, backgroundColor:'#2c2c2c' }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
+                        <Button mode="contained" style={{ width: 240, height: 50, backgroundColor: '#2c2c2c' }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
                     </View>
                 </View>
 
@@ -99,7 +99,7 @@ function LoginScreen() {
                         <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() =>  navigate('register')}> Create Account </Button>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => navigate('register')}> Create Account </Button>
                     </View>
                 </View>
             </ScrollView>
