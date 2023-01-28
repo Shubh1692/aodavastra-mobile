@@ -28,7 +28,7 @@ function RegisterScreen() {
 
     const onSubmit = (values) => {
         const { email, password } = values;
-        navigate('nonInfluencerProfile')
+        navigate('Home')
     }
     return (
         <View>

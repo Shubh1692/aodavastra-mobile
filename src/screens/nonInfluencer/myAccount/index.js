@@ -92,7 +92,7 @@ function NonInfluencerProfile() {
                 }
             </View>
 
-            <TouchableOpacity onPress={() => navigate('InfluencerEditProfile')} activeOpacity={0.7} style={{ backgroundColor: '#F9F9F9', flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', height: 80, bottom: 0, width: deviceWidth }}>
+            <TouchableOpacity onPress={() => navigate('becomeInfluencerProfile')} activeOpacity={0.7} style={{ backgroundColor: '#F9F9F9', flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', height: 80, bottom: 0, width: deviceWidth }}>
                 <ImageBackground style={{ width: 328, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', height: 40, paddingHorizontal: 10 }} source={require('../../../assets/images/backgroundCover.png')}>
                     <Image source={ClosetIcon} style={{ width: 30, height: 26 }} resizeMode="contain" />
                     <Text style={{ fontSize: 16, fontWeight: '400', color: theme.White }}>Become a ModaVastra creator</Text>

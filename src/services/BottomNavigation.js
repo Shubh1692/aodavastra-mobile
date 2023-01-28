@@ -9,33 +9,23 @@ import { View, Text } from 'react-native';
 
 
 import NonInfluencerProfile from '../screens/nonInfluencer/myAccount';
-
-
-
-const tabBarProps = {
-    showLabel: false,
-    style: {
-        flex:1,
-        position: 'absolute',
-        backgroundColor:'#222',
-        borderTopLeftRadius: 4,
-        borderTopRightRadius: 4,
-        height: 6*0.15,
-        shadowColor:  'rgba(0,0,0,0.5)',
-        shadowOffset: { width: 0, height: 6 },
-        shadowOpacity: 1,
-        shadowRadius: 6,  
-        elevation: 10,
-        // flexWrap:'wrap', 
-        borderTopColor: '#222',
-        borderTopWidth:1,
-        borderWidth:1,
-        borderColor: '#222',
-        // width:20
-      },
-};
+import Search from "../screens/search";
+import Cart from "../screens/bag/cart";
+import Welcome from "../screens/home/welcome";
 
 const screenOptions = ({ route, navigation }) => ({
+    tabBarShowLabel: false,
+    tabBarItemStyle: {
+        flex:1,
+        backgroundColor: "#fff",
+    },
+    tabBarStyle: {
+        elevation: 4,
+        shadowColor: "#3C3C3C",
+        shadowOffset: { width: 0, height: -1 }, // change this for more shadow
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+    },
     tabBarIcon: ({ focused }) => {
         // console.log("route",route.name)
         //   const iconName = getKeyValue(IconRouteMap)(route.name);
@@ -49,13 +39,11 @@ const HomeTab = createBottomTabNavigator();
 export const HomeTabs = () => {
     return (
         <HomeTab.Navigator
-        screenOptions={screenOptions}
-        tabBarOptions={tabBarProps}     
-    >
-        <HomeTab.Screen name="Main" component={NonInfluencerProfile} options={{ headerShown: false }} />
-        <HomeTab.Screen name="Favorite" component={NonInfluencerProfile} options={{ headerShown: false }} />
-        <HomeTab.Screen name="Menu" component={NonInfluencerProfile} options={{ headerShown: false }} />
-        <HomeTab.Screen name="Notification" component={NonInfluencerProfile} options={{ headerShown: false }} />
-    </HomeTab.Navigator>
+            screenOptions={screenOptions}>
+            <HomeTab.Screen name="home" component={Welcome} options={{ headerShown: false }} />
+            <HomeTab.Screen name="shopping-bag" component={Cart} options={{ headerShown: false }} />
+            <HomeTab.Screen name="search" component={Search} options={{ headerShown: false }} />
+            <HomeTab.Screen name="profile" component={NonInfluencerProfile} options={{ headerShown: false }} />
+        </HomeTab.Navigator>
     );
 };

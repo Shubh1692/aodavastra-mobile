@@ -25,7 +25,7 @@ function InfluencerProfileView({ handleIconAction }) {
                         <ProfileImage size={88} />
                     </View>
 
-                    <Button mode="contained" textStyle={{ lineHeight: 20 }} style={{ width: 172, height: 40, top: 10 }} onPress={() => console.log("hii")}>Rewards</Button>
+                    <Button mode="contained" textStyle={{ lineHeight: 20 }} style={{ width: 172, height: 40, top: 10 }} onPress={() => console.log("hii")}>Follow</Button>
                 </View>
                 <View style={{ position: 'relative', flexDirection: 'row' }}>
                     <View style={{ paddingLeft: 8, marginTop: 8, width: 20, }}>

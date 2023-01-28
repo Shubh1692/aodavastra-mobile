@@ -6,7 +6,7 @@ import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';
 import Title from '../../../components/title';
 import Button from '../../../components/button';
-import { goBack } from '../../../services/NavigationService';
+import { goBack,navigate } from '../../../services/NavigationService';
 
 const dummyArray = [
     { id: '1', value: 'In a world where you can be a king...' },
@@ -27,7 +27,7 @@ function FollowingList() {
                 <View style={styles.contentSection}>
                     <View style={styles.titleSection}>
                         <View style={styles.innerTitleSection}>
-                            <Title name="Sonali" />
+                            <Title name="Sonali" onPress={() => navigate('publicInfluencerProfile')} />
                             <View style={styles.descSection}>
                                 <Text numberOfLines={2} style={styles.item}>
                                     {item.value}

@@ -24,7 +24,7 @@ function LoginScreen() {
     const onSubmit = (values) => {
         const { email, password } = values;
         console.log('hiii values login', values)
-        navigate('nonInfluencerProfile')
+        navigate('Home')
     }
 
 

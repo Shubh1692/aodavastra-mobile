@@ -35,7 +35,7 @@ const MainStack = createStackNavigator();
 export const Main = () => {
     return (
         <MainStack.Navigator
-            initialRouteName="search"
+            initialRouteName="login"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -52,14 +52,14 @@ export const Main = () => {
             <MainStack.Screen name="wishlist" component={Wishlist} />
             <MainStack.Screen name="addressList" component={AddressList} />
             <MainStack.Screen name="orders" component={Orders} />
-            <MainStack.Screen name="BecomeInfluencerProfile" component={BecomeInfluencerProfile} />
-            <MainStack.Screen name="InfluencerMyAccount" component={InfluencerMyAccount} />
-            <MainStack.Screen name="TagPeopleList" component={TagPeopleList} />
-            <MainStack.Screen name="InfluencerEditProfileScreen" component={InfluencerEditProfileScreen} />
-            <MainStack.Screen name="BankDeatils" component={BankDeatils} />
-            <MainStack.Screen name="ReedemCoins" component={ReedemCoins} />
-            <MainStack.Screen name="InfluencerCoupon" component={InfluencerCoupon} />
-            <MainStack.Screen name="PublicInfluencerProfile" component={PublicInfluencerProfile} />
+            <MainStack.Screen name="becomeInfluencerProfile" component={BecomeInfluencerProfile} />
+            <MainStack.Screen name="influencerMyAccount" component={InfluencerMyAccount} />
+            <MainStack.Screen name="tagPeopleList" component={TagPeopleList} />
+            <MainStack.Screen name="influencerEditProfileScreen" component={InfluencerEditProfileScreen} />
+            <MainStack.Screen name="bankDeatils" component={BankDeatils} />
+            <MainStack.Screen name="reedemCoins" component={ReedemCoins} />
+            <MainStack.Screen name="influencerCoupon" component={InfluencerCoupon} />
+            <MainStack.Screen name="publicInfluencerProfile" component={PublicInfluencerProfile} />
             <MainStack.Screen name="productList" component={ProductList} />
             <MainStack.Screen name="shopNow" component={ShopNow} />
             <MainStack.Screen name="search" component={Search} />
