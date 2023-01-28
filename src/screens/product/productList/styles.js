@@ -4,7 +4,7 @@ import theme from '../../../theme/resources';
 
 const styles = StyleSheet.create({
     cardSection: {
-        // backgroundColor: theme.background,
+        backgroundColor: theme.White,
         padding: '2%'
     },
     cardInnerSection: {
@@ -19,19 +19,19 @@ const styles = StyleSheet.create({
     },
     contentSection: {
         flexDirection: 'column',
-        width: '70%',
+        marginTop:4,
     },
     outOfStockStyle: {
         position: 'absolute',
         width: 160,
         height: 200,
-        backgroundColor: '#00000040',
+        backgroundColor: 'rgba(0,0,0,0.4)',
         justifyContent: 'center',
         alignItems: 'center',
     },
     titleStyle: {
         width: '92%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     priceStyle: {
         marginLeft: '4%',
@@ -45,7 +45,20 @@ const styles = StyleSheet.create({
         width: '100%',
         marginBottom: 2,
         backgroundColor: '#fff'
-    }
+    },
+    bottomSheetContent: {
+      padding: 40,
+      alignItems: 'center',
+    },
+    bottomSheetText: {
+      fontSize: 24,
+      marginBottom: 80,
+    },
+    bottomSheetCloseButton: {
+      padding: 16,
+      backgroundColor: 'deeppink',
+      borderRadius: 8,
+    },
 });
 
 export default styles;
