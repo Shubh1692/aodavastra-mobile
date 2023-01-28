@@ -23,6 +23,10 @@ import ReedemCoins from '../screens/Influencer/reedemCoins';
 import InfluencerCoupon from '../screens/Influencer/influencerCoupon';
 import PublicInfluencerProfile from '../screens/publicInfluencer/PublicProfile';
 import ProductList from '../screens/product/productList';
+import ShopNow from '../screens/shopNow'
+import Search from '../screens/search';
+import Welcome from '../screens/home/welcome';
+import Cart from '../screens/bag/cart';
 
 
 const MainStack = createStackNavigator();
@@ -31,7 +35,7 @@ const MainStack = createStackNavigator();
 export const Main = () => {
     return (
         <MainStack.Navigator
-            initialRouteName="ProductList"
+            initialRouteName="search"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -56,7 +60,11 @@ export const Main = () => {
             <MainStack.Screen name="ReedemCoins" component={ReedemCoins} />
             <MainStack.Screen name="InfluencerCoupon" component={InfluencerCoupon} />
             <MainStack.Screen name="PublicInfluencerProfile" component={PublicInfluencerProfile} />
-            <MainStack.Screen name="ProductList" component={ProductList} />
+            <MainStack.Screen name="productList" component={ProductList} />
+            <MainStack.Screen name="shopNow" component={ShopNow} />
+            <MainStack.Screen name="search" component={Search} />
+            <MainStack.Screen name="welcome" component={Welcome} />
+            <MainStack.Screen name="cart" component={Cart} />
         </MainStack.Navigator>
     )
 }

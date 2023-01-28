@@ -19,7 +19,8 @@ const theme = {
     lightPurple:'#EEDCFF',
     lighterPurpule:'#F6EEFD',
     orange:'#FF7C61',
-    lightOrange:'#FFBFB2'
+    lightOrange:'#FFBFB2',
+    textGrey:'#A4A4A4'
 
 }
 
