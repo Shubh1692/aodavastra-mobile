@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
 const { width: ScreenWidth } = Dimensions.get("screen");
-export const _containerStyle = (width,inActiveTabColor) => ({
+export const _containerStyle = (width, inActiveTabColor) => ({
     height: 50,
     width: width || ScreenWidth - 32,
     display: "flex",
@@ -15,7 +15,7 @@ export const _selectedTabStyle = (tabs, activeTabColor, translateXAnimation, wid
         // borderRadius: 8,
         marginVertical: 2,
         marginHorizontal: 2,
-        width: (width ? width - 8 : ScreenWidth ) / tabs?.length,
+        width: (width ? width - 8 : ScreenWidth) / tabs?.length,
         // backgroundColor: activeTabColor,
         shadowOpacity: 0.2,
         shadowRadius: 3,
@@ -31,7 +31,7 @@ export default StyleSheet.create({
         flex: 1,
         height: 50,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     textStyle: {
         fontSize: 18,

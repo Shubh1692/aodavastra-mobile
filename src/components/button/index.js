@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     textTransform:'none',
     fontWeight:'400',
     fontSize: 16,
-    lineHeight: 26,
+    // lineHeight: 26,
     color:'#fff'
   },
 })

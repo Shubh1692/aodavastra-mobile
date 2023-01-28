@@ -36,6 +36,7 @@ import FollowingList from './src/screens/nonInfluencer/followingList';
 import Wishlist from './src/screens/wishlist';
 import AddressList from './src/screens/address/addressList';
 import Orders from './src/screens/orders';
+import { MenuProvider } from 'react-native-popup-menu';
 
 import {
   NavigationContainer,
@@ -62,6 +63,7 @@ const App = () => {
 
   return (
     <PaperProvider theme={paperTheme}>
+      <MenuProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <SafeAreaView
         style={{ flex: 0, backgroundColor: isDarkMode ? '#c4c4c4' : '#c4c4c4' }}
@@ -70,7 +72,7 @@ const App = () => {
       <NavigationContainer
         ref={navigationRef}
         {...{ onStateChange, initialState }}>
-        <SafeAreaView style={{flex:1}}>
+        <SafeAreaView style={{flex:1,backgroundColor:'#fff'}}>
           <Main />
         </SafeAreaView>
 
@@ -88,6 +90,7 @@ const App = () => {
       {/* <ForgotScreen /> */}
       {/* <ChangePasswordScreen /> */}
       {/* </SafeAreaView> */}
+      </MenuProvider>
     </PaperProvider>
   );
 };

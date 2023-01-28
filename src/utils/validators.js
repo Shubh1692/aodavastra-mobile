@@ -11,7 +11,12 @@ export const nameRegExp = /^(?=.{1,60}$)[a-zA-Z]+(?:[-' ][a-zA-Z]+)*$/;
 export const passwordRegExp = /^(?:(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*)$/;
 export const insta = /(?:http:\/\/)?(?:www\.)?instagram\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/;
 export const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
-
+export const instaRegex =/(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am|instagr.com)\/(\w+)/igm
+export const FbRegex = /(?:(?:http|https):\/\/)?(?:www.|m.)?facebook.com\/(?!home.php)(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\.-]+)/gm
+export const ifscRegex = /^[A-Za-z]{4}\d{7}$/
+export const accountNumber = /^[0-9]{9,18}$/
+export const panNumber = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/
+// export const snapRegex = /^(?:https?:)?\/\/(?:www\.)?snapchat\.com\/add\/(?P<username>[A-z0-9\.\_\-]+)\/?/im
 
 export const validateRequired = (messages = { required }) =>
   yup
@@ -46,6 +51,30 @@ export const validateRequiredPasswordLogin = () =>
 
 export const validateName = () =>
   yup.string().matches(nameRegExp, "Invalid Name");
+
+export const validateFacebookUserName = () =>
+  yup.string()
+  .matches(FbRegex, "Invalid Facebook Profile Name").required('Facebook Profile is required');
+
+export const validateInstaUserName = () =>
+  yup.string()
+  .matches(instaRegex, "Invalid Instgram Profile Name").required('Instgram Profile is required');
+
+export const validateAccountNumber = () =>
+  yup.string()
+  .matches(accountNumber, "Invalid Account Number").required('Account Number is required');
+
+export const validateIfsc = () =>
+  yup.string()
+  .matches(ifscRegex, "Invalid IFSC ").required('IFSC is required');
+
+export const validatePanNumber = () =>
+  yup.string()
+  .matches(panNumber, "Invalid Pan Number ").required('Pan Number is required');
+
+export const validateSnapChatUserName = () =>
+  yup.string().required('Snapchat Profile is required')
+  // .matches(snapRegex, "Invalid Snapchat Profile Name");
 
 export const validateRequiredName = () =>
   validateName()

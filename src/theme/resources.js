@@ -17,6 +17,7 @@ const theme = {
     divider:'#C4C4C4',
     gray: '#777777',
     lightPurple:'#EEDCFF',
+    lighterPurpule:'#F6EEFD',
     orange:'#FF7C61',
     lightOrange:'#FFBFB2'
 

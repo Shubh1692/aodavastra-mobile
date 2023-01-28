@@ -6,7 +6,7 @@ import theme from '../../theme/resources';
 import styles from './styles';
 
 
-export default function TextInputComponent({ handleToggleIcon,isIconToggle, onBlur,inputStyle, errorText, description, mode, isIcon, ...props }) {
+export default function TextInputComponent({ handleToggleIcon,isIconToggle, onBlur,inputStyle, errorText, description, mode, isIcon,isInstSocailIcon,isFbSocailIcon, isSnapSocailIcon,...props }) {
   const [isFocus, setIsFocus] = useState(false)
   return (
     <View style={styles.container}>
@@ -29,6 +29,21 @@ export default function TextInputComponent({ handleToggleIcon,isIconToggle, onBl
           {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={{ width: 20, height: 14 }} resizeMode="contain" />}
           {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={{ width: 20, height: 14 }} resizeMode="contain" />}
         </TouchableOpacity>
+      }
+      {isFbSocailIcon &&
+        <View style={{ position: 'absolute', right: 8, alignItems: 'center', height: 40, justifyContent: 'center' }}>
+           <FastImage source={require('../../assets/images/Facebook.png')} style={{ width: 25, height: 25 }} resizeMode="contain" />
+        </View>
+      }
+      {isInstSocailIcon &&
+        <View style={{ position: 'absolute', right: 8, alignItems: 'center', height: 40, justifyContent: 'center' }}>
+           <FastImage source={require('../../assets/images/instgram.png')} style={{ width: 25, height: 25 }} resizeMode="contain" />
+        </View>
+      }
+      {isSnapSocailIcon &&
+        <View style={{ position: 'absolute', right: 8, alignItems: 'center', height: 40, justifyContent: 'center' }}>
+           <FastImage source={require('../../assets/images/Snapchat.png')} style={{ width: 25, height: 25 }} resizeMode="contain" />
+        </View>
       }
       {description && !errorText ? (
         <Text style={styles.description}>{description}</Text>

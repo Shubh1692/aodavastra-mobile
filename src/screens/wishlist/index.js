@@ -8,6 +8,7 @@ import Title from "../../components/title";
 import Button from '../../components/button';
 import styles from './styles';
 import WishlistComponents from './components/wishlistComponent';
+import SeparatorComponent from '../../components/Separator';
 
 const  listItems =[
     { id:1, title:'1'}, 
@@ -34,7 +35,7 @@ function Wishlist() {
                     <FlatList
                         data={listItems}
                         //data defined in constructor
-                        ItemSeparatorComponent={ItemSeparatorView}
+                        ItemSeparatorComponent={() => <SeparatorComponent/>}
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                         //Item Separator View

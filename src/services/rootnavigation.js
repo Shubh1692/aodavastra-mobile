@@ -14,6 +14,15 @@ import Wishlist from '../screens/wishlist';
 import AddressList from '../screens/address/addressList';
 import Orders from '../screens/orders';
 import {HomeTabs} from './BottomNavigation';
+import BecomeInfluencerProfile from '../screens/Influencer/becomeInfuencerProfile';
+import InfluencerMyAccount from '../screens/Influencer/myAccount';
+import TagPeopleList from '../screens/Influencer/tagPeople';
+import InfluencerEditProfileScreen from '../screens/Influencer/editInfluencerProfile';
+import BankDeatils from '../screens/Influencer/bankDetails';
+import ReedemCoins from '../screens/Influencer/reedemCoins';
+import InfluencerCoupon from '../screens/Influencer/influencerCoupon';
+import PublicInfluencerProfile from '../screens/publicInfluencer/PublicProfile';
+import ProductList from '../screens/product/productList';
 
 
 const MainStack = createStackNavigator();
@@ -22,11 +31,10 @@ const MainStack = createStackNavigator();
 export const Main = () => {
     return (
         <MainStack.Navigator
-            initialRouteName="nonInfluencerProfile"
+            initialRouteName="ProductList"
             screenOptions={{
                 headerShown: false,
             }}>
-            
             <MainStack.Screen name="login" component={LoginScreen} />
             <MainStack.Screen name="Home" component={HomeTabs} />
             <MainStack.Screen name="register" component={RegisterScreen} />
@@ -40,6 +48,15 @@ export const Main = () => {
             <MainStack.Screen name="wishlist" component={Wishlist} />
             <MainStack.Screen name="addressList" component={AddressList} />
             <MainStack.Screen name="orders" component={Orders} />
+            <MainStack.Screen name="BecomeInfluencerProfile" component={BecomeInfluencerProfile} />
+            <MainStack.Screen name="InfluencerMyAccount" component={InfluencerMyAccount} />
+            <MainStack.Screen name="TagPeopleList" component={TagPeopleList} />
+            <MainStack.Screen name="InfluencerEditProfileScreen" component={InfluencerEditProfileScreen} />
+            <MainStack.Screen name="BankDeatils" component={BankDeatils} />
+            <MainStack.Screen name="ReedemCoins" component={ReedemCoins} />
+            <MainStack.Screen name="InfluencerCoupon" component={InfluencerCoupon} />
+            <MainStack.Screen name="PublicInfluencerProfile" component={PublicInfluencerProfile} />
+            <MainStack.Screen name="ProductList" component={ProductList} />
         </MainStack.Navigator>
     )
 }

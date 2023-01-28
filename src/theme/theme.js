@@ -6,9 +6,13 @@ const paperTheme = {
     roundness: 2,
     colors: {
       ...DefaultTheme.colors,
+      surface:'#fff',
       primary: theme.Primary,
-      accent: "#f1c40f",
-      error: theme.Red
+      accent: "#fff",
+      error: theme.Red,
+      onBackground:'#ffffff',
+      onSurface:'#ffffff',
+      background:'#ffffff'
     },
     fonts: {
       regular: { fontFamily: "Poppins-Regular" },

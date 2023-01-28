@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet,Image } from 'react-native';
 import SegmentedControl from "./plugin";
 import Icon from '../icon';
 
-const SegmentComponent = ({handleChanges}) => {
+const SegmentComponent = ({handleChanges,tab}) => {
     const [value, setValue] = React.useState('');
     const renderAdd = (item) => (
         <Icon
@@ -15,23 +15,15 @@ const SegmentComponent = ({handleChanges}) => {
         />
     );
 
-    const renderGrid = () => (
-        <Image source={require('../../assets/images/grid.png')} style={{width: 22,
-            height: 22,}} />
-    )
-    const renderEmptyHeart = () => (
-        <Image source={require('../../assets/images/emptyHeart.png')} style={{width: 22,
-            height: 22,}} resizeMode="contain" />
-    )
+
 
     return (
         <SafeAreaView style={styles.container}>
             <SegmentedControl
                 style={{ width: '100%' }}
-                // tabStyle={{backgroundColor:'#ececec'}}
                 inActiveTabColor={'#ececec'}
                 activeTabColor={'#f9f9f9'}
-                tabs={[renderGrid('grid'), renderEmptyHeart('heart1')]}
+                tabs={tab}
                 onChange={(index) => handleChanges(index)}
             />
         </SafeAreaView>

@@ -113,15 +113,6 @@ function RegisterScreen() {
                                             {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={{ width: 20, height: 20 }} />}
                                             {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={{ width: 20, height: 20 }} />}
                                         </TouchableOpacity>
-
-                                        {/* <Checkbox
-                                            status={checked ? 'checked' : 'unchecked'}
-                                            color={theme.White}
-                                            style={{height:15,width:15}}
-                                            onPress={() => {
-                                                setChecked(!checked);
-                                            }} /> */}
-                                        {/* </View> */}
                                         <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 5 }}>
                                             <Text>I accept</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>Privacy Policy</Text>
                                         </View>
