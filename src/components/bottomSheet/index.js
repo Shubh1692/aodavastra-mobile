@@ -1,21 +1,25 @@
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import {
     BottomSheetModal,
     BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet';
+import Heading from '../heading';
+import CloseIcon from '../../assets/svg/close.svg';
+import LineDivider from '../lineDivider';
+import theme from '../../theme/resources';
 
-const BottomSheet = ({ bottomSheetModalRef, setIsSettingIcon, handleSettingIcon }) => {
+const BottomSheet = ({ children,bottomSheetModalRef, setIsSettingIcon, handleSettingIcon,snapPoints }) => {
 
     // ref
-    useEffect(() =>{
-        if(setIsSettingIcon){
+    useEffect(() => {
+        if (setIsSettingIcon) {
             handlePresentModalPress();
         }
-    },[setIsSettingIcon])
-    
+    }, [setIsSettingIcon])
+
     // variables
-    const snapPoints = useMemo(() => ['25%', '50%', '75%'], []);
+    // const snapPoints = useMemo(() => ['35%', '50%', '75%'], []);
 
     // callbacks
     const handlePresentModalPress = useCallback(() => {
@@ -49,7 +53,15 @@ const BottomSheet = ({ bottomSheetModalRef, setIsSettingIcon, handleSettingIcon 
                 onChange={handleSheetChanges}
             >
                 <View style={styles.contentContainer}>
-                    <Text onPress={handleDismissModalPress}>Awesome 🎉</Text>
+                    <View style={{flexDirection:'row',alignItems:'center',position:'relative',width:'100%',justifyContent:'center'}}>
+                        <Heading textStyle={{fontSize:16,lineHeight:24,textAlign:'center',}} title="SETTINGS" />
+                        <TouchableOpacity onPress={handleDismissModalPress} style={{right:10,position:'absolute'}}>
+                        <CloseIcon />
+                        </TouchableOpacity>
+                    </View>
+                        <LineDivider extraStyle={{borderWidth:1,borderColor:theme.TextBlack,width:112,marginLeft:16,marginTop:16}}/>
+
+                    {children}
 
                 </View>
             </BottomSheetModal>
@@ -62,12 +74,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 24,
-        justifyContent: 'center',
+        // justifyContent: 'center',
         backgroundColor: 'grey',
     },
     contentContainer: {
         flex: 1,
-        alignItems: 'center',
+        // alignItems: 'center',
     },
 });
 

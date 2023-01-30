@@ -12,6 +12,8 @@ import SeparatorComponent from '../../../components/Separator';
 import OffersComponents from './components/offersComponents';
 
 import CheckOutComponents from './components/checkoutComponents';
+import TextWithUnderline from '../../../components/textWithUnderline';
+import { navigate } from '../../../services/NavigationService';
 
 function ReedemCoins() {
     return (
@@ -35,7 +37,8 @@ function ReedemCoins() {
                 <View style={{ flex: 1,}}>
                     <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Title name={'Cashout'} />
-                        <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', color: theme.Purple, fontWeight: '600', marginTop: '2%', textDecorationLine: 'underline' }}>Bank Details</Text>
+                        <TextWithUnderline  title="Bank Details" onPress={() => navigate('bankDeatils')}/>
+                        {/* <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', color: theme.Purple, fontWeight: '600', marginTop: '2%', textDecorationLine: 'underline' }}>Bank Details</Text> */}
                     </View>
                     <View style={{ alignItems: 'center'}}>
                         <FlatList

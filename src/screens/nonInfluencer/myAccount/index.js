@@ -61,7 +61,7 @@ function NonInfluencerProfile() {
                     <SegmentComponent handleChanges={handleSegment}  tab={[renderGrid(),renderEmptyHeart()]}/>
                 </View>
                 {selectedIndex == 0 && <View style={{ backgroundColor: '#F9F9F9', flex: 1, flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-                    <SquareCard imageUrl={OrderIcon} url={'orders'} title={'Orders'} count={'20'} isCount={true} />
+                    <SquareCard imageUrl={OrderIcon} url={'ordersList'} title={'Orders'} count={'20'} isCount={true} />
                     <SquareCard imageUrl={HomeIcon} url={'addressList'} title={'Address'} count={'3'} isCount={true} />
                     <SquareCard imageUrl={WishlistIcon} url={'wishlist'} title={'Wishlist'} count={'20'} isCount={true} />
                     <SquareCard imageUrl={SettingIcon} url={'nonInfluencerEditProfile'} title={'Edit Profile'} count={'20'} />

@@ -3,6 +3,7 @@ import { View, Text, ScrollView, FlatList } from 'react-native';
 import CardComponent from '../../../../components/card';
 import theme from '../../../../theme/resources';
 import FastImage from 'react-native-fast-image';
+import Chip from '../../../../components/chip';
 
 
 function OffersComponents() {
@@ -11,9 +12,11 @@ function OffersComponents() {
             <View style={{ alignItems: 'center' }}>
                 <FastImage source={require('../../../../assets/images/r1.png')} style={{ width: 72, height: 72, marginTop: 18, backgroundColor: theme.lightPurple, }} />
                 <Text style={{ lineHeight: 18, fontSize: 12, textAlign: 'center', marginTop: 6 }}>10% off on MODAVASTRA</Text>
-                <View style={{ marginTop: 9, width: 80, height: 20, borderRadius: 10, backgroundColor: theme.White, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ fontSize: 12, fontWeight: '400', lineHeight: 18 }}>100 coins</Text>
-                </View>
+                
+                <Chip title={'100 coins'}
+                        viewStyle={{ marginTop: 9, width: 80, height: 20, borderRadius: 10, backgroundColor: theme.White, alignItems: 'center', justifyContent: 'center' }}
+                        textStyle={{ fontSize: 12, fontWeight: '400', lineHeight: 18,color:theme.TextBlack }}
+                    />
             </View>
         </CardComponent>
     )

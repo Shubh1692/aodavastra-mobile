@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     btn: { 
         width: 160, 
-        height: 50, 
+        height: 40, 
         borderWidth: 1, 
         borderColor: theme.TextBlack 
     },

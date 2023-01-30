@@ -23,12 +23,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingVertical: 2,
     borderRadius:5,
+    height:40,
   },
   text: {
     textTransform:'none',
     fontWeight:'400',
     fontSize: 16,
-    // lineHeight: 26,
+    lineHeight: 18,
     color:'#fff'
   },
 })

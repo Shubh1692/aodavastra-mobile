@@ -2,12 +2,13 @@ import { StyleSheet } from 'react-native';
 import theme from '../../../theme/resources';
 
 const styles = StyleSheet.create({
-   btn: { width: 240, height: 50, },
+   btn: { width: 240, height: 40, },
    loginBtn: { 
        width: 200, 
-       height: 50, 
+       height: 40, 
        borderWidth: 1, 
-       borderColor: theme.TextBlack 
+       borderColor: theme.TextBlack,
+       paddingVertical:0
     }
 });
 

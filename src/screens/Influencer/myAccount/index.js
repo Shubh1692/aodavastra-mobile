@@ -24,6 +24,10 @@ import UserPosts from '../../../components/userPostItems';
 import UserCategories from '../../../components/userStoreItem';
 import BottomSheet from '../../../components/bottomSheet';
 import InfluencerProfileView from '../components/influencerProfileComponent';
+import Heading from '../../../components/heading';
+import CopyIcon from '../../../assets/svg/Copy-primary.svg';
+import ShareIcon from '../../../assets/svg/Share-primary.svg';
+import { navigate } from '../../../services/NavigationService';
 
 
 
@@ -100,7 +104,30 @@ function InfluencerMyAccount() {
 
                 </View>
             </View>
-            {isSettingIcon && <BottomSheet bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} />}
+            {isSettingIcon &&
+                <BottomSheet snapPoints={[420, 460]} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} >
+                    <View style={{ marginTop: '5%', flex: 1 }}>
+                        <View style={{ backgroundColor: theme.background, flex: 1, }}>
+                            <Heading 
+                            title="Orders" 
+                            textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} 
+                            viewStyle={{ marginVertical: 7, marginLeft: 16 }} 
+                            onPress={() => navigate('ordersList')}/>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                                <Heading title="YOUR STORE LINK"  onPress={() => navigate('ordersList')} textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
+                                <View style={{flexDirection:'row',alignItems:'center'}}>
+                                    <ShareIcon style={{marginRight:10}} />
+                                    <CopyIcon />
+                                </View>
+                            </View>
+                            <Heading title="Get your own Coupon" onPress={() => navigate('influencerCoupon')}  textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
+                            <Heading title="Address" onPress={() => navigate('addressList')} textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
+                            <Heading title="Wishlist" onPress={() => navigate('wishlist')} textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
+                            <Heading title="EDIT Profile" onPress={() => navigate('influencerEditProfile')} textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
+                        </View>
+
+                    </View>
+                </BottomSheet>}
         </MainContainer>
     )
 }

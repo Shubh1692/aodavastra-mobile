@@ -83,7 +83,7 @@ function ChangePasswordScreen() {
                                     </View>
                                 </View>
                                 <View style={{alignItems:'center',width:'100%',bottom:40,position:'absolute'}}>
-                                <Button mode="contained" style={{ width: 200, height: 50, }} onPress={handleSubmit}> Confirm Password </Button>
+                                <Button mode="contained" style={{ width: 200, height: 40, }} onPress={handleSubmit}> Confirm Password </Button>
                                 </View>
                             </View>
                         )

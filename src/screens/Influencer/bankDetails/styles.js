@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         width: deviceWidth,
         height: 50,
         marginHorizontal: -17,
-        bottom: -20
+        // bottom: -20
     }
 })
 

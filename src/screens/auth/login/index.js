@@ -13,7 +13,8 @@ import Icon from '../../../components/icon';
 import Divider from '../../../components/divider';
 import theme from '../../../theme/resources';
 import IconComponent from '../../../components/icon';
-import { navigate } from '../../../services/NavigationService';
+import { navigate, replace } from '../../../services/NavigationService';
+
 
 
 function LoginScreen() {
@@ -24,18 +25,19 @@ function LoginScreen() {
     const onSubmit = (values) => {
         const { email, password } = values;
         console.log('hiii values login', values)
-        navigate('Home')
+        replace('Home')
     }
 
 
     return (
         <View>
-            <Header />
-            <ScrollView contentContainerStyle={{paddingBottom:90}} 
-            showsVerticalScrollIndicator={false} 
-            showsHorizontalScrollIndicator={false}
+            <Header isBack={false} />
+            <ScrollView contentContainerStyle={{ paddingBottom: 90 }}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
             >
                 <Logo />
+                
                 <Formik
                     validationSchema={loginValidationSchema}
                     initialValues={{ email: '', password: '' }}
@@ -72,8 +74,8 @@ function LoginScreen() {
                                             isIcon={true}
                                             isIconToggle={eyeView}
                                             handleToggleIcon={() => setEyeView(!eyeView)}
-                                            
-                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+
+                                        // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                 </View>
@@ -83,7 +85,7 @@ function LoginScreen() {
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Button mode="contained" style={{ width: 200, height: 50, }} onPress={handleSubmit}> Log in </Button>
+                                    <Button mode="contained" style={{ width: 200, height: 40, }} onPress={handleSubmit}> Log in </Button>
                                 </View>
                             </View>
                         )
@@ -94,10 +96,10 @@ function LoginScreen() {
 
                 <View style={{ marginVertical: 10 }}>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 50, backgroundColor: '#fff' }} onPress={() => console.log("google login")}> Continue with Google  </Button>
+                        <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 40, backgroundColor: '#fff' }} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" style={{ width: 240, height: 50, backgroundColor: '#2c2c2c' }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
+                        <Button mode="contained" style={{ width: 240, height: 40, backgroundColor: '#2c2c2c' }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
                     </View>
                 </View>
 
@@ -106,7 +108,7 @@ function LoginScreen() {
                         <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 50, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => navigate('register')}> Create Account </Button>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 40, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => navigate('register')}> Create Account </Button>
                     </View>
                 </View>
             </ScrollView>

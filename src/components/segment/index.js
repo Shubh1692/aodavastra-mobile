@@ -1,28 +1,17 @@
 import * as React from 'react';
 import { SafeAreaView, StyleSheet,Image } from 'react-native';
 import SegmentedControl from "./plugin";
-import Icon from '../icon';
-
-const SegmentComponent = ({handleChanges,tab}) => {
-    const [value, setValue] = React.useState('');
-    const renderAdd = (item) => (
-        <Icon
-            name={item}
-            style={{
-                width: 25,
-                height: 25,
-            }}
-        />
-    );
 
 
+const SegmentComponent = ({handleChanges,segmentStyle,tab,tabStyle,inActiveTabColor,activeTabColor}) => {
 
     return (
         <SafeAreaView style={styles.container}>
             <SegmentedControl
-                style={{ width: '100%' }}
-                inActiveTabColor={'#ececec'}
-                activeTabColor={'#f9f9f9'}
+                style={[{ width: '100%',overflow:'hidden' },segmentStyle]}
+                tabStyle={tabStyle}
+                inActiveTabColor={'#ececec' || inActiveTabColor}
+                activeTabColor={'#f9f9f9'|| activeTabColor}
                 tabs={tab}
                 onChange={(index) => handleChanges(index)}
             />

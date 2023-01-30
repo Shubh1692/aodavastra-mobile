@@ -27,6 +27,7 @@ import ShopNow from '../screens/shopNow'
 import Search from '../screens/search';
 import Welcome from '../screens/home/welcome';
 import Cart from '../screens/bag/cart';
+import RewardMVCoins from '../screens/Influencer/rewardMvCoin';
 
 
 const MainStack = createStackNavigator();
@@ -51,11 +52,11 @@ export const Main = () => {
             <MainStack.Screen name="followingList" component={FollowingList} />
             <MainStack.Screen name="wishlist" component={Wishlist} />
             <MainStack.Screen name="addressList" component={AddressList} />
-            <MainStack.Screen name="orders" component={Orders} />
+            <MainStack.Screen name="ordersList" component={Orders} />
             <MainStack.Screen name="becomeInfluencerProfile" component={BecomeInfluencerProfile} />
             <MainStack.Screen name="influencerMyAccount" component={InfluencerMyAccount} />
             <MainStack.Screen name="tagPeopleList" component={TagPeopleList} />
-            <MainStack.Screen name="influencerEditProfileScreen" component={InfluencerEditProfileScreen} />
+            <MainStack.Screen name="influencerEditProfile" component={InfluencerEditProfileScreen} />
             <MainStack.Screen name="bankDeatils" component={BankDeatils} />
             <MainStack.Screen name="reedemCoins" component={ReedemCoins} />
             <MainStack.Screen name="influencerCoupon" component={InfluencerCoupon} />
@@ -65,6 +66,7 @@ export const Main = () => {
             <MainStack.Screen name="search" component={Search} />
             <MainStack.Screen name="welcome" component={Welcome} />
             <MainStack.Screen name="cart" component={Cart} />
+            <MainStack.Screen name="rewardMVCoins" component={RewardMVCoins} />
         </MainStack.Navigator>
     )
 }

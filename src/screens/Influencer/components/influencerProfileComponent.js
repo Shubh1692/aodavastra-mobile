@@ -13,6 +13,7 @@ import theme from '../../../theme/resources';
 import Button from '../../../components/button';
 import Title from '../../../components/title';
 import TagEmpty from '../../../assets/svg/Tag.svg';
+import { navigate } from '../../../services/NavigationService';
 
 function InfluencerProfileView({ handleIconAction }) {
     return (
@@ -30,7 +31,7 @@ function InfluencerProfileView({ handleIconAction }) {
                         <ProfileImage size={88} />
                     </View>
 
-                    <Button mode="contained" textStyle={{ lineHeight: 20 }} style={{ width: 172, height: 40, top: 10 }} onPress={() => console.log("hii")}>Rewards</Button>
+                    <Button mode="contained" textStyle={{ lineHeight: 20 }} style={{ width: 172, height: 40, top: 10 }} onPress={() => navigate('rewardMVCoins')}>Rewards</Button>
                 </View>
                 <View style={{ position: 'relative', flexDirection: 'row' }}>
                     <View style={{ paddingLeft: 8, marginTop: 8, width: 20, }}>

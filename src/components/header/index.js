@@ -24,7 +24,7 @@ function Header({ isLogout = false, isBack = true, isShopNow = false}) {
     return (
         <Appbar.Header style={{ backgroundColor: '#fff', justifyContent: 'space-between' }} >
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                {isBack && <Appbar.BackAction onPress={goBack} />}
+                {isBack  && <Appbar.BackAction onPress={goBack} />}
                 <Image source={Logo} height={50} resizeMode="contain" style={{ height: 30, alignItems: 'flex-start' }} />
             </View>
             {isLogout && <Text onPress={handleLogout} style={{ fontSize: 18, color: theme.Red, fontFamily: 'Poppins-SemiBold', right: 4 }}>Log out</Text>}

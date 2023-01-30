@@ -2,10 +2,10 @@ import React from 'react';
 import theme from '../../theme/resources';
 import { Text, View, StyleSheet } from 'react-native';
 
-function Heading({ title }) {
+function Heading({ title,textStyle,viewStyle,...restProps }) {
     return (
-        <View style={{ paddingVertical: '2%' }}>
-            <Text style={styles.heading}>{title}</Text>
+        <View style={[{ paddingVertical: '2%', },viewStyle]}>
+            <Text style={[styles.heading,textStyle]}{...restProps}>{title}</Text>
         </View>
     )
 }
