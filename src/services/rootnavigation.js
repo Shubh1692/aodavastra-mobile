@@ -28,6 +28,8 @@ import Search from '../screens/search';
 import Welcome from '../screens/home/welcome';
 import Cart from '../screens/bag/cart';
 import RewardMVCoins from '../screens/Influencer/rewardMvCoin';
+import CartAddress from '../screens/bag/cartAddress';
+import CartPayment from '../screens/bag/cartPayment';
 
 
 const MainStack = createStackNavigator();
@@ -66,6 +68,8 @@ export const Main = () => {
             <MainStack.Screen name="search" component={Search} />
             <MainStack.Screen name="welcome" component={Welcome} />
             <MainStack.Screen name="cart" component={Cart} />
+            <MainStack.Screen name='cartAddress' component={CartAddress} />
+            <MainStack.Screen name='cartPayment' component={CartPayment} />
             <MainStack.Screen name="rewardMVCoins" component={RewardMVCoins} />
         </MainStack.Navigator>
     )

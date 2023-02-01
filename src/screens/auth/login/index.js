@@ -40,7 +40,7 @@ function LoginScreen() {
                 
                 <Formik
                     validationSchema={loginValidationSchema}
-                    initialValues={{ email: '', password: '' }}
+                    initialValues={{ email: 'surya@mail.com', password: '12345678' }}
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
@@ -96,10 +96,10 @@ function LoginScreen() {
 
                 <View style={{ marginVertical: 10 }}>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 40, backgroundColor: '#fff' }} onPress={() => console.log("google login")}> Continue with Google  </Button>
+                        <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 40, backgroundColor: theme.White }} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" style={{ width: 240, height: 40, backgroundColor: '#2c2c2c' }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
+                        <Button mode="contained" style={{ width: 240, height: 40, backgroundColor: theme.appleBackground }} onPress={() => console.log("google login")}> Sign-in with Apple  </Button>
                     </View>
                 </View>
 

@@ -17,7 +17,7 @@ function HeaderWithSearch({ title , isBack = true }) {
     }
 
     return (
-        <Appbar.Header style={{ backgroundColor: '#fff' }} >
+        <Appbar.Header style={{ backgroundColor: theme.White }} >
             <Appbar.BackAction onPress={() => goBack()} />
             <Appbar.Content title={title}style={{ alignItems: 'center' }} />
             <SearchIcon style={{ marginRight: 10}} onPress={() => console.log('hii')} />

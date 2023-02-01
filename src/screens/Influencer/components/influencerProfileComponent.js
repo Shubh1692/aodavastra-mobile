@@ -50,7 +50,7 @@ function InfluencerProfileView({ handleIconAction }) {
                                 </TouchableOpacity>
                             </View>
                             <View>
-                                <TouchableOpacity onPress={() => console.log('hii')} activeOpacity={0.7}>
+                                <TouchableOpacity onPress={() => navigate('followingList')} activeOpacity={0.7}>
                                     <Text style={styles.followingCount}>0</Text>
                                     <Text style={styles.followingTitle}>Following</Text>
                                 </TouchableOpacity>

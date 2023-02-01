@@ -10,16 +10,16 @@ import CategoryComponents from './components/categoryComponents';
 
 function UserCategories({isCreator}) {
     return (
-        <View style={{ flex: 1, position: 'relative',marginBottom:30  }}>
+        // <View style={{ flex: 1, position: 'relative',marginBottom:30  }}>
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#F9F9F9', marginTop: 20, width: deviceWidth, paddingBottom: 130,}}>
+                contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: theme.background, /*marginTop: 20,*/ width: deviceWidth, paddingBottom: 90,}}>
                 <CategoryComponents isCreator={isCreator}/>
                 <CategoryComponents isCreator={isCreator}/>
             </ScrollView>
 
-        </View>
+        // </View>
 
     )
 }

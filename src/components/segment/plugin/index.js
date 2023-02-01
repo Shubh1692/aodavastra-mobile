@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Text, Animated, Dimensions, TouchableOpacity, } from "react-native";
+import theme from "../../../theme/resources";
 /**
  * ? Local Imports
  */
 import styles, { _containerStyle, _selectedTabStyle, } from "./SegmentedControl.style";
 const { width: ScreenWidth } = Dimensions.get("screen");
 
-const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabStyle, textStyle, activeTextColor = "#000", activeTabColor = "#f9f9f9", inActiveTabColor="#ececec" }) => {
+const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabStyle, textStyle, activeTextColor = theme.Black, activeTabColor = theme.background, inActiveTabColor=theme.tabColor }) => {
     const translateValue = (width ? width : ScreenWidth) / tabs.length;
     const [slideAnimation, _] = useState(new Animated.Value(0));
     const [currentIndex, setCurrentIndex] = useState(initialIndex);

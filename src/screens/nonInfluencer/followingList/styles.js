@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     contentSection: {
         flexDirection: 'column',
         overflow: 'hidden',
-        width: '90%'
+        width: '84%'
     },
     titleSection: {
         flexDirection: 'row',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         width: '84%'
     },
     descSection: {
-        width: '100%%',
+        width: '100%',
         marginLeft: '3%',
         marginTop: 3,
         // borderWidth:1
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         height: 2.5,
         width: '100%',
         marginBottom: 2,
-        backgroundColor: '#fff'
+        backgroundColor: theme.White
     }
 });
 

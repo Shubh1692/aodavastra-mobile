@@ -12,16 +12,20 @@ const theme = {
     WarningYellow: '#A49D00',
     White: '#FFFFFF',
     Black: '#000',
-    Eclipse :'#3C3C3C',
     background:'#F9F9F9',
+    tabColor:'#ECECEC',
     divider:'#C4C4C4',
     gray: '#777777',
     lightPurple:'#EEDCFF',
     lighterPurpule:'#F6EEFD',
     orange:'#FF7C61',
     lightOrange:'#FFBFB2',
-    textGrey:'#A4A4A4'
-
+    textGrey:'#A4A4A4',
+    bagHighlighterGrey:'#CBCBCB',
+    searchBarBackgorund: '#EDEDED',
+    textPlaceholder: '#888888',
+    appleBackground: '#2c2c2c',
+    
 }
 
 

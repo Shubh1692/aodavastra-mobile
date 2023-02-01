@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         height: 2.5,
         width: '100%',
         marginBottom: 2,
-        backgroundColor: '#fff'
+        backgroundColor: theme.White
     },
     bottomSheetContent: {
       padding: 40,

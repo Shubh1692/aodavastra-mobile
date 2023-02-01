@@ -67,9 +67,9 @@ function RewardMVCoins() {
                 </ImageBackground>
                 <View style={{ flex: 1, marginTop: '6%', }}>
                     <SegmentComponent
-                        inActiveTabColor={'#f9f9f9'}
-                        activeTabColor={'#ececec'}
-                        segmentStyle={{ overflow: 'hidden', elevation: 4, shadowColor: "#3C3C3C", shadowOffset: { width: 0, height: -1 }, shadowOpacity: 0.5, shadowRadius: 1, }}
+                        inActiveTabColor={theme.background}
+                        activeTabColor={theme.tabColor}
+                        segmentStyle={{ overflow: 'hidden', elevation: 4, shadowColor: theme.TextBlack, shadowOffset: { width: 0, height: -1 }, shadowOpacity: 0.5, shadowRadius: 1, }}
                         tabStyle={{ overflow: 'hidden' }}
                         tab={[renderYourCoin(), renderAboutMVCoin()]}
                         handleChanges={handleSegment} />

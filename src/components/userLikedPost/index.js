@@ -5,12 +5,12 @@ import FastImage from 'react-native-fast-image';
 import {deviceWidth} from '../../utils/device';
 
 
-function UserLikePosts() {
+function UserLikePosts({isCreator = false}) {
     return (
         <ScrollView
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: '#F9F9F9', marginTop: 20, width: deviceWidth, paddingBottom: 130 }}>
+            contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: theme.background, /*marginTop: 20,*/ width: deviceWidth, paddingBottom: !isCreator ? 90 :0 }}>
             <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
             <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
             <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />

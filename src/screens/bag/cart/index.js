@@ -1,20 +1,32 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, } from 'react-native';
 import CardComponent from '../../../components/card';
 import Header from '../../../components/header';
 import theme from '../../../theme/resources';
-import LineDivider from '../../../components/lineDivider';
-import Icon from '../../../components/icon';
 import styles from './styles';
 import FastImage from 'react-native-fast-image';
-import SeparatorComponent from '../../../components/Separator';
 import { deviceHeight, deviceWidth } from '../../../utils/device';
 import Button from '../../../components/button';
 import MainContainer from '../../../components/mainContainer';
+import { ScrollView } from 'react-native-gesture-handler';
+import CartListComponents from './components/cartListComponent';
+import CartIndecatorComponents, { CartBagIndecator } from './components/cartIndecatorComponent';
 
-
-function Cart() {
+function Cart({ navigation }) {
     const emptyCart = true
+
+    const listItems = [
+        { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
+        // { id:2, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:false}, 
+        // { id:3, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:true}, 
+        // { id:4, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:false},
+    ]
+    const list = listItems.map((item, index) => {
+        return (
+            <CartListComponents item={item} isCart={true} key={index.toString()} />
+        )
+    })
+
     return (
         <MainContainer>
             <Header isBack={false} />
@@ -30,12 +42,27 @@ function Cart() {
                         </View>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 200, height: 40 }} onPress={() => console.log("hii")}>Shop Now</Button>
+                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 200, height: 40 }} onPress={() => { navigation.navigate('shopNow') }}>Shop Now</Button>
                     </View>
                 </View>
                 :
-                <View style={{ marginTop: '8%', marginHorizontal: '4%' }}>
-                    {/*  */}
+                <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
+                    <View style={{ flex: 1, marginTop: '8%' }}>
+                        <CartBagIndecator />
+                        <Text style={{ marginTop: '6%', fontFamily: 'Poppins-Regular', fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
+                        <ScrollView
+                            // horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            showsVerticalScrollIndicator={false}
+                        >
+                            <View style={{ flex: 1, marginBottom: 90,}}>
+                                {list}
+                            </View>
+                        </ScrollView>
+                    </View>
+                    <View style={{ flex: 1, width: '100%', alignItems: 'center', position: 'absolute', bottom: 10 }}>
+                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => { navigation.navigate('cartAddress', {listItems}) }}>Proceed to Checkout</Button>
+                    </View>
                 </View>
             }
 

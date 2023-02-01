@@ -7,6 +7,7 @@ import theme from '../../../theme/resources';
 import Title from '../../../components/title';
 import Button from '../../../components/button';
 import { goBack,navigate } from '../../../services/NavigationService';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const dummyArray = [
     { id: '1', value: 'In a world where you can be a king...' },
@@ -23,7 +24,9 @@ function FollowingList() {
     const ItemView = ({ item }) => {
         return (
             <View style={styles.itemSection}>
+                <Pressable onPress={() => navigate('publicInfluencerProfile')}>
                 <ProfileImage size={72} />
+                </Pressable>
                 <View style={styles.contentSection}>
                     <View style={styles.titleSection}>
                         <View style={styles.innerTitleSection}>
@@ -56,9 +59,9 @@ function FollowingList() {
     };
     return (
         <View style={{flex:1}}>
-            <Appbar.Header style={{ backgroundColor: '#fff' }} >
+            <Appbar.Header style={{ backgroundColor: theme.White }} >
                 <Appbar.BackAction onPress={() => goBack()} />
-                <Appbar.Content title="Following" style={{ alignItems: 'center' }} />
+                <Appbar.Content title="Following" style={{ alignSelf: 'center' }} />
             </Appbar.Header>
 
             <View style={{ marginTop: '4%',flex:1 }}>
