@@ -23,7 +23,7 @@ function WishlistComponents() {
                         </View>
 
                         <View style={styles.btnSection}>
-                            <Button mode="outlined" textStyle={[styles.btnText,{lineHeight:12}]} style={{ width: '46%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Remove </Button>
+                            <Button mode="outlined" textStyle={[styles.btnText,{lineHeight:14}]} style={{ width: '46%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Remove </Button>
                             <Button mode="contained" textStyle={{ fontSize: 10,lineHeight:14 }} style={{ width: '48%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Add to bag </Button>
                         </View>
 

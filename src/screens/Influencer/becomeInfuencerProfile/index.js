@@ -40,7 +40,7 @@ function BecomeInfluencerProfile() {
                     <Heading title={'Profile Details'} />
                     <Formik
                         validationSchema={becomeCretorValidationSchema}
-                        initialValues={{ userName: '', email: '', mobile: '', fbUserName: '', instUserName: '', snapUsername: '' }}
+                        initialValues={{ userName: 'Surya', email: 'surya@mailinator.com', mobile: '9876541230', fbUserName: 'facebook.com/surya', instUserName: 'instagram.com/surya', snapUsername: 'surya' }}
                         onSubmit={onSubmit}>
                         {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                             return (
@@ -84,6 +84,7 @@ function BecomeInfluencerProfile() {
                                                 maxLength={10}
                                                 onChangeText={handleChange('mobile')}
                                                 onBlur={handleBlur('mobile')}
+                                                value={values.mobile}
                                                 error={errors.mobile && touched.mobile}
                                                 errorText={errors.mobile}
                                                 autoCapitalize="none"
@@ -98,6 +99,7 @@ function BecomeInfluencerProfile() {
                                                     returnKeyType="next"
                                                     onChangeText={handleChange('instUserName')}
                                                     onBlur={handleBlur('instUserName')}
+                                                    value={values.instUserName}
                                                     error={errors.instUserName && touched.instUserName}
                                                     errorText={errors.instUserName}
                                                     isInstSocailIcon={true}
@@ -110,6 +112,7 @@ function BecomeInfluencerProfile() {
                                                     returnKeyType="next"
                                                     onChangeText={handleChange('fbUserName')}
                                                     onBlur={handleBlur('fbUserName')}
+                                                    value={values.fbUserName}
                                                     error={errors.fbUserName && touched.fbUserName}
                                                     errorText={errors.fbUserName}
                                                     isFbSocailIcon={true}
@@ -122,6 +125,7 @@ function BecomeInfluencerProfile() {
                                                     returnKeyType="next"
                                                     onChangeText={handleChange('snapUsername')}
                                                     onBlur={handleBlur('snapUsername')}
+                                                    value={values.snapUsername}
                                                     error={errors.snapUsername && touched.snapUsername}
                                                     errorText={errors.snapUsername}
                                                     isSnapSocailIcon={true}

@@ -89,7 +89,7 @@ function Welcome() {
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                         >
-                            <View style={{flex:1, marginTop: '2%', marginBottom: '4%', flexDirection: 'row', flexWrap: 'wrap',}}>
+                            <View style={{flex:1, marginTop: '2%', marginBottom: '4%', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
                                 {brand}
                             </View>
                     </ScrollView>

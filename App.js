@@ -44,6 +44,7 @@ import {
 } from '@react-navigation/native';
 
 import { navigationRef } from './src/services/NavigationService';
+import theme from './src/theme/resources';
 
 const NAVIGATION_STATE_KEY = `NAVIGATION_STATE_KEY-${1}`;
 
@@ -66,13 +67,13 @@ const App = () => {
       <MenuProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <SafeAreaView
-        style={{ flex: 0, backgroundColor: isDarkMode ? '#c4c4c4' : '#c4c4c4' }}
+        style={{ flex: 0, backgroundStyle }}
       />
 
       <NavigationContainer
         ref={navigationRef}
         {...{ onStateChange, initialState }}>
-        <SafeAreaView style={{flex:1,backgroundColor:'#fff'}}>
+        <SafeAreaView style={{flex:1,backgroundColor:theme.White}}>
           <Main />
         </SafeAreaView>
 

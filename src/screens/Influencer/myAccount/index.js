@@ -76,6 +76,7 @@ function InfluencerMyAccount() {
     )
 
     return (
+        <>
         <MainContainer>
             <Header />
             <InfluencerProfileView handleIconAction={handleSettingIcon} />
@@ -88,24 +89,27 @@ function InfluencerMyAccount() {
                     {selectedIndex == 0 && <View style={{ flex: 1, alignItems: 'center' }}>
                         {categories.length == 0 && <EmptyUserStore />}
                         {categories.length > 0 && <UserCategories isCreator={true} />}
-                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 200, height: 40, bottom: 10 }} onPress={() => console.log("hii")}>Create Category</Button>
+                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', height: 40, bottom: 10, width: 200 }} onPress={() => console.log("hii")}>Create Category</Button>
                     </View>}
 
                     {selectedIndex == 1 && <View style={{ flex: 1, alignItems: 'center' }}>
                         {posts.length == 0 && <EmptyUserPost />}
                         {posts.length > 0 && <UserPosts />}
-                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 200, height: 40, bottom: 10 }} onPress={() => console.log("hii")}>Create a Post</Button>
+                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', height: 40, bottom: 10, width: 200 }} onPress={() => console.log("hii")}>Create a Post</Button>
                     </View>}
 
                     {selectedIndex == 2 && <View style={{ flex: 1, alignItems: 'center' }}>
                         {likes.length == 0 && <EmptyLikePost />}
-                        {likes.length > 0 && <UserLikePosts />}
+                        {likes.length > 0 && <UserLikePosts isCreator={true}/>}
                     </View>}
 
                 </View>
             </View>
-            {isSettingIcon &&
-                <BottomSheet snapPoints={[420, 460]} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} >
+           
+        </MainContainer>
+        {isSettingIcon &&
+            
+                <BottomSheet snapPoints={['66%', 460]} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} >
                     <View style={{ marginTop: '5%', flex: 1 }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <Heading 
@@ -128,7 +132,7 @@ function InfluencerMyAccount() {
 
                     </View>
                 </BottomSheet>}
-        </MainContainer>
+        </>
     )
 }
 

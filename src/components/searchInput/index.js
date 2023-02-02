@@ -3,6 +3,7 @@ import { Animated, StyleSheet, TextInput, View } from 'react-native';
 import { deviceWidth } from '../../utils/device';
 import CloseIcon from '../../assets/svg/close.svg';
 import SearchIcon from '../../assets/svg/search.svg';
+import theme from '../../theme/resources';
 
 
 const SearchComponent = ({ clampedScroll }) => {
@@ -28,12 +29,12 @@ const SearchComponent = ({ clampedScroll }) => {
         opacity: searchBarOpacity,
       }
     ]}>
-      <View style={{flexDirection:'row',backgroundColor: '#EDEDED',borderRadius:4,alignItems:'center',width:'95%',marginRight:10}}>
+      <View style={{flexDirection:'row',backgroundColor: theme.searchBarBackgorund ,borderRadius:4,alignItems:'center',width:'95%',marginRight:10}}>
         <SearchIcon style={{marginLeft:4}} onPress={() => console.log('hii')}/>
         <TextInput
           placeholder='Search'
           style={styles.formField}
-          placeholderTextColor={'#888888'}
+          placeholderTextColor={theme.textPlaceholder}
         />
       </View>
       <View style={{ marginLeft: 10 }}>
@@ -60,11 +61,12 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     borderRadius: 4,
-    borderColor: '#EDEDED',
-    backgroundColor: '#EDEDED',
+    borderColor: theme.searchBarBackgorund,
+    backgroundColor: theme.searchBarBackgorund,
     fontSize: 18,
     width: '95%',
-    height: 40
+    height: 40,
+    color: theme.TextBlack
   }
 })
 

@@ -5,7 +5,7 @@ import { Image, View } from 'react-native';
 import Logo from '../../assets/images/logo2.png';
 import closet from '../../assets/images/closet-black.png';
 import theme from '../../theme/resources';
-import { goBack, push } from '../../services/NavigationService';
+import { goBack, navigate } from '../../services/NavigationService';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
@@ -18,11 +18,11 @@ function Header({ isLogout = false, isBack = true, isShopNow = false}) {
     }
 
     function handleShopNow() {
-        push('shopNow')
+        navigate('shopNow')
     }
 
     return (
-        <Appbar.Header style={{ backgroundColor: '#fff', justifyContent: 'space-between' }} >
+        <Appbar.Header style={{ backgroundColor: theme.White, justifyContent: 'space-between' }} >
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {isBack  && <Appbar.BackAction onPress={goBack} />}
                 <Image source={Logo} height={50} resizeMode="contain" style={{ height: 30, alignItems: 'flex-start' }} />

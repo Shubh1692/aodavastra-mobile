@@ -35,7 +35,7 @@ function ProductList() {
             <Header />
             <Container >
                 <View>
-                    <Text onPress={() => console.log('hii')} style={{ textAlign: 'right', textDecorationLine:'underline' ,color: theme.Purple, fontFamily:'Poppins-SemiBold' }}>Apply Filters</Text>
+                    <Text onPress={() => console.log('hii')} style={{ textAlign: 'right', textDecorationLine:'underline', color: theme.Purple, fontFamily:'Poppins-SemiBold' }}>Apply Filters</Text>
                 </View>
 
                 {/* <View style={{flex:1}}> */}

@@ -16,7 +16,7 @@ function TopBrandListComponents({item}) {
             //width: deviceWidth/4.35,
             position: 'relative',
             alignItems: 'center',
-            marginHorizontal: 14,
+            marginHorizontal: 13,
             marginVertical:9
         }}>
             <FastImage style={styles.brandImgStyle} source={require('../../../../assets/images/brand275.png')} />

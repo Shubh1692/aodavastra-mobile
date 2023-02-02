@@ -26,7 +26,7 @@ function UserListComponents({item}) {
 
     return (
         <View style={{ marginTop: 10, padding: 10 }}>
-            <Card style={{backgroundColor: '#F9F9F9',  paddingVertical: '8%', width: 139,height:224}}>
+            <Card style={{backgroundColor: theme.background,  paddingVertical: '8%', width: 139,height:224}}>
                 <View style={{
                     flexDirection: 'column',
                     // width: '100%',
@@ -43,7 +43,7 @@ function UserListComponents({item}) {
                     </View>
                     <View style={{ marginTop:8}}>
                         <TouchableOpacity style={{ backgroundColor: theme.Purple, width: 120, height: 29, alignItems: 'center', justifyContent: 'center', borderRadius: 5,}}>
-                            <Text style={{ fontSize: 10, fontFamily: 'Poppins-Bold', alignItems: 'center', color: '#fff',}}> Follow </Text>
+                            <Text style={{ fontSize: 10, fontFamily: 'Poppins-Bold', alignItems: 'center', color: theme.White,}}> Follow </Text>
                         </TouchableOpacity>
                     </View>
                 </View>

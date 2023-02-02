@@ -25,7 +25,7 @@ function ForgotScreen() {
             <View style={{alignItems:'center',}}>
                 <Heading title="Forgot Your Password" textStyle={{ fontSize: 16, color: theme.TextBlack, fontWeight:'600'}} />
                 <Text style={{color:theme.textGrey,textAlign:'center',width:'80%'}}>
-                    Enter the email you use to login to ModaVastra Admin Panel and we will send you a link to get you back into your account.
+                    Enter the email you use to login to ModaVastra and we will send you a link to get you back into your account.
                 </Text>
             </View>
             <Formik
@@ -34,7 +34,7 @@ function ForgotScreen() {
                 onSubmit={onSubmit}>
                 {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                     return (
-                        <View style={{ paddingHorizontal: 20, marginTop: '12%', flex: 1 }}>
+                        <View style={{ paddingHorizontal: 20, marginTop: '6%', flex: 1 }}>
                             <View>
                                 <View>
                                     <TextInputComponent
@@ -54,7 +54,7 @@ function ForgotScreen() {
 
                             </View>
 
-                            <View style={{ alignItems: 'center', marginTop: '12%' }}>
+                            <View style={{ alignItems: 'center', marginTop: '6%' }}>
                                 <Button mode="contained" textStyle={{lineHeight: 18,}} style={{ width: 200, height: 40, }} onPress={handleSubmit}> Submit </Button>
                             </View>
                         </View>

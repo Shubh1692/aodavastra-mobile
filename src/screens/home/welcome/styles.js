@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         width: '100%',
         position: 'relative',
         alignItems: 'center',
-        backgroundColor: '#F9F9F9',
+        backgroundColor: theme.background,
     },
     titleStyle: {
         width: deviceWidth/3.5,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         height: 2.5,
         width: '100%',
         marginBottom: 2,
-        backgroundColor: '#fff'
+        backgroundColor: theme.White
     },
     welcomeTitle: {
         fontSize: 16,

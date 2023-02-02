@@ -17,7 +17,7 @@ function Orders() {
             <Header />
             <View style={{ marginTop: '8%', marginHorizontal: '4%' }}>
                 <View>
-                    <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', color: theme.Purple, fontWeight: '600' }}>Apply Filter</Text>
+                    <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', textDecorationLine:'underline', color: theme.Purple, fontWeight: '600' }}>Apply Filter</Text>
                 </View>
                 <View style={{paddingBottom:160}}>
 

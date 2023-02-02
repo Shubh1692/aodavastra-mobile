@@ -12,6 +12,7 @@ import NonInfluencerProfile from '../screens/nonInfluencer/myAccount';
 import Search from "../screens/search";
 import Cart from "../screens/bag/cart";
 import Welcome from "../screens/home/welcome";
+import theme from "../theme/resources";
 
 const screenOptions = ({ route, navigation }) => ({
     tabBarShowLabel: false,
@@ -21,7 +22,7 @@ const screenOptions = ({ route, navigation }) => ({
     },
     tabBarStyle: {
         elevation: 4,
-        shadowColor: "#3C3C3C",
+        shadowColor: theme.TextBlack,
         shadowOffset: { width: 0, height: -1 }, // change this for more shadow
         shadowOpacity: 0.5,
         shadowRadius: 1,

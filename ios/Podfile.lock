@@ -468,7 +468,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: 49cbe4b43e445b06bf29199b6ad2057649e4c8f5
-  FBReactNativeSpec: eff231cc61eff12ea8a8d105a3d59cf7fc4c4085
+  FBReactNativeSpec: ccf56637595ac82cfb65835e3711dc767fbfd39e
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c

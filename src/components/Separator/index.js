@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
+import theme from '../../theme/resources';
 
 
 
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
         height: 2.5,
         width: '100%',
         // marginBottom: 2,
-        backgroundColor: '#fff'
+        backgroundColor: theme.White
     }
 })
 

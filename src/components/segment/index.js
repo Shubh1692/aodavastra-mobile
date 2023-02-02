@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, StyleSheet,Image } from 'react-native';
+import theme from '../../theme/resources';
 import SegmentedControl from "./plugin";
 
 
@@ -10,8 +11,8 @@ const SegmentComponent = ({handleChanges,segmentStyle,tab,tabStyle,inActiveTabCo
             <SegmentedControl
                 style={[{ width: '100%',overflow:'hidden' },segmentStyle]}
                 tabStyle={tabStyle}
-                inActiveTabColor={'#ececec' || inActiveTabColor}
-                activeTabColor={'#f9f9f9'|| activeTabColor}
+                inActiveTabColor={theme.tabColor || inActiveTabColor}
+                activeTabColor={theme.background || activeTabColor}
                 tabs={tab}
                 onChange={(index) => handleChanges(index)}
             />

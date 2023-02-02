@@ -12,14 +12,17 @@ import { navigate } from '../../../../services/NavigationService';
 function AddressListComponent() {
 
     const handleRemove = ()=>{
-        Alert.alert('Are Your sure you want to remove this ?',  [
+        Alert.alert(
+            'Alert',
+            'Are Your sure you want to remove this ?',
+            [
+                { text: 'Cancel', onPress: () => console.log('Cancel button is clicked') },
+                { text: 'OK', onPress: () => console.log('OK button clicked') },
+            ],
             {
-              text: 'Cancel',
-              onPress: () => console.log('Cancel Pressed'),
-              style: 'cancel',
-            },
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
-          ]);
+                cancelable: false
+            }
+        );
     }
 
     return (

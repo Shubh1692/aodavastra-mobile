@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
         paddingBottom: '6%'
     },
     addressText: {
-        fontSize: 8,
+        fontSize: 10,
         fontWeight: '600',
         color: theme.TextBlack,
         marginVertical: 6,
         width: '90%'
     },
     titleText: {
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: '600'
     },
 

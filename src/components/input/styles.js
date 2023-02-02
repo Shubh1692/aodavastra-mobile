@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         paddingTop:10,
         fontSize:14,
         borderWidth:1.2,
-        borderRadius:4
+        borderRadius:4,
+        color: theme.TextBlack
       },
       description: {
         fontSize: 11,
