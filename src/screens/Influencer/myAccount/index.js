@@ -108,8 +108,7 @@ function InfluencerMyAccount() {
            
         </MainContainer>
         {isSettingIcon &&
-            
-                <BottomSheet snapPoints={['66%', 460]} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} >
+                <BottomSheet bottomSheetHeigh={'66%'} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} actionHandler={handleSettingIcon} >
                     <View style={{ marginTop: '5%', flex: 1 }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <Heading 

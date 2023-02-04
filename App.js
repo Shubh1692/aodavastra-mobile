@@ -1,50 +1,26 @@
 
+import AsyncStorage from '@react-native-community/async-storage';
+import {
+  NavigationContainer
+} from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
+  SafeAreaView, StatusBar, useColorScheme
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import AsyncStorage from '@react-native-community/async-storage';
-
-
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import paperTheme from './src/theme/theme';
-import { Main } from './src/services/rootnavigation';
-import { ThemeProvider } from '@shopify/restyle';
-import LoginScreen from './src/screens/auth/login';
-import RegisterScreen from './src/screens/auth/regitser';
-import NonInfluencerEditProfile from './src/screens/nonInfluencer/editProfile';
-import AddAddress from './src/screens/address/addAddress';
-import EditAddress from './src/screens/address/editAddress';
-import ForgotScreen from './src/screens/auth/forgotPassword';
-import ChangePasswordScreen from './src/screens/auth/changePassword';
-import NonInfluencerProfile from './src/screens/nonInfluencer/myAccount';
-import FollowingList from './src/screens/nonInfluencer/followingList';
-import Wishlist from './src/screens/wishlist';
-import AddressList from './src/screens/address/addressList';
-import Orders from './src/screens/orders';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { MenuProvider } from 'react-native-popup-menu';
-
 import {
-  NavigationContainer,
-  useNavigationContainerRef,
-} from '@react-navigation/native';
-
+  Colors
+} from 'react-native/Libraries/NewAppScreen';
 import { navigationRef } from './src/services/NavigationService';
+import { Main } from './src/services/rootnavigation';
 import theme from './src/theme/resources';
+import paperTheme from './src/theme/theme';
+
+
+
+
+
 
 const NAVIGATION_STATE_KEY = `NAVIGATION_STATE_KEY-${1}`;
 
@@ -78,19 +54,7 @@ const App = () => {
         </SafeAreaView>
 
       </NavigationContainer>
-      {/* <FollowingList /> */}
-      {/* <Orders /> */}
-      {/* <AddressList /> */}
-      {/* <Wishlist /> */}
-      {/* <NonInfluencerProfile /> */}
-      {/* <LoginScreen /> */}
-      {/* <RegisterScreen /> */}
-      {/* <NonInfluencerEditProfile /> */}
-      {/* <AddAddress /> */}
-      {/* <EditAddress /> */}
-      {/* <ForgotScreen /> */}
-      {/* <ChangePasswordScreen /> */}
-      {/* </SafeAreaView> */}
+
       </MenuProvider>
     </PaperProvider>
   );
