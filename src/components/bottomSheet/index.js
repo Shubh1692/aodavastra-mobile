@@ -14,7 +14,7 @@ import styles from './styles';
 
 
 
-const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, actionHandler, bottomSheetHeigh }) => {
+const BottomSheet = ({ children, bottomSheetModalRef, title,setIsSettingIcon, actionHandler, bottomSheetHeigh }) => {
 
     // renders
     return (
@@ -26,7 +26,7 @@ const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, actionHa
                     style={[styles.child, { height: bottomSheetHeigh }]}>
                     <View style={{ flex: 1 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center', position: 'relative', width: '100%', justifyContent: 'center' }}>
-                            <Heading textStyle={{ fontSize: 16, lineHeight: 24, textAlign: 'center', }} title="SETTINGS" />
+                            <Heading textStyle={{ fontSize: 16, lineHeight: 24, textAlign: 'center', }} title={title} />
                             <TouchableOpacity onPress={actionHandler} style={{ right: 10, position: 'absolute' }}>
                                 <CloseIcon />
                             </TouchableOpacity>
@@ -35,11 +35,11 @@ const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, actionHa
                         {children}
                     </View>
                 </Animated.View>
+               
             </Pressable>
         </Animated.View>
     );
 };
-
 
 
 export default BottomSheet;
