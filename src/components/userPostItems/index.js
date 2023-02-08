@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text,ScrollView } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import theme from '../../theme/resources';
 import FastImage from 'react-native-fast-image';
-import {deviceWidth} from '../../utils/device';
+import { deviceWidth } from '../../utils/device';
 
 
 function UserPosts() {
@@ -11,26 +11,41 @@ function UserPosts() {
         <ScrollView
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap', backgroundColor: theme.background, /*marginTop: 20,*/ width: deviceWidth, paddingBottom: 90, }}>
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
-            <FastImage style={{ width: deviceWidth / 3, height: deviceWidth / 3 }} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            contentContainerStyle={styles.contentContainer}>
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
+            <FastImage style={styles.postImage} source={require('../../assets/images/p2.png')} resizeMode="cover" />
         </ScrollView>
         // </View>
     )
 }
 
 export default UserPosts;
+
+const styles = StyleSheet.create({
+    contentContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        backgroundColor: theme.background,
+        /*marginTop: 20,*/
+        width: deviceWidth,
+        paddingBottom: 90,
+    },
+    postImage: {
+        width: deviceWidth / 3,
+        height: deviceWidth / 3
+    },
+});

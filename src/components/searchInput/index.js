@@ -29,15 +29,15 @@ const SearchComponent = ({ clampedScroll }) => {
         opacity: searchBarOpacity,
       }
     ]}>
-      <View style={{flexDirection:'row',backgroundColor: theme.searchBarBackgorund ,borderRadius:4,alignItems:'center',width:'95%',marginRight:10}}>
-        <SearchIcon style={{marginLeft:4}} onPress={() => console.log('hii')}/>
+      <View style={styles.subContainer}>
+        <SearchIcon style={styles.searchIcon} onPress={() => console.log('hii')} />
         <TextInput
           placeholder='Search'
           style={styles.formField}
           placeholderTextColor={theme.textPlaceholder}
         />
       </View>
-      <View style={{ marginLeft: 10 }}>
+      <View style={styles.closeIconContainer}>
         <CloseIcon />
       </View>
     </Animated.View>
@@ -54,6 +54,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
+  subContainer: {
+    flexDirection: 'row',
+    backgroundColor: theme.searchBarBackgorund,
+    borderRadius: 4,
+    alignItems: 'center',
+    width: '95%',
+    marginRight: 10
+  },
+  searchIcon: {
+    marginLeft: 4
+  },
   formField: {
     borderWidth: 1,
     // padding: 12,
@@ -67,7 +78,10 @@ const styles = StyleSheet.create({
     width: '95%',
     height: 40,
     color: theme.TextBlack
-  }
+  },
+  closeIconContainer: {
+    marginLeft: 10
+  },
 })
 
 export default SearchComponent;

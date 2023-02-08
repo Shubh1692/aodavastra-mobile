@@ -41,5 +41,4 @@ const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, actionHa
 };
 
 
-
 export default BottomSheet;

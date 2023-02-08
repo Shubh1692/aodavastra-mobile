@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Appbar, Searchbar,  } from 'react-native-paper';
-import { View, Text, FlatList,Animated } from 'react-native';
+import { View, Text, FlatList,Animated, StyleSheet } from 'react-native';
 import styles from './styles';
 import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';

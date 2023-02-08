@@ -6,7 +6,7 @@ import icoMoonConfig from '../../assets/fonts/selection.json';
 
 
 
-function IconComponent({ name, size ,...restProps }) {
+function IconComponent({ name, size, ...restProps }) {
     return <Icomoon iconSet={icoMoonConfig} size={size || 20} name={name} {...restProps} />
 }
 

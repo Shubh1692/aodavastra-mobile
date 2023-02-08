@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import theme from '../../theme/resources';
 
-function Chip({title,textStyle,viewStyle,...restProps}) {
+function Chip({ title, textStyle, viewStyle, ...restProps }) {
     return (
-        <View style={[styles.topConatiner,viewStyle] }>
-            <Text style={[styles.textChip,textStyle]} {...restProps}>{title}</Text>
+        <View style={[styles.topConatiner, viewStyle]}>
+            <Text style={[styles.textChip, textStyle]} {...restProps}>{title}</Text>
         </View>
     )
 }
@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-   textChip: { 
-       fontSize: 12, 
-       fontWeight: '400', 
-       lineHeight: 18, 
-       color: theme.White 
+    textChip: {
+        fontSize: 12,
+        fontWeight: '400',
+        lineHeight: 18,
+        color: theme.White
     }
 })
 

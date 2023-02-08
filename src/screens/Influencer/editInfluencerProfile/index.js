@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, ImageBackground, ScrollView } from 'react-native';
+import { View, TouchableOpacity, Text, ImageBackground, ScrollView, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import ProfileImage from '../../../components/profileImage';
 import theme from '../../../theme/resources';

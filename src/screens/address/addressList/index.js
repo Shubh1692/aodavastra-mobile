@@ -17,7 +17,7 @@ function AddressList() {
     const [addressList, setAddressList] = useState([1,2,])
 
     return (
-        <View style={{ flex: 1, }}>
+        <View style={styles.container}>
             <Header />
             {addressList.length > 0 &&
                 <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>

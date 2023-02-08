@@ -3,9 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import theme from '../../theme/resources';
 
 
-function TextWithUnderline({ title, textStyle,...restProps }) {
+function TextWithUnderline({ title, textStyle, ...restProps }) {
     return (
-        <Text  style={[styles.text, textStyle]} {...restProps}>{title}</Text>
+        <Text style={[styles.text, textStyle]} {...restProps}>{title}</Text>
     )
 }
 

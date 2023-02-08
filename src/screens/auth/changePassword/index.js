@@ -1,11 +1,11 @@
-import React,{useState} from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import { Formik } from 'formik';
 import TextInputWithLabel from '../../../components/inputWithLabel';
 import { TextInput as Input } from 'react-native-paper';
 import Button from '../../../components/button';
-import {changePasswordValidationSchema} from '../../../utils/formvalidation';
+import { changePasswordValidationSchema } from '../../../utils/formvalidation';
 
 
 
@@ -19,17 +19,17 @@ function ChangePasswordScreen() {
         console.log('changePassword values', values)
     }
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
             <Header />
-            <View style={{ marginTop: '8%', flex: 1 }}>
+            <View style={styles.subContainer}>
                 <Formik
                     validationSchema={changePasswordValidationSchema}
                     initialValues={{ oldPassword: '', newPassword: '', confirmNewPassword: '', }}
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
-                            <View style={{ flex: 1,}}>
-                                <View style={{ paddingHorizontal: 20, }}>
+                            <View style={styles.container}>
+                                <View style={styles.formikSubContainer}>
                                     <View>
                                         <TextInputWithLabel
                                             title="Current Password"
@@ -44,7 +44,7 @@ function ChangePasswordScreen() {
                                             isIcon={true}
                                             isIconToggle={eyeView}
                                             handleToggleIcon={() => setEyeView(!eyeView)}
-                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -61,7 +61,7 @@ function ChangePasswordScreen() {
                                             isIcon={true}
                                             isIconToggle={newPasswordeyeView}
                                             handleToggleIcon={() => setNewPasswordeyeView(!newPasswordeyeView)}
-                                            // right={<Input.Icon icon={newPasswordeyeView ? "eye" : 'eye-off'} onPress={() => setNewPasswordeyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={newPasswordeyeView ? "eye" : 'eye-off'} onPress={() => setNewPasswordeyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -78,12 +78,12 @@ function ChangePasswordScreen() {
                                             isIcon={true}
                                             isIconToggle={confirmEyeView}
                                             handleToggleIcon={() => setConfirmEyeView(!confirmEyeView)}
-                                            // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setConfirmEyeView(!confirmEyeView)} />}
+                                        // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setConfirmEyeView(!confirmEyeView)} />}
                                         />
                                     </View>
                                 </View>
-                                <View style={{alignItems:'center',width:'100%',bottom:40,position:'absolute'}}>
-                                <Button mode="contained" style={{ width: 200, height: 40, }} onPress={handleSubmit}> Confirm Password </Button>
+                                <View style={styles.confirmButtonConatiner}>
+                                    <Button mode="contained" style={styles.confirmButton} onPress={handleSubmit}> Confirm Password </Button>
                                 </View>
                             </View>
                         )
@@ -95,3 +95,26 @@ function ChangePasswordScreen() {
 }
 
 export default ChangePasswordScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    subContainer: {
+        marginTop: '8%',
+        flex: 1
+    },
+    formikSubContainer: {
+        paddingHorizontal: 20,
+    },
+    confirmButtonConatiner: {
+        alignItems: 'center',
+        width: '100%',
+        bottom: 40,
+        position: 'absolute'
+    },
+    confirmButton: {
+        width: 200,
+        height: 40,
+    },
+});

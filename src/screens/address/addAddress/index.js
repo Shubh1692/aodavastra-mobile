@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, StyleSheet } from 'react-native';
 import TextInputWithLabel from '../../../components/inputWithLabel';
 import { Formik } from 'formik';
 import FooterButton from '../../../components/footerButton';
@@ -14,19 +14,19 @@ function AddAddressScreen() {
         console.log("values", values)
     }
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
             <Header />
 
-            <View style={{ marginTop: '8%', flex: 1 }}>
+            <View style={styles.subContainer}>
                 <Formik
                     validationSchema={addAddressValidationSchema}
                     initialValues={{ userName: '', mobile: '', pin: '', state: '', city: '', address1: '', address2: '' }}
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
-                            <View style={{ flex: 1 }}>
-                                <View style={{ paddingHorizontal: 20, }}>
-                                    <ScrollView contentContainerStyle={{ paddingBottom: 60 }}
+                            <View style={styles.container}>
+                                <View style={styles.formikSubContainer}>
+                                    <ScrollView contentContainerStyle={styles.scrollContentConatiner}
                                         showsVerticalScrollIndicator={false}
                                         showsHorizontalScrollIndicator={false}>
                                         <View>
@@ -58,10 +58,10 @@ function AddAddressScreen() {
                                                 />
                                             </View>
                                         </View>
-                                        <View style={{ marginTop: '8%' }}>
-                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                        <View style={styles.pinContainer}>
+                                            <View style={styles.pinSubContainer}>
                                                 {/* Pin */}
-                                                <View style={{ width: '48%' }}>
+                                                <View style={styles.textInputContainer}>
                                                     <TextInputWithLabel
                                                         title="Pin"
                                                         placeholder="Pin"
@@ -76,7 +76,7 @@ function AddAddressScreen() {
                                                     />
                                                 </View>
                                                 {/* State */}
-                                                <View style={{ width: '48%' }}>
+                                                <View style={styles.textInputContainer}>
                                                     <TextInputWithLabel
                                                         title="State"
                                                         placeholder="State"
@@ -134,7 +134,7 @@ function AddAddressScreen() {
                                         </View>
                                     </ScrollView>
                                 </View>
-                                <FooterButton mode="contained" style={{ width: deviceWidth, height: 50, }} onPress={handleSubmit}>Save Changes</FooterButton>
+                                <FooterButton mode="contained" style={styles.saveButton} onPress={handleSubmit}>Save Changes</FooterButton>
                             </View>
                         )
                     }}
@@ -146,3 +146,33 @@ function AddAddressScreen() {
 }
 
 export default AddAddressScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    subContainer: {
+        marginTop: '8%',
+        flex: 1
+    },
+    formikSubContainer: {
+        paddingHorizontal: 20,
+    },
+    scrollContentConatiner: {
+        paddingBottom: 60
+    },
+    pinContainer: {
+        marginTop: '8%'
+    },
+    pinSubContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    textInputContainer: {
+        width: '48%'
+    },
+    saveButton: {
+        width: deviceWidth,
+        height: 50,
+    },
+});

@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Card, IconButton, Colors } from 'react-native-paper';
 import { StyleSheet, View, Text } from 'react-native';
 
-function CardComponent({ children,cardStyle }) {
+function CardComponent({ children, cardStyle }) {
     return (
-        <View style={[{ marginTop: 10 }]}>
-            <Card  style={cardStyle}>
+        <View style={[styles.container]}>
+            <Card style={cardStyle}>
                 {children}
             </Card>
         </View>
@@ -13,3 +13,9 @@ function CardComponent({ children,cardStyle }) {
 }
 
 export default CardComponent;
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop: 10
+    },
+});

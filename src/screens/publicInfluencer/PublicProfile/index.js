@@ -1,5 +1,5 @@
 import React, { useState,useRef,useCallback } from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import MainContainer from '../../../components/mainContainer';
 
@@ -31,7 +31,7 @@ function PublicInfluencerProfile() {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const bottomSheetModalRef = useRef(null);
     const [categories, setCategories] = useState([1]);
-    const [isSettingIcon, setIsSettingIcon] = useState(false);
+    const [isSettingIcon, setIsCloseIcon] = useState(false);
     const [posts, setPosts] = useState([1]);
     const [likes, setLikes] = useState([1]);
 
@@ -40,9 +40,9 @@ function PublicInfluencerProfile() {
         setSelectedIndex(index);
     }
 
-    const handleSettingIcon = () =>{
-        console.log("hiii handleSettingIcon")
-        setIsSettingIcon(!isSettingIcon);
+    const handleCloseIcon = () =>{
+        console.log("hiii handleCloseIcon")
+        setIsCloseIcon(!isSettingIcon);
         handlePresentModalPress()
     }
 
@@ -74,7 +74,7 @@ function PublicInfluencerProfile() {
     return (
         <MainContainer>
             <Header />
-            <InfluencerProfileView handleIconAction={handleSettingIcon}/>
+            <InfluencerProfileView handleIconAction={handleCloseIcon}/>
             {/* Edit Ptofile End */}
             <View style={{ flex: 1, }}>
                 <View style={{ elevation: 3 }}>

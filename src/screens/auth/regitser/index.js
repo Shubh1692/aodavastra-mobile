@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../../../components/logo';
-import { View, TouchableOpacity, ScrollView, } from 'react-native';
+import { View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import Button from '../../../components/button';
 import TextInputComponent from '../../../components/input';
@@ -33,7 +33,7 @@ function RegisterScreen() {
     return (
         <View>
             <Header />
-            <ScrollView contentContainerStyle={{ paddingBottom: 90 }}
+            <ScrollView contentContainerStyle={styles.scrollContentContaine}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}>
                 <Logo />
@@ -43,7 +43,7 @@ function RegisterScreen() {
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
-                            <View style={{ paddingHorizontal: 20 }}>
+                            <View style={styles.formikSubContainer}>
                                 <View>
                                     <View>
                                         <TextInputComponent
@@ -86,7 +86,7 @@ function RegisterScreen() {
                                             isIcon={true}
                                             isIconToggle={eyeView}
                                             handleToggleIcon={() => setEyeView(!eyeView)}
-                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -102,23 +102,23 @@ function RegisterScreen() {
                                             isIcon={true}
                                             isIconToggle={confirmEyeView}
                                             handleToggleIcon={() => setconfirmEyeView(!confirmEyeView)}
-                                            // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
                                         />
                                     </View>
-                                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', width: '80%', marginVertical: 7, marginBottom: 8 }}>
+                                    <View style={styles.checkBoxContainer}>
                                         {/* <View style={{borderWidth:2,borderColor:theme.TextBlack ,backgroundColor:checked ? theme.Primary :theme.White,width:20,height:20 }}> */}
                                         <TouchableOpacity onPress={() => {
                                             setChecked(!checked);
                                         }} >
-                                            {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={{ width: 20, height: 20 }} />}
-                                            {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={{ width: 20, height: 20 }} />}
+                                            {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={styles.checkBox} />}
+                                            {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={styles.checkBox} />}
                                         </TouchableOpacity>
-                                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 5 }}>
-                                            <Text>I accept</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>Privacy Policy</Text>
+                                        <View style={styles.tcppContainer}>
+                                            <Text>I accept</Text><Text style={styles.tcppText}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={styles.tcppText}>Privacy Policy</Text>
                                         </View>
                                     </View>
                                 </View>
-                                <View style={{ alignItems: 'center' }}>
+                                <View style={styles.signupContainer}>
                                     <Button mode="contained" style={styles.btn} onPress={handleSubmit}>Sign up</Button>
                                 </View>
                             </View>
@@ -128,7 +128,7 @@ function RegisterScreen() {
 
                 <Divider title={'or signup with'} />
 
-                <View style={{ marginVertical: 10 }}>
+                <View style={styles.socialContainer}>
                     <View style={{ alignItems: 'center' }}>
                         <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={[styles.btn, { backgroundColor: theme.White }]} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
@@ -137,12 +137,12 @@ function RegisterScreen() {
                     </View>
                 </View>
 
-                <View style={{ alignItems: 'center', marginVertical: 14 }}>
+                <View style={styles.alreadyHaveContainer}>
                     <View>
-                        <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>Already have an account?</Text>
+                        <Text style={styles.alreadyHaveText}>Already have an account?</Text>
                     </View>
-                    <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => navigate('login')}> Log in </Button>
+                    <View style={styles.signupContainer}>
+                        <Button mode="outlined" textStyle={styles.loginText} style={styles.loginBtn} onPress={() => navigate('login')}> Log in </Button>
                     </View>
                 </View>
             </ScrollView>

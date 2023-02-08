@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import styles from "../styles";
 import CardComponent from '../../../../components/card';
 import FastImage from 'react-native-fast-image';
