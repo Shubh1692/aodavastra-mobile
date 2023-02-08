@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, ImageBackground } from 'react-native';
+import { View, Text, ScrollView, FlatList, ImageBackground, StyleSheet } from 'react-native';
 import Container from '../../../components/container';
 import Header from '../../../components/header';
 import Heading from '../../../components/heading';

@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         borderColor: theme.TextBlack
     },
-    textStyle:{ 
-        fontSize: 16, 
+    textStyle: {
+        fontSize: 16,
         fontWeight: '400',
-        color:theme.TextBlack
+        color: theme.TextBlack
     }
 });
 

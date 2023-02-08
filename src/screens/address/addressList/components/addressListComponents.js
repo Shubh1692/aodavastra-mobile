@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles';
-import { View,Text,Alert } from 'react-native';
+import { View,Text,Alert, StyleSheet } from 'react-native';
 import CardComponent from '../../../../components/card';
 import theme from '../../../../theme/resources';
 import Button from '../../../../components/button';
@@ -35,8 +35,8 @@ function AddressListComponent() {
                 </View>
                 <LineDivider />
                 <View style={styles.btnSection}>
-                    <Button mode="text" textStyle={{ color: theme.Primary }} style={{ width: '50%',height:40, marginVertical:0,paddingVertical:0 }} onPress={() => navigate('editAddress')}>Edit </Button>
-                    <Button mode="text" textStyle={{ color: theme.TextBlack }} style={{ width: '50%',height:40, marginVertical:0,paddingVertical:0 }} onPress={() => handleRemove()}>Remove</Button>
+                    <Button mode="text" textStyle={{ color: theme.Primary }} style={styles.buttonText} onPress={() => navigate('editAddress')}>Edit </Button>
+                    <Button mode="text" textStyle={{ color: theme.TextBlack }} style={styles.buttonText} onPress={() => handleRemove()}>Remove</Button>
                 </View>
             </View>
         </CardComponent>

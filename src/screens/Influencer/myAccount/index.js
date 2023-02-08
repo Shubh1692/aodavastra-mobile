@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import MainContainer from '../../../components/mainContainer';
 
@@ -35,7 +35,7 @@ function InfluencerMyAccount() {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const bottomSheetModalRef = useRef(null);
     const [categories, setCategories] = useState([1]);
-    const [isSettingIcon, setIsSettingIcon] = useState(false);
+    const [isSettingIcon, setIsCloseIcon] = useState(false);
     const [posts, setPosts] = useState([1]);
     const [likes, setLikes] = useState([1]);
 
@@ -44,9 +44,9 @@ function InfluencerMyAccount() {
         setSelectedIndex(index);
     }
 
-    const handleSettingIcon = () => {
-        console.log("hiii handleSettingIcon")
-        setIsSettingIcon(!isSettingIcon);
+    const handleCloseIcon = () => {
+        console.log("hiii handleCloseIcon")
+        setIsCloseIcon(!isSettingIcon);
         handlePresentModalPress()
     }
 
@@ -79,7 +79,7 @@ function InfluencerMyAccount() {
         <>
         <MainContainer>
             <Header />
-            <InfluencerProfileView handleIconAction={handleSettingIcon} />
+            <InfluencerProfileView handleIconAction={handleCloseIcon} />
             {/* Edit Ptofile End */}
             <View style={{ flex: 1, }}>
                 <View style={{ elevation: 3 }}>
@@ -109,7 +109,7 @@ function InfluencerMyAccount() {
         </MainContainer>
         {isSettingIcon &&
             
-                <BottomSheet snapPoints={['66%', 460]} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} handleSettingIcon={handleSettingIcon} >
+                <BottomSheet title={SETTINGS} snapPoints={['75%', 460]} bottomSheetModalRef={bottomSheetModalRef} setIsCloseIcon={setIsCloseIcon} handleCloseIcon={handleCloseIcon} >
                     <View style={{ marginTop: '5%', flex: 1 }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <Heading 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import theme from '../../../theme/resources';
 import CardComponent from '../../../components/card';
@@ -13,23 +13,23 @@ import { navigate } from '../../../services/NavigationService';
 
 function AddressList() {
     return (
-        <View style={{ flex: 1, }}>
+        <View style={styles.container}>
             <Header />
-            <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
+            <View style={styles.subConatiner}>
                 <View>
                     <Text style={styles.heading}>Default Address</Text>
                 </View>
                 <View>
                     <AddressListComponent />
                 </View>
-                <View style={{ marginTop: '4%', flex: 1 }}>
-                    <View style={{ paddingVertical: '2%' }}>
+                <View style={styles.headingContainer}>
+                    <View style={styles.headingSubContainer}>
                         <Text style={styles.heading}>Other Addresses</Text>
                     </View>
-                    <View style={{ flex: 1, }}>
+                    <View style={styles.container}>
                         <FlatList
                             data={[1, 2, 3]}
-                            contentContainerStyle={{paddingBottom:90}}
+                            contentContainerStyle={styles.contentContainer}
                             showsHorizontalScrollIndicator={false}
                             showsVerticalScrollIndicator={false}
                             ItemSeparatorComponent={() => <SeparatorComponent />}
@@ -41,8 +41,8 @@ function AddressList() {
                 </View>
 
             </View>
-            <View style={{ paddingVertical: '3%', bottom: 20, alignItems: 'center', position: 'absolute', justifyContent: 'center', width: '100%' }}>
-                <Button mode="contained" style={{ width: 200, height: 40, paddingVertical: 0 }} textStyle={{ lineHeight: 22 }} onPress={() => navigate('addAddress')} >Add Address</Button>
+            <View style={styles.buttonContanier}>
+                <Button mode="contained" style={styles.addAddressButton} textStyle={{ lineHeight: 22 }} onPress={() => navigate('addAddress')} >Add Address</Button>
             </View>
         </View>)
 }

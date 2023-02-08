@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView, ImageBackground, Image } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, ImageBackground, Image, StyleSheet } from 'react-native';
 import Header from "../../../components/header";
 import ProfileImage from '../../../components/profileImage';
 import SegmentComponent from '../../../components/segment';

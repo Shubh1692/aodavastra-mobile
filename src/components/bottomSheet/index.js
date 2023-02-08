@@ -17,14 +17,14 @@ import Animated, {
 } from 'react-native-reanimated';
 import { deviceHeight, deviceWidth } from '../../utils/device';
 
-const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, handleSettingIcon, snapPoints }) => {
+const BottomSheet = ({ children, title, snapPoints, bottomSheetModalRef, setIsCloseIcon, handleCloseIcon }) => {
 
     // ref
     // useEffect(() => {
-    //     if (setIsSettingIcon) {
+    //     if (setIsCloseIcon) {
     //         handlePresentModalPress();
     //     }
-    // }, [setIsSettingIcon])
+    // }, [setIsCloseIcon])
 
     // variables
     // const snapPoints = useMemo(() => ['35%', '50%', '75%'], []);
@@ -41,7 +41,7 @@ const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, handleSe
     // const handleSheetChanges = useCallback((index) => {
     //     console.log('handleSheetChanges', index);
     //     if (index == -1) {
-    //         handleSettingIcon()
+    //         handleCloseIcon()
     //     }
 
     // }, []);
@@ -49,25 +49,24 @@ const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, handleSe
     // renders
     return (
         <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
-            <Pressable onPress={handleSettingIcon} style={styles.subContainer}>
+            <Pressable onPress={handleCloseIcon} style={styles.subContainer}>
                 <Animated.View
                     entering={SlideInDown}
                     exiting={SlideOutDown}
-                    style={[styles.child,{height:snapPoints[0]}]}>
-                    <View style={{flex:1}}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', position: 'relative', width: '100%', justifyContent: 'center' }}>
-                            <Heading textStyle={{ fontSize: 16, lineHeight: 24, textAlign: 'center', }} title="SETTINGS" />
-                            <TouchableOpacity onPress={handleSettingIcon} style={{ right: 10, position: 'absolute' }}>
+                    style={[styles.child, { height: snapPoints[0] }]}>
+                    <View style={styles.subChild}>
+                        <View style={styles.headingContainer}>
+                            <Heading textStyle={styles.heading} title={title} />
+                            <TouchableOpacity onPress={handleCloseIcon} style={styles.closeIcon}>
                                 <CloseIcon />
                             </TouchableOpacity>
                         </View>
-                        <LineDivider extraStyle={{ borderWidth: 1, borderColor: theme.TextBlack, width: 112, marginLeft: 16, marginTop: 16 }} />
+                        <LineDivider extraStyle={styles.divider} />
 
                         {children}
 
                     </View>
                 </Animated.View>
-               
             </Pressable>
         </Animated.View>
     );
@@ -79,25 +78,51 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         zIndex: 999,
-        flex:1
-      },
-      subContainer: {
+        flex: 1
+    },
+    subContainer: {
         height: deviceHeight,
         width: deviceWidth,
         backgroundColor: 'rgba(0,0,0,0.5)',
         flexDirection: 'column-reverse',
-        flex:1,
-      },
-      child: {
+        flex: 1,
+    },
+    child: {
         width: deviceWidth,
         backgroundColor: theme.White,
         borderTopEndRadius: 12,
-        borderTopStartRadius:12,
+        borderTopStartRadius: 12,
         overflow: 'hidden',
         paddingHorizontal: 12,
         paddingVertical: 5,
-        
-      },
+
+    },
+    subChild: {
+        flex: 1
+    },
+    headingContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        position: 'relative',
+        width: '100%',
+        justifyContent: 'center'
+    },
+    heading: {
+        fontSize: 16,
+        lineHeight: 24,
+        textAlign: 'center',
+    },
+    closeIcon: {
+        right: 10,
+        position: 'absolute'
+    },
+    divider: {
+        borderWidth: 1,
+        borderColor: theme.TextBlack,
+        width: 112,
+        marginLeft: 16,
+        marginTop: 16,
+    },
 });
 
 export default BottomSheet;

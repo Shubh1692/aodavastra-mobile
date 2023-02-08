@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         marginLeft: 16,
     }
-})
+});
 
 export default ShowCaseComponent;

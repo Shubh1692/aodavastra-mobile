@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../../../components/logo';
-import { View, TouchableOpacity, ScrollView } from 'react-native';
+import { View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import Button from '../../../components/button';
 import TextInputComponent from '../../../components/input';
@@ -32,19 +32,19 @@ function LoginScreen() {
     return (
         <View>
             <Header isBack={false} />
-            <ScrollView contentContainerStyle={{ paddingBottom: 90 }}
+            <ScrollView contentContainerStyle={styles.scrollContentContaine}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
             >
                 <Logo />
-                
+
                 <Formik
                     validationSchema={loginValidationSchema}
                     initialValues={{ email: 'surya@mail.com', password: '12345678' }}
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
-                            <View style={{ paddingHorizontal: 20 }}>
+                            <View style={styles.formikSubContainer}>
                                 <View>
                                     <View>
                                         <TextInputComponent
@@ -84,8 +84,8 @@ function LoginScreen() {
                                         <Text style={styles.forgot}>Forgot Password?</Text>
                                     </TouchableOpacity>
                                 </View>
-                                <View style={{ alignItems: 'center' }}>
-                                    <Button mode="contained" style={{ width: 200, height: 40, }} onPress={handleSubmit}> Log in </Button>
+                                <View style={styles.loginButtonConatiner}>
+                                    <Button mode="contained" style={styles.loginButton} onPress={handleSubmit}> Log in </Button>
                                 </View>
                             </View>
                         )
@@ -94,7 +94,7 @@ function LoginScreen() {
 
                 <Divider title={'or login with'} />
 
-                <View style={{ marginVertical: 10 }}>
+                <View style={styles.socialContainer}>
                     <View style={{ alignItems: 'center' }}>
                         <Button mode="contained" textStyle={{ color: theme.TextBlack }} style={{ width: 240, height: 40, backgroundColor: theme.White }} onPress={() => console.log("google login")}> Continue with Google  </Button>
                     </View>
@@ -103,12 +103,12 @@ function LoginScreen() {
                     </View>
                 </View>
 
-                <View style={{ alignItems: 'center', marginVertical: 14 }}>
+                <View style={styles.newHereContainer}>
                     <View>
-                        <Text style={{ fontFamily: 'Poppins-Regular', color: theme.TextBlack }}>New here?</Text>
+                        <Text style={styles.newHereText}>New here?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={{ width: 200, height: 40, borderWidth: 1, borderColor: theme.TextBlack }} onPress={() => navigate('register')}> Create Account </Button>
+                        <Button mode="outlined" textStyle={styles.createAccountText} style={styles.createAccountButton} onPress={() => navigate('register')}> Create Account </Button>
                     </View>
                 </View>
             </ScrollView>

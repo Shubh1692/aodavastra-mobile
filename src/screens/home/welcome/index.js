@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import CardComponent from '../../../components/card';
 import FastImage from 'react-native-fast-image';

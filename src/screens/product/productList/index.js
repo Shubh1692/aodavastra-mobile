@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image,FlatList } from 'react-native';
+import { View, Text, Image,FlatList, StyleSheet } from 'react-native';
 import Header from '../../../components/header';
 import theme from "../../../theme/resources";
 import styles from './styles';

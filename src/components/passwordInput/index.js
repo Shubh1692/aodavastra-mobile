@@ -3,7 +3,7 @@ import { TextInput } from '../input'
 import { TextInput as Input } from 'react-native-paper';
 
 
-function PasswordInput({  ...props }) {
+function PasswordInput({ ...props }) {
     const [eyeView, setEyeView] = useState(true);
     // return (<TextInput
     //     placeholder="Password"

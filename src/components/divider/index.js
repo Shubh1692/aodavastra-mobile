@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import theme from '../../theme/resources';
 import styles from './styles';
 
-function Divider({title}) {
+function Divider({ title }) {
     return (
         <View style={styles.topContainer}>
             <View style={styles.leftLight} />
