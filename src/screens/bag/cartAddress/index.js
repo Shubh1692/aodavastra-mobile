@@ -48,7 +48,7 @@ function CartAddress({ navigation }) {
                                 <Text onPress={() => {navigation.navigate('addAddress')}} style={{ marginTop: '4%', fontFamily: 'Poppins-SemiBold', fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Add Address</Text>
                             </View>
                             {addressList.length > 0 ?
-                                <AddressListComponent />
+                                <AddressListComponent isCheckShow={true}/>
                                 : <View style={ {
                                     marginTop: '3%', 
                                     backgroundColor: theme.background,

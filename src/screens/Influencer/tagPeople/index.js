@@ -9,6 +9,7 @@ import Button from '../../../components/button';
 import { goBack } from '../../../services/NavigationService';
 import SeparatorComponent from '../../../components/Separator';
 import HeaderWithSearch from '../../../components/headerWithSearch';
+import MainContainer from '../../../components/mainContainer';
 
 
 
@@ -63,7 +64,8 @@ function TagPeopleList() {
     };
 
     return (
-        <View style={{ flex: 1 }}>
+        
+        <MainContainer style={{ flex: 1 }}>
             
             <HeaderWithSearch title={"Tag People"} />
             <View style={{ marginTop: '4%', flex: 1 }}>
@@ -78,7 +80,7 @@ function TagPeopleList() {
                     keyExtractor={(item, index) => index.toString()}
                 />
             </View>
-        </View>
+        </MainContainer>
     )
 }
 

@@ -30,6 +30,11 @@ import Cart from '../screens/bag/cart';
 import RewardMVCoins from '../screens/Influencer/rewardMvCoin';
 import CartAddress from '../screens/bag/cartAddress';
 import CartPayment from '../screens/bag/cartPayment';
+import CategoryStore from '../screens/Influencer/categoryStore';
+import EndorseProductList from '../screens/Influencer/endoresProductList';
+import CouponScreen from '../screens/bag/coupon';
+import OrderDetails from '../screens/orders/orderDetails';
+import ProductDetailsScreen from '../screens/product/productDetails';
 
 
 const MainStack = createStackNavigator();
@@ -71,6 +76,11 @@ export const Main = () => {
             <MainStack.Screen name='cartAddress' component={CartAddress} />
             <MainStack.Screen name='cartPayment' component={CartPayment} />
             <MainStack.Screen name="rewardMVCoins" component={RewardMVCoins} />
+            <MainStack.Screen name="categoryStore" component={CategoryStore} />
+            <MainStack.Screen name="endorseProduct" component={EndorseProductList} />
+            <MainStack.Screen name="coupon" component={CouponScreen} />
+            <MainStack.Screen name="orderDetails" component={OrderDetails} />
+            <MainStack.Screen name="productDetails" component={ProductDetailsScreen} />
         </MainStack.Navigator>
     )
 }

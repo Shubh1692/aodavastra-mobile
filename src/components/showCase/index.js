@@ -3,13 +3,14 @@ import { View, StyleSheet, Text } from 'react-native';
 import ProfileImage from '../profileImage';
 import theme from '../../theme/resources';
 import { deviceWidth } from '../../utils/device';
+import RectangleImage from '../rectangleImage';
 
 
-function ShowCaseComponent() {
+function ShowCaseComponent({ imgUrl, title, }) {
     return (
         <View style={styles.topContainer}>
             <ProfileImage size={88} />
-            <Text style={styles.textStyle}>Sujata’s Store</Text>
+            <Text style={styles.textStyle}>{title ? title : 'Sujata’s Store'}</Text>
         </View>
     )
 }

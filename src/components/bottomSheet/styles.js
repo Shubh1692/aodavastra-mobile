@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.5)',
         flexDirection: 'column-reverse',
         flex: 1,
+        overflow: 'hidden',
     },
     child: {
         width: deviceWidth,

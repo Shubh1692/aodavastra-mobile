@@ -13,7 +13,7 @@ import CartListComponents from './components/cartListComponent';
 import CartIndecatorComponents, { CartBagIndecator } from './components/cartIndecatorComponent';
 
 function Cart({ navigation }) {
-    const emptyCart = true
+    const emptyCart = false
 
     const listItems = [
         { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
