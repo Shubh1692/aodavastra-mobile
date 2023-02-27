@@ -1,6 +1,6 @@
 import React from "react";
 import LogoImageComponent from "../logoImage";
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import styles from './styles';
 
 
@@ -11,5 +11,8 @@ function Logo() {
         </View>
     )
 }
+
+
+
 
 export default Logo;

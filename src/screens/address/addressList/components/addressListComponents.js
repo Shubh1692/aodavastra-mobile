@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles';
 import { View,Text,Alert, StyleSheet } from 'react-native';
 import CardComponent from '../../../../components/card';
 import theme from '../../../../theme/resources';
@@ -14,10 +13,10 @@ function AddressListComponent() {
     const handleRemove = ()=>{
         Alert.alert(
             'Alert',
-            'Are Your sure you want to remove this ?',
+            'Are Your sure you want to remove this address?',
             [
                 { text: 'Cancel', onPress: () => console.log('Cancel button is clicked') },
-                { text: 'OK', onPress: () => console.log('OK button clicked') },
+                { text: 'Remove', onPress: () => console.log('Remove button is clicked') },
             ],
             {
                 cancelable: false
@@ -35,12 +34,47 @@ function AddressListComponent() {
                 </View>
                 <LineDivider />
                 <View style={styles.btnSection}>
-                    <Button mode="text" textStyle={{ color: theme.Primary }} style={styles.buttonText} onPress={() => navigate('editAddress')}>Edit </Button>
-                    <Button mode="text" textStyle={{ color: theme.TextBlack }} style={styles.buttonText} onPress={() => handleRemove()}>Remove</Button>
+                    <Button mode="text" textStyle={{ color: theme.Primary}} style={styles.btn} onPress={() => navigate('editAddress')}>Edit </Button>
+                    <Button mode="text" textStyle={{ color: theme.TextBlack}} style={styles.btn} onPress={() => handleRemove()}>Remove</Button>
                 </View>
             </View>
         </CardComponent>
     )
 }
+
+const styles = StyleSheet.create({
+    cardSection: {
+        backgroundColor: theme.background,
+        minHeight: 120
+    },
+    titleSection: {
+        paddingHorizontal: '4%',
+        paddingVertical: '4%',
+        paddingBottom: '6%'
+    },
+    addressText: {
+        fontFamily: theme.Poppins.regular,
+        fontSize: 10,
+        fontWeight: '600',
+        color: theme.TextBlack,
+        marginVertical: 6,
+        width: '90%'
+    },
+    titleText: {
+        fontFamily: theme.Poppins.regular,
+        fontSize: 12,
+        fontWeight: '600'
+    },
+    btnSection: {
+        flexDirection: 'row',
+        paddingVertical: '1.5%'
+    },
+    btn: {
+        width: '50%',
+        height:40, 
+        marginVertical:0,
+        paddingVertical:0
+    },
+})
 
 export default AddressListComponent;

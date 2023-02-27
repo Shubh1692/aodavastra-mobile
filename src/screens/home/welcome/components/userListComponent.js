@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import { Card } from "react-native-paper";
 import theme from "../../../../theme/resources";
@@ -36,14 +36,14 @@ function UserListComponents({item}) {
                 }}>
                     <FastImage style={styles.userImgStyle} source={require('../../../../assets/images/demo_image.png')} />
                     <View style={styles.userTitleStyle}>
-                        <Text style={{ color: theme.textGrey, fontSize: 8, fontFamily: 'Poppins-Regular',}}>Anjali Verma</Text>
+                        <Text style={{ color: theme.textGrey, fontSize: 8, fontFamily: theme.Poppins.regular,}}>Anjali Verma</Text>
                     </View>
                     <View style={{  flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}}>
                         {post}
                     </View>
                     <View style={{ marginTop:8}}>
                         <TouchableOpacity style={{ backgroundColor: theme.Purple, width: 120, height: 29, alignItems: 'center', justifyContent: 'center', borderRadius: 5,}}>
-                            <Text style={{ fontSize: 10, fontFamily: 'Poppins-Bold', alignItems: 'center', color: theme.White,}}> Follow </Text>
+                            <Text style={{ fontSize: 10, fontFamily: theme.Poppins.bold, alignItems: 'center', color: theme.White,}}> Follow </Text>
                         </TouchableOpacity>
                     </View>
                 </View>

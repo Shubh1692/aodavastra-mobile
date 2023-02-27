@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
+import theme from "../../../theme/resources";
 const { width: ScreenWidth } = Dimensions.get("screen");
 export const _containerStyle = (width, inActiveTabColor) => ({
     height: 50,
@@ -34,6 +35,7 @@ export default StyleSheet.create({
         justifyContent: "center",
     },
     textStyle: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 18,
         textAlign: "center",
         fontWeight: "500",

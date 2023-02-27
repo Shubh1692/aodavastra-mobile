@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, } from 'react-native';
 import CardComponent from '../../../../components/card';
 import theme from '../../../../theme/resources';
 import styles from './../styles';
@@ -70,6 +70,7 @@ function CartListComponents({ item, isCart, navigation }) {
                 }}>
                     <Button mode="text" textStyle={[{
                         color: theme.TextBlack,
+                        fontFamily: theme.Poppins.regular,
                         fontSize: 10,
                     }, { lineHeight: 14 }]} style={{ width: 110, height: 32, paddingVertical: 0, marginVertical: 0 }} onPress={() => console.log('hii')}>Remove</Button>
                     <View style={{width: 1, height: "70%", backgroundColor: theme.TextBlack}}/>

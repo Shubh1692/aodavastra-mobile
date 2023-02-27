@@ -30,7 +30,7 @@ function ProductList() {
         />
     }, []);
     const Empty = useCallback(() => {
-        return <DefaultEmpty />
+        return <DefaultEmpty description={'Product List is \nEmpty Right Now'}/> 
     }, []);
 
     return (
@@ -38,7 +38,7 @@ function ProductList() {
             <Header />
             <Container >
                 <View>
-                    <Text onPress={() => console.log('hii')} style={{ textAlign: 'right', textDecorationLine: 'underline', color: theme.Purple, fontFamily: 'Poppins-SemiBold' }}>Apply Filters</Text>
+                    <Text onPress={() => console.log('hii')} style={{ textAlign: 'right', textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.semiBold, }}>Apply Filters</Text>
                 </View>
                 <FlatList
                     refreshing

@@ -34,20 +34,20 @@ const styles = StyleSheet.create({
     },
     welcomeTitle: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: theme.Poppins.semiBold,
         color: theme.DarkerPurple,
         alignItems: 'center'
     },
     userTitle: {
         fontSize: 12,
-        fontFamily: 'Poppins-Regular',
+        fontFamily: theme.Poppins.regular,
         color: theme.TextBlack,
         alignItems: 'center',
         textAlign: 'center',
     },
     brandTitle: {
         fontSize: 12,
-        fontFamily: 'Poppins-Regular',
+        fontFamily: theme.Poppins.regular,
         color: theme.TextBlack,
         alignItems: 'center'
     },

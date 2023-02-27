@@ -43,13 +43,12 @@ const styles = StyleSheet.create({
     outOfStocktextStyle: {
         color: theme.White,
         fontSize: 14,
-        fontFamily: 'Poppins-Regular',
-        fontFamily: 'Poppins-SemiBold'
+        fontFamily: theme.Poppins.semiBold,
     },
     priceTextStyle: {
         color: theme.TextBlack,
         fontSize: 14,
-        fontFamily: 'Poppins-Regular',
+        fontFamily: theme.Poppins.regular,
     },
     productName: { 
         color: theme.TextBlack, 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
 import MenuIcon from '../../../assets/svg/menu.svg';
 import EditPencilIcon from '../../../assets/svg/editPencil.svg';
@@ -15,60 +15,63 @@ import FastImage from 'react-native-fast-image';
 import { deviceWidth } from '../../../utils/device';
 
 
-function CategoryComponents({ isCreator }) {
+function CategoryComponents({isCreator}) {
     const [visible, setVisible] = useState(false);
     const openMenu = () => setVisible(true);
     const closeMenu = () => setVisible(false);
     return (
-        <ImageBackground style={styles.imageBg} source={require('../../../assets/images/p2.png')} resizeMode="cover" >
+        <ImageBackground style={styles.backgroundContainer} source={require('../../../assets/images/p2.png')} resizeMode="cover" >
             <View style={styles.container}>
-                {isCreator && <View style={{ position: 'absolute', right: 8, top: 8, }}>
+                {isCreator && <View style={styles.menuContainer}>
                     <Menu >
                         <MenuTrigger
                             customStyles={{
-                                triggerWrapper: styles.triggerWrapper,
+                                triggerWrapper: styles.triggerWrapper
                             }}
                         >
                             <MenuIcon />
                         </MenuTrigger>
-                        <MenuOptions optionsContainerStyle={styles.optionsContainer} >
-                            <MenuOption onSelect={() => alert(`Save`)} style={styles.saveOption}  >
-                                <View style={styles.optionsSubContainer}>
+                        <MenuOptions optionsContainerStyle={styles.menuOptionsContainer} >
+                            <MenuOption onSelect={() => alert(`Save`)} style={[styles.menuOptionStyle, { borderBottomWidth: 0.7, borderBottomColor: 'rgba(173, 173, 173, 0.38)', }]}  >
+                                <View style={styles.menuOptionSubContainer}>
                                     <EditPencilIcon />
-                                    <Text style={styles.optionsText}>Edit</Text>
+                                    <Text style={styles.menuOptionTextStyle}>Edit</Text>
                                 </View>
                             </MenuOption>
-                            <MenuOption onSelect={() => alert(`Delete`)} style={styles.deleteOption} >
-                                <View style={styles.optionsSubContainer}>
+                            <MenuOption onSelect={() => alert(`Delete`)} style={styles.menuOptionStyle} >
+                                <View style={styles.menuOptionSubContainer}>
                                     <DeleteIcon />
-                                    <Text style={styles.optionsText}>Remove</Text>
+                                    <Text style={styles.menuOptionTextStyle}>Remove</Text>
                                 </View>
                             </MenuOption>
                         </MenuOptions>
                     </Menu>
                 </View>}
-                <Text style={styles.categoryItems}>(166 Items)</Text>
-                <Text style={styles.categoryTitle}>Jewellry</Text>
+                <Text style={styles.itemCountTextStyle}>(166 Items)</Text>
+                <Text style={styles.titleStyle}>Jewellry</Text>
             </View>
         </ImageBackground>
     )
 }
 
-export default CategoryComponents;
-
 const styles = StyleSheet.create({
-    imageBg: {
-        width: deviceWidth,
+    backgroundContainer: { 
+        width: deviceWidth, 
         height: 200,
-        marginBottom: 12,
+        marginBottom:12 
     },
-    container: {
-        backgroundColor: 'rgba(0,0,0,0.6)',
-        width: deviceWidth,
-        height: 200,
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative'
+    container: { 
+        backgroundColor: 'rgba(0,0,0,0.6)', 
+        width: deviceWidth, 
+        height: 200, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        position: 'relative' 
+    },
+    menuContainer: { 
+        position: 'absolute', 
+        right: 8, 
+        top: 8, 
     },
     triggerWrapper: {
         top: 0,
@@ -77,38 +80,35 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: 28
     },
-    optionsContainer: {
-        width: 100
+    menuOptionsContainer: {
+        width: 100,
     },
-    saveOption: {
-        paddingVertical: 4,
-        height: 30,
-        borderBottomWidth: 0.7,
-        borderBottomColor: 'rgba(173, 173, 173, 0.38)',
-    },
-    deleteOption: {
-        paddingVertical: 4,
+    menuOptionStyle: {
+        paddingVertical: 4, 
         height: 30,
     },
-    optionsSubContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
+    menuOptionSubContainer: { 
+        flexDirection: 'row', 
+        alignItems: 'center', 
     },
-    optionsText: {
-        fontSize: 15,
-        fontWeight: '400',
-        marginLeft: 5
+    menuOptionTextStyle: { 
+        fontFamily: theme.Poppins.regular,
+        fontSize: 15, 
+        marginLeft: 5 
     },
-    categoryItems: {
-        fontSize: 14,
-        fontWeight: '500',
-        color: theme.Purple
+    itemCountTextStyle: { 
+        fontFamily: theme.Poppins.regular,
+        fontSize: 14, 
+        fontWeight: '500', 
+        color: theme.Purple 
     },
-    categoryTitle: {
-        fontSize: 16,
-        fontWeight: '600',
-        color: theme.White,
-        textTransform: 'uppercase',
+    titleStyle: {
+        fontFamily: theme.Poppins.regular,
+        fontSize: 16, 
+        fontWeight: '600', 
+        color: theme.White, 
+        textTransform: 'uppercase', 
         paddingTop: 5
     },
-});
+})
+export default CategoryComponents;

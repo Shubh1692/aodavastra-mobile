@@ -1,44 +1,73 @@
-import React from 'react';
-import { Pressable, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Pressable, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated, {
+    EasingNode,
     FadeIn,
     FadeOut,
     SlideInDown,
-    SlideOutDown
+    SlideOutDown,
 } from 'react-native-reanimated';
 import CloseIcon from '../../assets/svg/close.svg';
 import theme from '../../theme/resources';
+import { deviceHeight } from '../../utils/device';
 import Heading from '../heading';
 import LineDivider from '../lineDivider';
 import styles from './styles';
 
+const BottomSheet = ({ children, title, actionHandler }) => {
 
+    const animatedValue = useRef(new Animated.Value(255)).current;
+    const [isOpen, setIsOpen] = useState(true);
 
-const BottomSheet = ({ children, bottomSheetModalRef, setIsSettingIcon, actionHandler, bottomSheetHeigh }) => {
+    const startAnimation = (toValue => {
+        Animated.timing(animatedValue, {
+            toValue,
+            duration: 300,
+            easing: EasingNode.linear,
+            useNativeDriver: true
+        }).start(() => {
+            setIsOpen(false);
+        })
+    });
+
+    useEffect(() => {
+        startAnimation(isOpen ? 1 : 0);
+    }, [isOpen]);
+
+    const translateY = animatedValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, deviceHeight],
+        extrapolate: 'clamp'
+    });
+
+    const close = (() => {
+        setIsOpen(true);
+        setTimeout(() => actionHandler(), 300);
+    });
 
     // renders
     return (
         <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
-            <Pressable onPress={actionHandler} style={styles.subContainer}>
+            <TouchableOpacity activeOpacity={1.0} onPress={close} style={styles.subContainer}/>
+            <Animated.View style={styles.childContainer}>
                 <Animated.View
                     entering={SlideInDown}
                     exiting={SlideOutDown}
-                    style={[styles.child, { height: bottomSheetHeigh }]}>
-                    <View style={{ flex: 1 }}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', position: 'relative', width: '100%', justifyContent: 'center' }}>
-                            <Heading textStyle={{ fontSize: 16, lineHeight: 24, textAlign: 'center', }} title="SETTINGS" />
-                            <TouchableOpacity onPress={actionHandler} style={{ right: 10, position: 'absolute' }}>
-                                <CloseIcon />
-                            </TouchableOpacity>
-                        </View>
-                        <LineDivider extraStyle={{ borderWidth: 1, borderColor: theme.TextBlack, width: 112, marginLeft: 16, marginTop: 16 }} />
-                        {children}
+                    style={[styles.child, { transform: [{ translateY }] } ]}>
+                    <View style={styles.headingContainer}>
+                        <Heading textStyle={styles.heading} title={title} />
+                        <Pressable onPress={close} style={styles.closeBtn}>
+                            <CloseIcon />
+                        </Pressable>
                     </View>
+                    <LineDivider extraStyle={styles.divider} />
+                    {children}
                 </Animated.View>
-            </Pressable>
+               
+            </Animated.View>
         </Animated.View>
     );
 };
-
 
 export default BottomSheet;

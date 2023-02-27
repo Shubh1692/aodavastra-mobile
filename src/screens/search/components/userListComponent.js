@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from "../styles";
 import CardComponent from '../../../components/card';
 import FastImage from 'react-native-fast-image';
@@ -21,7 +21,7 @@ function UserListComponents({item}) {
         }}>
             <ProfileImage size={45}  />
             <View style={styles.userTitleStyle}>
-                <Text style={{ color: theme.textGrey, fontSize: 8, fontFamily: 'Poppins-Regular', textAlign: 'center', paddingTop: '4%',}} numberOfLines={2}>{item.name}</Text>
+                <Text style={{ color: theme.textGrey, fontSize: 8, fontFamily: theme.Poppins.regular, textAlign: 'center', paddingTop: '4%',}} numberOfLines={2}>{item.name}</Text>
             </View>
         </View>
         //</CardComponent>

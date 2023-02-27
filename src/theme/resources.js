@@ -26,6 +26,16 @@ const theme = {
     textPlaceholder: '#888888',
     appleBackground: '#2c2c2c',
     
+
+
+    Poppins: {
+        thin: 'Poppins-Thin',
+        regular: 'Poppins-Regular',
+        light: 'Poppins-Light',
+        medium: 'Poppins-Medium',
+        semiBold: 'Poppins-SemiBold',
+        bold: 'Poppins-Bold',
+      },
 }
 
 

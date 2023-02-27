@@ -1,6 +1,6 @@
 import { Formik } from 'formik';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View,Text, StyleSheet } from 'react-native';
 import Button from '../../../components/button';
 import Header from '../../../components/header';
 import TextInputComponent from '../../../components/input';
@@ -8,6 +8,7 @@ import Logo from '../../../components/logo';
 import { forgotPasswordValidationSchema } from '../../../utils/formvalidation';
 import Heading from '../../../components/heading';
 import theme from '../../../theme/resources';
+import MainContainer from '../../../components/mainContainer';
 
 
 function ForgotScreen() {
@@ -18,13 +19,13 @@ function ForgotScreen() {
 
 
     return (
-        <View style={styles.container}>
+        <MainContainer>
 
             <Header />
             <Logo />
-            <View style={styles.subContainer}>
-                <Heading title="Forgot Your Password" textStyle={styles.forgotPasswordTitle} />
-                <Text style={styles.forgotPasswordText}>
+            <View style={styles.container}>
+                <Heading title="Forgot Your Password" textStyle={styles.headingStyle} />
+                <Text style={styles.textStyle}>
                     Enter the email you use to login to ModaVastra and we will send you a link to get you back into your account.
                 </Text>
             </View>
@@ -34,7 +35,7 @@ function ForgotScreen() {
                 onSubmit={onSubmit}>
                 {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                     return (
-                        <View style={styles.formikSubContainer}>
+                        <View style={styles.subContainer}>
                             <View>
                                 <View>
                                     <TextInputComponent
@@ -54,48 +55,50 @@ function ForgotScreen() {
 
                             </View>
 
-                            <View style={styles.submitButtonConatiner}>
-                                <Button mode="contained" textStyle={{ lineHeight: 18, }} style={styles.submitButton} onPress={handleSubmit}> Submit </Button>
+                            <View style={styles.btnContainer}>
+                                <Button mode="contained" textStyle={{}} style={styles.btn} onPress={handleSubmit}> Submit </Button>
                             </View>
                         </View>
                     )
                 }}
             </Formik>
-        </View>
+        </MainContainer>
 
     )
 }
 
-export default ForgotScreen;
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    container: { 
+        alignItems:'center',
+    },
+    headingStyle: {
+        fontFamily: theme.Poppins.regular,
+        fontSize: 16, 
+        color: theme.TextBlack, 
+        fontWeight:'600'
+    },
+    textStyle: {
+        color:theme.textGrey,
+        textAlign:'center',
+        width:'80%'
     },
     subContainer: {
-        alignItems: 'center',
-    },
-    forgotPasswordTitle: {
-        fontSize: 16,
-        color: theme.TextBlack,
-        fontWeight: '600'
-    },
-    forgotPasswordText: {
-        color: theme.textGrey,
-        textAlign: 'center',
-        width: '80%'
-    },
-    formikSubContainer: {
-        paddingHorizontal: 20,
-        marginTop: '6%',
+        paddingHorizontal: 20, 
+        marginTop: '6%', 
         flex: 1
     },
-    submitButtonConatiner: {
-        alignItems: 'center',
+    scrollContentContainer: {
+        paddingHorizontal: 20, 
+        paddingBottom: 90
+    },
+    btnContainer: {
+        alignItems: 'center', 
         marginTop: '6%'
     },
-    submitButton: {
-        width: 200,
+    btn: {
+        width: 200, 
         height: 40,
-    },
-});
+    }
+})
+
+export default ForgotScreen;

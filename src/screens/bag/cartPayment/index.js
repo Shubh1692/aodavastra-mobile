@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, } from 'react-native';
 import CardComponent from '../../../components/card';
 import Header from '../../../components/header';
 import theme from '../../../theme/resources';
@@ -41,7 +41,7 @@ function CartPayment({ navigation }) {
                     justifyContent: 'space-between',
                     paddingHorizontal: '4%', 
                 }}>
-                    <Text onPress={() => console.log("hii")} style={{ marginVertical: '4%', fontFamily: 'Poppins-Regular', fontSize: 14, color: theme.TextBlack, }}>{item}</Text>
+                    <Text onPress={() => console.log("hii")} style={{ marginVertical: '4%', fontFamily: theme.Poppins.regular, fontSize: 14, color: theme.TextBlack, }}>{item}</Text>
                     <Select />
                 </View>
                 <LineDivider/>
@@ -71,12 +71,12 @@ function CartPayment({ navigation }) {
                     // justifyContent: 'space-between',
                     paddingHorizontal: '4%', 
                 }}>
-                    <Text style={{ marginVertical: '1%', width: '55%', fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.TextBlack, }}>{item.title}</Text>
+                    <Text style={{ marginVertical: '1%', width: '55%', fontFamily: theme.Poppins.medium, fontSize: 14, color: theme.TextBlack, }}>{item.title}</Text>
                     {item.title == 'Order Total: '
                     ?
-                    <Text style={{ marginVertical: '1%', fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.Purple, }}>{item.price}</Text>
+                    <Text style={{ marginVertical: '1%', fontFamily: theme.Poppins.medium, fontSize: 14, color: theme.Purple, }}>{item.price}</Text>
                     :
-                    <Text style={{ marginVertical: '1%', fontFamily: 'Poppins-Regular', fontSize: 14, color: theme.TextBlack, }}>{item.price}</Text>
+                    <Text style={{ marginVertical: '1%', fontFamily: theme.Poppins.regular, fontSize: 14, color: theme.TextBlack, }}>{item.price}</Text>
                     }
                 </View>
             </View>
@@ -92,7 +92,7 @@ function CartPayment({ navigation }) {
             <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
                 <View style={{ flex: 1, marginTop: '8%' }}>
                     <CartPaymentIndecator isComplete={isComplete}/>
-                    <Text style={{ marginTop: '6%', fontFamily: 'Poppins-Regular', fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
+                    <Text style={{ marginTop: '6%', fontFamily: theme.Poppins.regular, fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
                     <ScrollView
                         // horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -101,7 +101,7 @@ function CartPayment({ navigation }) {
                         <View style={{ flex: 1, marginBottom: 90, }}>
                             {list}
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Text style={{ marginTop: '4%', fontFamily: 'Poppins-Regular', fontSize: 18, color: theme.TextBlack }}>Choose Payment Mode</Text>
+                                <Text style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 18, color: theme.TextBlack }}>Choose Payment Mode</Text>
                             </View>
                             {/* payment options */}
                             <View style={{
@@ -117,16 +117,16 @@ function CartPayment({ navigation }) {
                                 {payment}
                             </View>
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Text style={{ marginTop: '1%', fontFamily: 'Poppins-Regular', fontSize: 12, color: theme.TextBlack }}>
-                                    Estimated Delivery by <Text style={{ fontFamily: 'Poppins-SemiBold', fontSize: 12, color: theme.TextBlack }}>
+                                <Text style={{ marginTop: '1%', fontFamily: theme.Poppins.regular, fontSize: 12, color: theme.TextBlack }}>
+                                    Estimated Delivery by <Text style={{ fontFamily: theme.Poppins.semiBold, fontSize: 12, color: theme.TextBlack }}>
                                         25th February, 2022
                                     </Text>
                                 </Text>
                             </View>
                             {/* order summery */}
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Text style={{ marginTop: '4%', fontFamily: 'Poppins-Regular', fontSize: 18, color: theme.TextBlack }}>Order Summary</Text>
-                                <Text onPress={() => {navigation.navigate('')}} style={{ marginTop: '4%', fontFamily: 'Poppins-SemiBold', fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Apply Coupon</Text>
+                                <Text style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 18, color: theme.TextBlack }}>Order Summary</Text>
+                                <Text onPress={() => {navigation.navigate('')}} style={{ marginTop: '4%', fontFamily: theme.Poppins.semiBold, fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Apply Coupon</Text>
                             </View>
 
                             <View style={{
@@ -145,7 +145,7 @@ function CartPayment({ navigation }) {
                     </ScrollView>
                 </View>
                 <View style={{ flex: 1, width: '100%', alignItems: 'center', position: 'absolute', bottom: 10 }}>
-                    <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => { setIsComplete(true) }}>Place Your Order</Button>
+                    <Button mode="contained" textStyle={{ lineHeight: 18, fontFamily: theme.Poppins.regular, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => { setIsComplete(true) }}>Place Your Order</Button>
                 </View>
             </View>
 

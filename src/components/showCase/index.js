@@ -25,10 +25,10 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: theme.Purple,
+        fontFamily: theme.Poppins.regular,
         fontSize: 24,
-        fontWeight: '400',
         marginLeft: 16,
     }
-});
+})
 
 export default ShowCaseComponent;

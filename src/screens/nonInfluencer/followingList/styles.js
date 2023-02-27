@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     },
     item: {
         //   padding: 10,
+        fontFamily: theme.Poppins.regular,
         fontSize: 14,
         //   height: 44,
     },
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
         marginVertical: 0
     },
     btnTextStyle: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 12,
         lineHeight: 20
     },

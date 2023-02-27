@@ -7,7 +7,7 @@ import theme from "../../../theme/resources";
 import styles, { _containerStyle, _selectedTabStyle, } from "./SegmentedControl.style";
 const { width: ScreenWidth } = Dimensions.get("screen");
 
-const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabStyle, textStyle, activeTextColor = theme.Black, activeTabColor = theme.background, inActiveTabColor = theme.tabColor }) => {
+const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabStyle, textStyle, activeTextColor = theme.Black, activeTabColor = theme.background, inActiveTabColor=theme.tabColor }) => {
     const translateValue = (width ? width : ScreenWidth) / tabs.length;
     const [slideAnimation, _] = useState(new Animated.Value(0));
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
@@ -28,18 +28,18 @@ const SegmentedControl = ({ style, tabs, width, onChange, initialIndex = 0, tabS
     const renderTab = (tab, index) => {
         const isActiveTab = currentIndex === index;
         const isTabText = typeof tab === "string";
-        return (<TouchableOpacity key={index} activeOpacity={0.5} style={[styles.tab, tabStyle, { backgroundColor: (currentIndex === index) ? activeTabColor : inActiveTabColor }]} onPress={() => handleTabPress(index)}>
+        return (<TouchableOpacity key={index} activeOpacity={0.5} style={[styles.tab, tabStyle,{backgroundColor:(currentIndex === index) ? activeTabColor : inActiveTabColor}]} onPress={() => handleTabPress(index)}>
             {!isTabText ? (tab) : (
-                <Text numberOfLines={1} style={[
-                    styles.textStyle,
-                    isActiveTab && { color: activeTextColor, },
-                    textStyle,
-                ]}>
-                    {tab}
-                </Text>)}
+            <Text numberOfLines={1} style={[
+                styles.textStyle,
+                isActiveTab && { color: activeTextColor, },
+                textStyle,
+            ]}>
+                {tab}
+            </Text>)}
         </TouchableOpacity>);
     };
-    return (<Animated.View style={[_containerStyle(width, inActiveTabColor), style]}>
+    return (<Animated.View style={[_containerStyle(width,inActiveTabColor), style]}>
         {renderSelectedTab()}
         {tabs.map((tab, index) => renderTab(tab, index))}
     </Animated.View>);

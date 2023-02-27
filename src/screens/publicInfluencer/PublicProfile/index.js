@@ -1,5 +1,5 @@
 import React, { useState,useRef,useCallback } from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
 import Header from '../../../components/header';
 import MainContainer from '../../../components/mainContainer';
 
@@ -31,7 +31,7 @@ function PublicInfluencerProfile() {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const bottomSheetModalRef = useRef(null);
     const [categories, setCategories] = useState([1]);
-    const [isSettingIcon, setIsCloseIcon] = useState(false);
+    const [isSettingIcon, setIsSettingIcon] = useState(false);
     const [posts, setPosts] = useState([1]);
     const [likes, setLikes] = useState([1]);
 
@@ -40,9 +40,9 @@ function PublicInfluencerProfile() {
         setSelectedIndex(index);
     }
 
-    const handleCloseIcon = () =>{
-        console.log("hiii handleCloseIcon")
-        setIsCloseIcon(!isSettingIcon);
+    const handleSettingIcon = () =>{
+        console.log("hiii handleSettingIcon")
+        setIsSettingIcon(!isSettingIcon);
         handlePresentModalPress()
     }
 
@@ -53,20 +53,20 @@ function PublicInfluencerProfile() {
     const renderGrid = () => (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             {selectedIndex == 0 ? <TagPrimary /> : <Tag />}
-            <Text style={{ marginLeft: 3, fontSize: 14, fontWeight: '600', color: selectedIndex == 0 ? theme.Purple : theme.TextBlack }}>Store</Text>
+            <Text style={{ marginLeft: 3, fontFamily: theme.Poppins.regular,fontSize: 14, fontWeight: '600', color: selectedIndex == 0 ? theme.Purple : theme.TextBlack }}>Store</Text>
         </View>
     )
     const renderLikePost = () => (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             {selectedIndex == 1 ? <CameraPrimary /> : <Camera />}
-            <Text style={{ marginLeft: 3, fontSize: 14, fontWeight: '600', color: selectedIndex == 1 ? theme.Purple : theme.TextBlack }}>Posts</Text>
+            <Text style={{ marginLeft: 3, fontFamily: theme.Poppins.regular,fontSize: 14, fontWeight: '600', color: selectedIndex == 1 ? theme.Purple : theme.TextBlack }}>Posts</Text>
         </View>
     )
 
     const renderPost = () => (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             {selectedIndex == 2 ? <HeartPrimary /> : <Heart />}
-            <Text style={{ marginLeft: 3, fontSize: 14, fontWeight: '600', color: selectedIndex == 2 ? theme.Purple : theme.TextBlack }}>Liked Posts</Text>
+            <Text style={{ marginLeft: 3, fontFamily: theme.Poppins.regular,fontSize: 14, fontWeight: '600', color: selectedIndex == 2 ? theme.Purple : theme.TextBlack }}>Liked Posts</Text>
         </View>
 
     )
@@ -74,7 +74,7 @@ function PublicInfluencerProfile() {
     return (
         <MainContainer>
             <Header />
-            <InfluencerProfileView handleIconAction={handleCloseIcon}/>
+            <InfluencerProfileView handleIconAction={handleSettingIcon}/>
             {/* Edit Ptofile End */}
             <View style={{ flex: 1, }}>
                 <View style={{ elevation: 3 }}>

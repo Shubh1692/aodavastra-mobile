@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, TextInput,TouchableOpacity } from 'react-native'
 // import { TextInput as Input } from 'react-native-paper';
 import FastImage from 'react-native-fast-image';
 import theme from '../../theme/resources';
 import styles from './styles';
 
-export default function TextInputWithLabel({ onBlur, isIcon, handleToggleIcon, isIconToggle, title, inputStyle, textStyle, errorText, description, mode, ...props }) {
+export default function TextInputWithLabel({ onBlur, isIcon,handleToggleIcon,isIconToggle,title, inputStyle, textStyle, errorText, description, mode, ...props }) {
     const [isFocus, setIsFocus] = useState(false)
     return (
         <View style={styles.container}>
@@ -29,8 +29,8 @@ export default function TextInputWithLabel({ onBlur, isIcon, handleToggleIcon, i
             />
             {isIcon &&
                 <TouchableOpacity onPress={handleToggleIcon} style={styles.iconContainer}>
-                    {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={styles.toggleIcon} resizeMode="contain" />}
-                    {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={styles.toggleIcon} resizeMode="contain" />}
+                    {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={styles.toggleIconStyle} resizeMode="contain" />}
+                    {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={styles.toggleIconStyle} resizeMode="contain" />}
                 </TouchableOpacity>
             }
             {description && !errorText ? (

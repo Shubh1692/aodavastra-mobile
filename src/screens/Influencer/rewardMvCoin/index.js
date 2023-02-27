@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, FlatList, ImageBackground } from 'react-native';
 import Container from '../../../components/container';
 import Header from '../../../components/header';
 import Heading from '../../../components/heading';
@@ -31,10 +31,10 @@ function RewardMVCoins() {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 8 }}>
                 <View>
-                    <Text style={{ fontSize: 16, lineHeight: 24 }}>5 Likes</Text>
-                    <Text style={{ color: theme.textGrey, fontSize: 12 }}>5 Likes</Text>
+                    <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 16, lineHeight: 24 }}>5 Likes</Text>
+                    <Text style={{ color: theme.textGrey, fontFamily: theme.Poppins.regular,fontSize: 12 }}>5 Likes</Text>
                 </View>
-                <Text style={{ fontSize: 16, lineHeight: 24 }}>+5 Coins</Text>
+                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 16, lineHeight: 24 }}>+5 Coins</Text>
             </View>
         )
     }
@@ -58,7 +58,7 @@ function RewardMVCoins() {
                             <Chip
                                 onPress={() => navigate('reedemCoins')}
                                 title={'Redeem'}
-                                textStyle={{ fontSize: 16, fontWeight: '400', color: theme.TextBlack }}
+                                textStyle={{ fontSize: 16, color: theme.TextBlack }}
                                 viewStyle={{ width: 104, height: 32, borderRadius: 16, backgroundColor: theme.White }}
                             />
                             <TextWithUnderline title="More Details" textStyle={{ marginTop: 9, color: theme.TextBlack }} onPress={() => console.log('reward insights')} />

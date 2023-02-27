@@ -30,7 +30,7 @@ const SearchComponent = ({ clampedScroll }) => {
       }
     ]}>
       <View style={styles.subContainer}>
-        <SearchIcon style={styles.searchIcon} onPress={() => console.log('hii')} />
+        <SearchIcon style={styles.searchIcon} onPress={() => console.log('hii')}/>
         <TextInput
           placeholder='Search'
           style={styles.formField}
@@ -55,32 +55,33 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   subContainer: {
-    flexDirection: 'row',
+    flexDirection:'row',
     backgroundColor: theme.searchBarBackgorund,
-    borderRadius: 4,
-    alignItems: 'center',
-    width: '95%',
-    marginRight: 10
+    borderRadius:4,
+    alignItems:'center',
+    width:'95%',
+    marginRight:10
   },
   searchIcon: {
-    marginLeft: 4
+    marginLeft:4
   },
   formField: {
     borderWidth: 1,
     // padding: 12,
+    fontFamily: theme.Poppins.regular,
     fontSize: 12,
+    fontSize: 18,
     paddingLeft: 20,
     paddingRight: 20,
     borderRadius: 4,
     borderColor: theme.searchBarBackgorund,
     backgroundColor: theme.searchBarBackgorund,
-    fontSize: 18,
     width: '95%',
     height: 40,
     color: theme.TextBlack
   },
   closeIconContainer: {
-    marginLeft: 10
+    marginLeft:10
   },
 })
 

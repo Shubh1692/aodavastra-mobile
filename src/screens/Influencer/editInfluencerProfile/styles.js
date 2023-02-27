@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     },
     btnText: {
         color: theme.TextBlack,
+        fontFamily: theme.Poppins.regular,
         fontSize: 12,
         lineHeight: 16
     },
@@ -45,11 +46,11 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     forgot: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 14,
         color: theme.Primary,
         textDecorationLine: 'underline',
         fontWeight: '600',
-        fontFamily: 'Poppins-Regular'
     },
 });
 

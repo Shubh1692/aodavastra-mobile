@@ -11,30 +11,31 @@ import SeparatorComponent from '../../../components/Separator';
 import { navigate } from '../../../services/NavigationService';
 import EmptyAddress from '../addressList/components/emptyAddressList';
 import FloatingButton from '../../../components/button/floatingButton';
+import MainContainer from '../../../components/mainContainer';
 
 
 function AddressList() {
     const [addressList, setAddressList] = useState([1,2,])
 
     return (
-        <View style={styles.container}>
+        <MainContainer>
             <Header />
             {addressList.length > 0 &&
-                <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
+                <View style={styles.container}>
                     <View>
                         <Text style={styles.heading}>Default Address</Text>
                     </View>
                     <View>
                         <AddressListComponent />
                     </View>
-                    <View style={{ marginTop: '4%', flex: 1 }}>
+                    <View style={styles.subContainer}>
                         <View style={{ paddingVertical: '2%' }}>
                             <Text style={styles.heading}>Other Addresses</Text>
                         </View>
-                        <View style={{ flex: 1}}>
+                        <View style={styles.listContainer}>
                             <FlatList
                                 data={addressList}
-                                contentContainerStyle={{ paddingBottom: 90 }}
+                                contentContainerStyle={styles.contentContainer}
                                 showsHorizontalScrollIndicator={false}
                                 showsVerticalScrollIndicator={false}
                                 ItemSeparatorComponent={() => <SeparatorComponent />}
@@ -49,7 +50,7 @@ function AddressList() {
             {/* <View style={{ paddingVertical: '3%', bottom: 20, alignItems: 'center', position: 'absolute', justifyContent: 'center', width: '100%' }}>
                 <Button mode="contained" style={{ width: 200, height: 40, paddingVertical: 0 }} textStyle={{ lineHeight: 22 }} onPress={() => navigate('addAddress')} >Add Address</Button>
             </View> */}
-        </View>)
+        </MainContainer>)
 }
 
 export default AddressList;

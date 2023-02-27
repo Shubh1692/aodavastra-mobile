@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     topTitle: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 14,
         color: theme.Primary,
         fontWeight: '600',
@@ -17,12 +18,14 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     midTitle: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 14,
         color: theme.TextBlack,
         fontWeight: '600',
         marginHorizontal: 3
     },
     lastTitle: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 14,
         color: theme.Primary,
         fontWeight: '600'
@@ -50,6 +53,7 @@ const styles = StyleSheet.create({
     termTitle: {
         color: theme.Primary,
         paddingHorizontal: 4,
+        fontFamily: theme.Poppins.regular,
         fontWeight: '600'
     },
     footerBtn: {

@@ -5,7 +5,7 @@ import {
     BottomTabBarOptions,
 } from "@react-navigation/bottom-tabs";
 import { BottomTabIcon } from './BottomTabIcon';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 
 
 import NonInfluencerProfile from '../screens/nonInfluencer/myAccount';

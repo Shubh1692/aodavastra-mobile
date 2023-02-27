@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import CardComponent from '../../../components/card';
 import Header from '../../../components/header';
 import theme from '../../../theme/resources';
@@ -19,7 +19,7 @@ function OrderListComponents({status = 'Cancel'}) {
                     <Text style={styles.headerTitle}>07 : 30 PM</Text>
                 </View>
                 <View style={{ paddingVertical: '2%', paddingHorizontal: '2%' }}>
-                    <Text style={{ fontSize: 14, color: theme.gray }}>#133589</Text>
+                    <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 14, color: theme.gray }}>#133589</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: '1.3%', paddingBottom: '1%' }}>
                         <Text style={{ color: theme.TextBlack }}>₹ 3,099.00</Text>
                         <Text style={{ color: theme.TextBlack }}>2 Items</Text>
@@ -27,7 +27,7 @@ function OrderListComponents({status = 'Cancel'}) {
                     <LineDivider />
                     {/* Address Section */}
                     <View style={{ paddingTop: '1%' }}>
-                        <Text style={{ fontSize: 12, fontWeight: '600' }}>Address</Text>
+                        <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 12, fontWeight: '600' }}>Address</Text>
                         <View style={{ backgroundColor: theme.White, borderRadius: 6, marginTop: '1%' }}>
                             <View style={styles.titleSection}>
                                 <Text style={styles.titleText} numberOfLines={1}>Sukrut Patil </Text>
@@ -44,10 +44,10 @@ function OrderListComponents({status = 'Cancel'}) {
                                 <FastImage source={require('../../../assets/images/doubleDone.png')} style={{ width: 12, height: 12 }}  resizeMode="contain"/>
                             </View>
                             <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontSize: 11, fontWeight: '400', color: theme.Primary }}>Delivered</Text>
+                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.Primary }}>Delivered</Text>
                             </View>
                         </View>
-                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }}>View Details</Text>
+                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600' }}>View Details</Text>
                     </View>}
 
                     {/* Single Done */}
@@ -57,7 +57,7 @@ function OrderListComponents({status = 'Cancel'}) {
                                 <FastImage source={require('../../../assets/images/done.png')} style={{ width: 10, height: 10 }} />
                             </View>
                             <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontSize: 11, fontWeight: '400', color: theme.Primary }}>Ordered</Text>
+                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.Primary }}>Ordered</Text>
                             </View>
                         </View>
                         <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }}>View Details</Text>
@@ -70,10 +70,10 @@ function OrderListComponents({status = 'Cancel'}) {
                                 <FastImage source={require('../../../assets/images/close.png')} style={{ width: 10, height: 10 }} />
                             </View>
                             <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontSize: 11, fontWeight: '400', color: theme.orange }}>Cancelled</Text>
+                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.orange }}>Cancelled</Text>
                             </View>
                         </View>
-                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }}>View Details</Text>
+                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600' }}>View Details</Text>
                     </View>}
                 </View>
             </View>

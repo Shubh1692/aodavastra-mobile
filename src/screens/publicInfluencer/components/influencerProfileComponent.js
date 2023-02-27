@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, TouchableOpacity } from 'react-native';
 import styles from '../PublicProfile/styles';
 import UserCoverImage from '../../../assets/images/backgroundImage.png'
 import { deviceWidth } from '../../../utils/device';

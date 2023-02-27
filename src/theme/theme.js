@@ -1,4 +1,4 @@
-import {DefaultTheme } from "react-native-paper";
+import {DefaultTheme } from 'react-native-paper';
 import theme from './resources';
 
 const paperTheme = {
@@ -8,17 +8,17 @@ const paperTheme = {
       ...DefaultTheme.colors,
       surface:'#fff',
       primary: theme.Primary,
-      accent: "#fff",
+      accent: '#fff',
       error: theme.Red,
-      onBackground:'#ffffff',
-      onSurface:'#ffffff',
-      background:'#ffffff'
+      onBackground:'#fff',
+      onSurface:'#fff',
+      background:'#fff'
     },
     fonts: {
-      regular: { fontFamily: "Poppins-Regular" },
-      light: { fontFamily: "Poppins-Light" },
-      medium: { fontFamily: "Poppins-Medium" },
-      thin: { fontFamily: "Poppins-Light" },
+      regular: { fontFamily: 'Poppins-Regular' },
+      light: { fontFamily: 'Poppins-Light' },
+      medium: { fontFamily: 'Poppins-Medium' },
+      thin: { fontFamily: 'Poppins-Thin' },
     },
   };
 

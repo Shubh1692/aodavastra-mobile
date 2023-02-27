@@ -1,17 +1,31 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import theme from '../../../../theme/resources';
 import AddressPlaceholder from '../../../../assets/images/AddressPlaceholder.svg'
 
 
 function EmptyAddress() {
     return (
-        <View style={{ alignItems: 'center', flex: 1, justifyContent: 'center',  }}>
+        <View style={styles.emptyAddressContainer}>
             <AddressPlaceholder />
-            <Text style={{ color: theme.TextBlack, fontSize: 16, fontWeight: '400', textAlign: 'center',marginTop:20 }}>Please add your address </Text>
+            <Text style={styles.emptyAddressTextStyle}>Please add your address </Text>
         </View>
 
     )
 }
 
+const styles = StyleSheet.create({
+    emptyAddressContainer: {
+        alignItems: 'center', 
+        flex: 1, 
+        justifyContent: 'center',
+    },
+    emptyAddressTextStyle: {
+        color: theme.TextBlack, 
+        fontFamily: theme.Poppins.regular,
+        fontSize: 16, 
+        textAlign: 'center',
+        paddingTop:20
+    },
+})
 export default EmptyAddress;

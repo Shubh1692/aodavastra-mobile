@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from "../styles";
 import CardComponent from '../../../components/card';
 import FastImage from 'react-native-fast-image';
@@ -24,7 +24,7 @@ function CategoryListComponents({item}) {
                     alignItems: 'center',
                     padding: '2%'
                 }}>
-                    <Text style={{ color: theme.TextBlack, fontSize: 10, fontFamily: 'Poppins-Regular',}}>{item.name}</Text>
+                    <Text style={{ color: theme.TextBlack, fontFamily: theme.Poppins.regular,fontSize: 10,}}>{item.name}</Text>
                 </View>
             </View>
         </View>

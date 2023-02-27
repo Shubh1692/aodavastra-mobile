@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     bottomSheetText: {
+        fontFamily: theme.Poppins.regular,
       fontSize: 24,
       marginBottom: 80,
     },

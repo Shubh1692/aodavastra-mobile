@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, } from 'react-native';
 import CardComponent from '../../../components/card';
 import Header from '../../../components/header';
 import theme from '../../../theme/resources';
@@ -35,7 +35,7 @@ function CartAddress({ navigation }) {
             <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
                 <View style={{ flex: 1, marginTop: '8%' }}>
                     <CartAddressIndecator />
-                    <Text style={{ marginTop: '6%', fontFamily: 'Poppins-Regular', fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
+                    <Text style={{ marginTop: '6%', fontFamily: theme.Poppins.regular, fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
                     <ScrollView
                         // horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -44,8 +44,8 @@ function CartAddress({ navigation }) {
                         <View style={{ flex: 1, marginBottom: 90, }}>
                             {list}
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Text style={{ marginTop: '4%', fontFamily: 'Poppins-Regular', fontSize: 18, color: theme.TextBlack }}>Address</Text>
-                                <Text onPress={() => {navigation.navigate('addAddress')}} style={{ marginTop: '4%', fontFamily: 'Poppins-SemiBold', fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Add Address</Text>
+                                <Text style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 18, color: theme.TextBlack }}>Address</Text>
+                                <Text onPress={() => {navigation.navigate('addAddress')}} style={{ marginTop: '4%', fontFamily: theme.Poppins.semiBold, fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Add Address</Text>
                             </View>
                             {addressList.length > 0 ?
                                 <AddressListComponent />
@@ -57,7 +57,7 @@ function CartAddress({ navigation }) {
                                     justifyContent: 'center',
                                 }}>
                                     <AddressPlaceholder />
-                                    <Text onPress={() => console.log("hii")} style={{ marginTop: '4%', fontFamily: 'Poppins-Regular', fontSize: 14, color: theme.textGrey, }}>Please add your delivery address </Text>
+                                    <Text onPress={() => console.log("hii")} style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 14, color: theme.textGrey, }}>Please add your delivery address </Text>
                                 </View>}
                         </View>
                     </ScrollView>

@@ -13,20 +13,18 @@ function EmptyUserPost() {
 
     )
 }
-
-export default EmptyUserPost;
-
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
-        width: '60%'
+    container: { 
+        alignItems: 'center', 
+        flex: 1, 
+        justifyContent: 'center', 
+        width: '60%' 
     },
-    textStyle: {
-        color: theme.TextBlack,
-        fontSize: 16,
-        fontWeight: '400',
-        textAlign: 'center'
-    },
-});
+    textStyle: { 
+        color: theme.TextBlack, 
+        fontFamily: theme.Poppins.regular, 
+        fontSize: 16, 
+        textAlign: 'center' 
+    }
+})
+export default EmptyUserPost;

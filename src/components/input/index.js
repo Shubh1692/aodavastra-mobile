@@ -6,7 +6,7 @@ import theme from '../../theme/resources';
 import styles from './styles';
 
 
-export default function TextInputComponent({ handleToggleIcon, isIconToggle, onBlur, inputStyle, errorText, description, mode, isIcon, isInstSocailIcon, isFbSocailIcon, isSnapSocailIcon, ...props }) {
+export default function TextInputComponent({ handleToggleIcon,isIconToggle, onBlur,inputStyle, errorText, description, mode, isIcon,isInstSocailIcon,isFbSocailIcon, isSnapSocailIcon,...props }) {
   const [isFocus, setIsFocus] = useState(false)
   return (
     <View style={styles.container}>
@@ -26,23 +26,23 @@ export default function TextInputComponent({ handleToggleIcon, isIconToggle, onB
       />
       {isIcon &&
         <TouchableOpacity onPress={handleToggleIcon} style={styles.iconContainer}>
-          {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={styles.toggleIcon} resizeMode="contain" />}
-          {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={styles.toggleIcon} resizeMode="contain" />}
+          {isIconToggle && <FastImage source={require('../../assets/images/eye.png')} style={styles.toggleIconStyle} resizeMode="contain" />}
+          {!isIconToggle && <FastImage source={require('../../assets/images/eyeOff.png')} style={styles.toggleIconStyle} resizeMode="contain" />}
         </TouchableOpacity>
       }
       {isFbSocailIcon &&
         <View style={styles.iconContainer}>
-          <FastImage source={require('../../assets/images/Facebook.png')} style={styles.socailIcon} resizeMode="contain" />
+           <FastImage source={require('../../assets/images/Facebook.png')} style={styles.iconStyle} resizeMode="contain" />
         </View>
       }
       {isInstSocailIcon &&
         <View style={styles.iconContainer}>
-          <FastImage source={require('../../assets/images/instgram.png')} style={styles.socailIcon} resizeMode="contain" />
+           <FastImage source={require('../../assets/images/instgram.png')} style={styles.iconStyle} resizeMode="contain" />
         </View>
       }
       {isSnapSocailIcon &&
-        <View style={{ position: 'absolute', right: 8, alignItems: 'center', height: 40, justifyContent: 'center' }}>
-          <FastImage source={require('../../assets/images/Snapchat.png')} style={styles.socailIcon} resizeMode="contain" />
+        <View style={styles.iconContainer}>
+           <FastImage source={require('../../assets/images/Snapchat.png')} style={styles.iconStyle} resizeMode="contain" />
         </View>
       }
       {description && !errorText ? (

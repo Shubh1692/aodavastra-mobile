@@ -5,4 +5,3 @@ import theme from '../../../theme/resources';
 const styles = StyleSheet.create({
 
 })
-export default styles;

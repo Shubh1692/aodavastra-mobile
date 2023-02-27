@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import CardComponent from '../../components/card';
 import Header from '../../components/header';
 import theme from '../../theme/resources';
@@ -17,7 +17,7 @@ function Orders() {
             <Header />
             <View style={{ marginTop: '8%', marginHorizontal: '4%' }}>
                 <View>
-                    <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', textDecorationLine:'underline', color: theme.Purple, fontWeight: '600' }}>Apply Filter</Text>
+                    <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', textDecorationLine:'underline', color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600' }}>Apply Filter</Text>
                 </View>
                 <View style={{paddingBottom:160}}>
 

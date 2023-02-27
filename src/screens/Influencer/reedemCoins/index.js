@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import Container from '../../../components/container';
 import Header from '../../../components/header';
 import MainContainer from '../../../components/mainContainer';
@@ -38,7 +38,7 @@ function ReedemCoins() {
                     <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Title name={'Cashout'} />
                         <TextWithUnderline  title="Bank Details" onPress={() => navigate('bankDeatils')}/>
-                        {/* <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', color: theme.Purple, fontWeight: '600', marginTop: '2%', textDecorationLine: 'underline' }}>Bank Details</Text> */}
+                        {/* <Text onPress={() => console.log("hii")} style={{ textAlign: 'right', color: theme.Purple, fontFamily: theme.Poppins.regular, fontWeight: '600', marginTop: '2%', textDecorationLine: 'underline' }}>Bank Details</Text> */}
                     </View>
                     <View style={{ alignItems: 'center'}}>
                         <FlatList

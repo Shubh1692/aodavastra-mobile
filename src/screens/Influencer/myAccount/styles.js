@@ -16,17 +16,20 @@ const styles = StyleSheet.create({
         marginTop: '2%'
     },
     profileTitle:{ 
+        fontFamily: theme.Poppins.regular,
         fontSize: 18, 
         fontWeight: '500', 
         lineHeight: 27, 
     },
     followingCount: { 
+        fontFamily: theme.Poppins.regular,
         fontSize: 16, 
         fontWeight: '500', 
         lineHeight: 24, 
         marginBottom: 2 
     },
     followingTitle: { 
+        fontFamily: theme.Poppins.regular,
         fontSize: 14, 
     },
     descriptionSection: { 
@@ -35,11 +38,13 @@ const styles = StyleSheet.create({
         marginLeft:'8.7%'
     },
     descTitle: { 
+        fontFamily: theme.Poppins.regular,
         fontSize: 13,
         lineHeight:21 
     },
     btnText: {
         color: theme.TextBlack,
+        fontFamily: theme.Poppins.regular,
         fontSize: 13,
     },
     btn: {

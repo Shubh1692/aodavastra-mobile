@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     shopNowTitle: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: theme.Poppins.semiBold,
         color: theme.DarkerPurple,
         alignItems: 'center'
     },

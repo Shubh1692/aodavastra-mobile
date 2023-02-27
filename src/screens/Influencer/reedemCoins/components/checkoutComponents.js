@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import CardComponent from '../../../../components/card';
 import theme from '../../../../theme/resources';
 import FastImage from 'react-native-fast-image';
@@ -23,10 +23,10 @@ function CheckOutComponents() {
                 <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'space-around', }}>
                     <FastImage source={require('../../../../assets/images/r1.png')} style={{ width: 56, height: 56, }} />
                     <View >
-                        <Text style={{ fontSize: 16, fontWeight: '400', lineHeight: 24 }}>₹ 100 cashout</Text>
+                        <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 16, lineHeight: 24 }}>₹ 100 cashout</Text>
                         <Chip title={'100 coins'}
                             viewStyle={{ marginTop: 9, width: 80, height: 20, borderRadius: 10, backgroundColor: theme.Purple, alignItems: 'center', justifyContent: 'center' }}
-                            textStyle={{ fontSize: 12, fontWeight: '400', lineHeight: 18, color: theme.White }}
+                            textStyle={{ fontFamily: theme.Poppins.regular,fontSize: 12, lineHeight: 18, color: theme.White }}
                         />
 
                     </View>

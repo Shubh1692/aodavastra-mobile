@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from "../styles";
 import CardComponent from '../../../components/card';
 import FastImage from 'react-native-fast-image';
@@ -25,7 +25,7 @@ function CategoryListComponents({item}) {
                 borderRadius: 4.5,
             }} source={ productConfig.id == 1 ? require('../../../assets/images/c1.png') : require('../../../assets/images/c2.png')} resizeMode='contain'/>
             <View style={styles.categoryTitleStyle}>
-                <Text style={{ color: theme.White, fontSize: 14, fontFamily: 'Poppins-SemiBold',}}>{productConfig.name}</Text>
+                <Text style={{ color: theme.White, fontSize: 14, fontFamily: theme.Poppins.semiBold,}}>{productConfig.name}</Text>
             </View>
         </View>
         //</CardComponent>

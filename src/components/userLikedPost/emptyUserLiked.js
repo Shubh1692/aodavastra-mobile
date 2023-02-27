@@ -8,25 +8,24 @@ function EmptyLikePost() {
     return (
         <View style={styles.container}>
             <HeartEmpty />
-            <Text style={styles.textSyle}>You Haven’t Added Anything In your Store Yet</Text>
+            <Text style={styles.textStyle}>You Haven’t Added Anything In your Store Yet</Text>
         </View>
 
     )
 }
 
-export default EmptyLikePost;
-
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
-        width: '60%'
+    container: { 
+        alignItems: 'center', 
+        flex: 1, 
+        justifyContent: 'center', 
+        width: '60%' 
     },
-    textSyle: {
+    textStyle: { 
         color: theme.TextBlack, 
+        fontFamily: theme.Poppins.regular, 
         fontSize: 16, 
-        fontWeight: '400', 
-        textAlign: 'center'
-    },
-});
+        textAlign: 'center' 
+    }
+})
+export default EmptyLikePost;

@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     },
     btnText: {
         color: theme.TextBlack,
+        fontFamily: theme.Poppins.regular,
         fontSize: 10,
     },
     btn: {

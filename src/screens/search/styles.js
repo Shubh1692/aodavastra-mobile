@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     searchTitle: {
         fontSize: 14,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: theme.Poppins.semiBold,
         color: theme.Purple,
         alignItems: 'center'
     },

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from "../styles";
 import CardComponent from '../../../components/card';
 import FastImage from 'react-native-fast-image';
@@ -24,7 +24,7 @@ function WishlistComponents() {
 
                         <View style={styles.btnSection}>
                             <Button mode="outlined" textStyle={[styles.btnText,{lineHeight:14}]} style={{ width: '46%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Remove </Button>
-                            <Button mode="contained" textStyle={{ fontSize: 10,lineHeight:14 }} style={{ width: '48%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Add to bag </Button>
+                            <Button mode="contained" textStyle={{ fontFamily: theme.Poppins.regular,fontSize: 10,lineHeight:14 }} style={{ width: '48%',height:32,paddingVertical:0,marginVertical:0 }} onPress={() => console.log('hii')}>Add to bag </Button>
                         </View>
 
                     </View>

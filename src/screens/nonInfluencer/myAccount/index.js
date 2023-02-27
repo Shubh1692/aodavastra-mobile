@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView, ImageBackground, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, ImageBackground, Image } from 'react-native';
 import Header from "../../../components/header";
 import ProfileImage from '../../../components/profileImage';
 import SegmentComponent from '../../../components/segment';
@@ -82,7 +82,7 @@ function NonInfluencerProfile() {
             <TouchableOpacity onPress={() => navigate('becomeInfluencerProfile')} activeOpacity={0.7} style={{ /*backgroundColor: theme.background,*/ flex: 1, alignItems: 'center', justifyContent: 'center', position: 'absolute', height: 80, bottom: 0, width: deviceWidth }}>
                 <ImageBackground style={{ backgroundColor: theme.Purple, borderRadius: 10, width: 328, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', height: 40, paddingHorizontal: 10 }} source={require('../../../assets/images/backgroundCover.png')}>
                     <Image source={ClosetIcon} style={{ width: 30, height: 26 }} resizeMode="contain" />
-                    <Text style={{ fontSize: 16, fontWeight: '400', color: theme.White }}>Become a ModaVastra creator</Text>
+                    <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 16, color: theme.White }}>Become a ModaVastra creator</Text>
                     <Image source={Back} style={{ width: 20, height: 20 }} resizeMode="contain" />
                 </ImageBackground>
             </TouchableOpacity>

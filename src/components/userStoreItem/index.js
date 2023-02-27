@@ -8,31 +8,31 @@ import CategoryComponents from './components/categoryComponents';
 
 
 
-function UserCategories({ isCreator }) {
+function UserCategories({isCreator}) {
     return (
         // <View style={{ flex: 1, position: 'relative',marginBottom:30  }}>
-        <ScrollView
-            showsVerticalScrollIndicator={false}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.contentContainer}>
-            <CategoryComponents isCreator={isCreator} />
-            <CategoryComponents isCreator={isCreator} />
-        </ScrollView>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.scrollContentContainer}>
+                <CategoryComponents isCreator={isCreator}/>
+                <CategoryComponents isCreator={isCreator}/>
+            </ScrollView>
 
         // </View>
 
     )
 }
 
-export default UserCategories;
-
 const styles = StyleSheet.create({
-    contentContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        backgroundColor: theme.background,
-        /*marginTop: 20,*/
-        width: deviceWidth,
+    scrollContentContainer: { 
+        flexDirection: 'row', 
+        flexWrap: 'wrap', 
+        backgroundColor: theme.background, 
+        /*marginTop: 20,*/ 
+        width: deviceWidth, 
         paddingBottom: 90,
     },
-});
+})
+
+export default UserCategories;

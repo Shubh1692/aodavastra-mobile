@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import Header from '../../../components/header';
 import MainContainer from '../../../components/mainContainer';
 import theme from '../../../theme/resources';
@@ -20,15 +20,15 @@ function InfluencerCoupon() {
 
             <View style={{ flex: 1, alignItems: 'center', marginVertical: '6%' }}>
                 <View style={{ alignItems: 'center', width: '76%', paddingTop: '4%' }}>
-                    <Title name="Get your own Coupon" textStyle={{ color: theme.Purple, fontWeight: '600', textTransform: 'uppercase' }} />
+                    <Title name="Get your own Coupon" textStyle={{ color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600', textTransform: 'uppercase' }} />
                     <Text style={{ textAlign: 'center', marginTop: 10 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non mollis metus.</Text>
                 </View>
                 <View style={{ marginTop: '14%' }}>
                     <CouponeIcon />
-                    <Title name="9 0 H J K 4 5" textStyle={{ color: theme.Purple, fontWeight: '600', textTransform: 'uppercase', marginVertical: 18 }} />
+                    <Title name="9 0 H J K 4 5" textStyle={{ color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600', textTransform: 'uppercase', marginVertical: 18 }} />
                 </View>
                 <View style={{ marginTop: 36 }}>
-                    <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 154, height: 40, bottom: 10 }} onPress={() => console.log("hii")}>Share</Button>
+                    <Button mode="contained" textStyle={{ lineHeight: 18, fontFamily: theme.Poppins.regular,fontSize: 14 }} style={{ width: 154, height: 40, bottom: 10 }} onPress={() => console.log("hii")}>Share</Button>
                 </View>
             </View>
         </MainContainer>

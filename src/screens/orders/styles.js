@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         color: theme.White,
+        fontFamily: theme.Poppins.regular,
         fontSize: 11
     },
     titleSection: {
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
         paddingBottom: '6%'
     },
     addressText: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 10,
         fontWeight: '600',
         color: theme.TextBlack,
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
         width: '90%'
     },
     titleText: {
+        fontFamily: theme.Poppins.regular,
         fontSize: 12,
         fontWeight: '600'
     },
