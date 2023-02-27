@@ -22,7 +22,7 @@ function CheckOutComponents() {
             }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'space-around', }}>
                     <FastImage source={require('../../../../assets/images/r1.png')} style={{ width: 56, height: 56, }} />
-                    <View >
+                    <View>
                         <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 16, lineHeight: 24 }}>₹ 100 cashout</Text>
                         <Chip title={'100 coins'}
                             viewStyle={{ marginTop: 9, width: 80, height: 20, borderRadius: 10, backgroundColor: theme.Purple, alignItems: 'center', justifyContent: 'center' }}

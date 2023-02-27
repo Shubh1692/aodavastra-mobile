@@ -19,7 +19,7 @@ import LineDivider from '../../../components/lineDivider';
 import { Card, shadow } from 'react-native-paper';
 import BottomSheet from '../../../components/bottomSheet';
 import BagIcon from '../../../assets/svg/bagCongrts.svg';
-import { navigate } from '../../../services/NavigationService';
+import { navigate, popToTop } from '../../../services/NavigationService';
 import Heading from '../../../components/heading';
 import TextWithUnderline from '../../../components/textWithUnderline';
 import PriceText from '../../../components/priceText';
@@ -150,7 +150,7 @@ function CartPayment({ navigation }) {
                 </View>
             </MainContainer>
             {isConfirmationVisible &&
-                <BottomSheet bottomSheetHeigh={'55%'} title={"Email Verification"} setIsSettingIcon={setIsConfirmationVisible} actionHandler={handleConfirm} >
+                <BottomSheet bottomSheetHeigh={'55%'} title={"Order Placed Successfully"} setIsSettingIcon={setIsConfirmationVisible} actionHandler={handleConfirm} >
                     <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
                         <View style={{ flex: 1, alignItems: 'center' }}>
                             <BagIcon />
@@ -160,12 +160,14 @@ function CartPayment({ navigation }) {
                             <View style={{ alignItems: 'center' }}>
                                 <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => {
                                     handleConfirm()
+                                    popToTop()
                                     navigate("orderDetails")
                                     }}>Review Your Order</Button>
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Button mode="contained" textStyle={{ fontSize: 14, }} style={styles.loginBtnStyle} onPress={() => {
                                     handleConfirm()
+                                    popToTop()
                                     navigate('shopNow')
                                 }}>Continue Shopping</Button>
                             </View>

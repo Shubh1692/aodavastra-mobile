@@ -132,7 +132,7 @@ function InfluencerMyAccount() {
                                 onPress={() => navigate('ordersList')} />
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                                 <Heading title="YOUR STORE LINK" onPress={() => navigate('ordersList')} textStyle={{ fontSize: 18, fontWeight: '600', lineHeight: 27, textTransform: 'uppercase' }} viewStyle={{ marginVertical: 7, marginLeft: 16 }} />
-                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 16 }}>
                                     <ShareIcon style={{ marginRight: 10 }} />
                                     <CopyIcon />
                                 </View>

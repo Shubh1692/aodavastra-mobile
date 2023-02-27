@@ -7,6 +7,7 @@ import FastImage from 'react-native-fast-image';
 import Button from '../../../../components/button';
 import Title from "../../../../components/title";
 import DownArrow from "../../../../assets/images/DownArrow.svg"
+import PriceText from '../../../../components/priceText';
 
 function CartListComponents({ item, isCart, navigation }) {
     return (
@@ -50,12 +51,10 @@ function CartListComponents({ item, isCart, navigation }) {
                                 <Text style={{ color: theme.TextBlack }}>Qty: 1</Text>
                                 <DownArrow />
                             </View>
-                            <View style={{
+                            <PriceText viewStyle={{
                                 marginLeft: '4%',
                                 marginTop: '4%'
-                            }}>
-                                <Text style={{ color: theme.TextBlack }}>₹ 999.00</Text>
-                            </View>
+                            }} price={'999.00'} />
                         </View>
 
                     </View>

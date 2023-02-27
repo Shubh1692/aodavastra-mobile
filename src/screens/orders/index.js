@@ -47,7 +47,7 @@ function Orders() {
                     <View>
                         <Text onPress={handleFilterSection} style={{ textAlign: 'right', textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }}>Apply Filter</Text>
                     </View>
-                    <View style={{ paddingBottom: 160 }}>
+                    <View style={{ paddingBottom: 90 }}>
 
                         <FlatList
                             data={[{ status: 'Cancel' }, { status: 'Complete' }, { status: 'Done' }]}

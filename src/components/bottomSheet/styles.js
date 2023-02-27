@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         lineHeight: 24, 
         textAlign: 'center',
-        textTransform: 'uppercase'
+        textTransform: 'capitalize'
     },
     closeBtn: {
         right: 10, 

@@ -6,6 +6,7 @@ import FastImage from 'react-native-fast-image';
 import theme from "../../../theme/resources";
 import Title from "../../../components/title";
 import Button from '../../../components/button';
+import PriceText from "../../../components/priceText";
 
 
 function WishlistComponents() {
@@ -17,9 +18,7 @@ function WishlistComponents() {
                     <View style={styles.contentSection}>
                         <View style={styles.titleStyle}>
                             <Title numberOfLines={2} name="American Diamond Bangles" />
-                            <View style={styles.priceStyle}>
-                                <Text style={{ color: theme.TextBlack }}>₹ 999.00</Text>
-                            </View>
+                            <PriceText viewStyle={styles.priceStyle} price={'999.00'} />
                         </View>
 
                         <View style={styles.btnSection}>

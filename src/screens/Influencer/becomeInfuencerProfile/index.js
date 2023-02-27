@@ -13,6 +13,7 @@ import FastImage from 'react-native-fast-image';
 import styles from './styles';
 import MainContainer from '../../../components/mainContainer';
 import {navigate} from '../../../services/NavigationService';
+import CheckboxComponent from '../../../components/checkbox';
 
 
 
@@ -134,12 +135,9 @@ function BecomeInfluencerProfile() {
                                             </View>
                                         </View>
                                         <View style={styles.checkSection}>
-                                            <TouchableOpacity onPress={() => {
+                                            <CheckboxComponent checked={checked} handleCheckbox={() => {
                                                 setChecked(!checked);
-                                            }}>
-                                                {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={styles.checkImg} />}
-                                                {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={styles.checkImg} />}
-                                            </TouchableOpacity>
+                                            }} />
                                             <View style={styles.checkTitleSection}>
                                                 <Text>I accept</Text><Text style={styles.termTitle}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={styles.termTitle}>Privacy Policy</Text>
                                             </View>

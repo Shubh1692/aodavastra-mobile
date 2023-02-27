@@ -134,22 +134,11 @@ function EditAddressScreen() {
                                             />
                                         </View>
                                         <View style={styles.checkBoxConatiner}>
-                                            <TouchableOpacity onPress={() => {
+                                            <CheckboxComponent checked={checked} handleCheckbox={() => {
                                                 setChecked(!checked);
-                                            }} >
-                                                {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={styles.checkBox} />}
-                                                {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={styles.checkBox} />}
-                                            </TouchableOpacity>
+                                            }} />
                                             <View style={styles.checkBoxTextContainer}>
                                                 <Text style={styles.checkBoxTextStyle}>Make this my default address.</Text>
-                                            </View>
-                                            <View style={{ flexDirection: 'row', paddingHorizontal: 11, alignItems: 'center', width: '100%', borderRadius:4,backgroundColor: theme.background, height: 50, marginVertical: 7, marginBottom: 8 }}>
-                                                <CheckboxComponent checked={checked} handleCheckbox={() => {
-                                                    setChecked(!checked);
-                                                }} />
-                                                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 15 }}>
-                                                    <Text style={{ color: theme.TextBlack, fontSize: 14 }}>Make this my default address.</Text>
-                                                </View>
                                             </View>
                                         </View>
                                     </ScrollView>
