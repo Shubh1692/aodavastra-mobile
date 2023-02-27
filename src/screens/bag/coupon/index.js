@@ -6,10 +6,10 @@ import MainContainer from '../../../components/mainContainer';
 import Title from '../../../components/title';
 import OffersComponents from './components/offersComponents';
 const listItems = [
-    { id: 1, name: '10% off on MODAVASTRA', price: '₹ 2,099.00', isCouponApplied: true },
-    { id:2, name:'10% off on Drapes By Rashmi', price:'₹ 2,099.00', isCouponApplied: false}, 
-    { id:3, name:'10% off on ARABELLA', price:'₹ 2,099.00', isCouponApplied: false}, 
-    { id:4, name:'10% off on MODAVASTRA', price:'₹ 2,099.00', isCouponApplied: false},
+    { id: 1, name: '10% off on MODAVASTRA', price: '2,099.00', isCouponApplied: true },
+    { id:2, name:'10% off on Drapes By Rashmi', price:'2,099.00', isCouponApplied: false}, 
+    { id:3, name:'10% off on ARABELLA', price:'2,099.00', isCouponApplied: false}, 
+    { id:4, name:'10% off on MODAVASTRA', price:'2,099.00', isCouponApplied: false},
 ]
 
 

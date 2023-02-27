@@ -17,10 +17,10 @@ function Cart({ navigation }) {
     const emptyCart = false
 
     const listItems = [
-        { id:1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-        // { id:2, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:false}, 
-        // { id:3, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:true}, 
-        // { id:4, name:'Net Multi Work Saree', price:'₹ 2,099.00', outOfStock:false},
+        { id:1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+        // { id:2, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:false}, 
+        // { id:3, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:true}, 
+        // { id:4, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:false},
     ]
     const list = listItems.map((item, index) => {
         return (

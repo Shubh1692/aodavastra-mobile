@@ -11,10 +11,10 @@ import { navigate } from '../../../services/NavigationService';
 import theme from '../../../theme/resources';
 
 const listItems = [
-    { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 2, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 3, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 4, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
+    { id: 1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 2, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 3, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 4, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
 ]
 
 function CategoryStore() {

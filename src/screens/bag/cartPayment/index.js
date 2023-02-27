@@ -41,7 +41,7 @@ function CartPayment({ navigation }) {
     }
 
     const addressList = [
-        { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
+        { id: 1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
     ]
 
     const payment = ['PayTM', 'Cash on Delivery'].map((item, index) => {
@@ -71,7 +71,7 @@ function CartPayment({ navigation }) {
         { title: 'Order Total: ', price: '1039.00' },
     ])
     const summary = summaryItem.map((item, index) => {
-        if ((item.title == 'Discount: ') && (item.price != '₹ 0.00')) {
+        if ((item.title == 'Discount: ') && (item.price != '0.00')) {
             summaryItem.splice(index, 1);
             setSummaryItem(summaryItem)
         }

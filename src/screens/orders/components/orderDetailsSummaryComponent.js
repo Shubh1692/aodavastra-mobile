@@ -10,7 +10,7 @@ function OrderDetailsSummaryComponent({ summaryItem,setSummaryItem }) {
     return (
         <PaymentCard>
             {summaryItem.map((item, index) => {
-                if ((item.title == 'Discount: ') && (item.price != '₹ 0.00')) {
+                if ((item.title == 'Discount: ') && (item.price != '0.00')) {
                     summaryItem.splice(index, 1);
                     setSummaryItem(summaryItem)
                 }

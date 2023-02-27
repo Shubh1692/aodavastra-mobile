@@ -14,16 +14,16 @@ import SeparatorComponent from '../../../components/Separator';
 import LineDivider from '../../../components/lineDivider';
 
 const listItems = [
-    { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 2, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: true },
-    { id: 3, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 4, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 5, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 6, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 7, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 8, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 9, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
-    { id: 10, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
+    { id: 1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 2, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: true },
+    { id: 3, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 4, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 5, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 6, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 7, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 8, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 9, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+    { id: 10, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
 ]
 
 

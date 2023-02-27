@@ -54,10 +54,10 @@ const brand = brandItems.map((item, index) => {
 })
 
 const  productItems =[
-    {id:1, name:'Net Multi Work Saree', price:'₹ 2,099.00'}, 
-    {id:2, name:'Net Multi Work Saree', price:'₹ 2,099.00'}, 
-    {id:3, name:'Net Multi Work Saree', price:'₹ 2,099.00'},
-    {id:4, name:'Net Multi Work Saree', price:'₹ 2,099.00'},
+    {id:1, name:'Net Multi Work Saree', price:'2,099.00'}, 
+    {id:2, name:'Net Multi Work Saree', price:'2,099.00'}, 
+    {id:3, name:'Net Multi Work Saree', price:'2,099.00'},
+    {id:4, name:'Net Multi Work Saree', price:'2,099.00'},
 ]
 
 const product = productItems.map((item, index) => {

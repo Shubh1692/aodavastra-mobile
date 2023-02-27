@@ -26,7 +26,7 @@ function CartAddress({ navigation }) {
     })
 
     const addressList = [
-        { id: 1, name: 'Net Multi Work Saree', price: '₹ 2,099.00', outOfStock: false },
+        { id: 1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
     ]
 
     return (
