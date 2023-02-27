@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View, Text, ImageBackground,TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground,TouchableOpacity, StyleSheet } from 'react-native';
 import MenuIcon from '../../../assets/svg/menu.svg';
 import EditPencilIcon from '../../../assets/svg/editPencil.svg';
 import DeleteIcon from '../../../assets/svg/delete.svg';

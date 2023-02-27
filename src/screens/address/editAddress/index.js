@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import TextInputWithLabel from '../../../components/inputWithLabel';
 import { Formik } from 'formik';
 import FooterButton from '../../../components/footerButton';
