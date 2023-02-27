@@ -18,7 +18,7 @@ function AddressList() {
     const [addressList, setAddressList] = useState([1,2,])
 
     return (
-        <MainContainer>
+        <MainContainer style={{ flex: 1, }}>
             <Header />
             {addressList.length > 0 &&
                 <View style={styles.container}>
@@ -47,9 +47,6 @@ function AddressList() {
                 </View>}
             {addressList.length == 0 && <EmptyAddress />}
             <FloatingButton title={'Add Address'} onPress={() => navigate('addAddress')}  />
-            {/* <View style={{ paddingVertical: '3%', bottom: 20, alignItems: 'center', position: 'absolute', justifyContent: 'center', width: '100%' }}>
-                <Button mode="contained" style={{ width: 200, height: 40, paddingVertical: 0 }} textStyle={{ lineHeight: 22 }} onPress={() => navigate('addAddress')} >Add Address</Button>
-            </View> */}
         </MainContainer>)
 }
 

@@ -3,6 +3,7 @@ import theme from '../../../theme/resources';
 
 const styles = StyleSheet.create({
    btn: { width: 240, height: 40, },
+   loginBtnStyle: { width: 200, height: 40, },
    loginBtn: { 
        width: 200, 
        height: 40, 

@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         maxHeight: deviceHeight,
         flex: 1,
+        overflow: 'hidden',
     },
     child: {
         width: deviceWidth,

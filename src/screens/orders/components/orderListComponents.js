@@ -7,11 +7,13 @@ import LineDivider from '../../../components/lineDivider';
 import Icon from '../../../components/icon';
 import styles from '../styles';
 import FastImage from 'react-native-fast-image';
+import StatusComponent from './statusComponent';
+import { navigate } from '../../../services/NavigationService';
 
 
-function OrderListComponents({status = 'Cancel'}) {
+function OrderListComponents({ status = 'Complete' }) {
     return (
-        <CardComponent>
+        <CardComponent style={{backgroundColor:theme.background}}>
             <View style={styles.cardSection}>
                 {/* Header */}
                 <View style={styles.headerSection}>
@@ -36,45 +38,13 @@ function OrderListComponents({status = 'Cancel'}) {
                             </View>
                         </View>
                     </View>
-                    {/* Status Section Double Done */}
 
-                    {status == 'Complete' &&  <View style={{ paddingVertical: '2%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <View style={{ backgroundColor: theme.lightPurple, height: 24, paddingVertical: 5, width: 100, borderRadius: 45, alignItems: 'center', flexDirection: 'row' }}>
-                            <View style={{ backgroundColor: theme.White, width: 18, height: 18, borderRadius: 90, marginLeft: 4, alignItems: 'center', justifyContent: 'center' }}>
-                                <FastImage source={require('../../../assets/images/doubleDone.png')} style={{ width: 12, height: 12 }}  resizeMode="contain"/>
-                            </View>
-                            <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.Primary }}>Delivered</Text>
-                            </View>
-                        </View>
-                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600' }}>View Details</Text>
-                    </View>}
 
-                    {/* Single Done */}
-                    {status == 'Done' && <View style={{ paddingVertical: '2%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <View style={{ backgroundColor: theme.lightPurple, height: 24, paddingVertical: 5, width: 100, borderRadius: 45, alignItems: 'center', flexDirection: 'row' }}>
-                            <View style={{ backgroundColor: theme.White, width: 18, height: 18, borderRadius: 90, marginLeft: 4, alignItems: 'center', justifyContent: 'center' }}>
-                                <FastImage source={require('../../../assets/images/done.png')} style={{ width: 10, height: 10 }} />
-                            </View>
-                            <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.Primary }}>Ordered</Text>
-                            </View>
-                        </View>
-                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }}>View Details</Text>
-                    </View>}
+                    <View style={{ paddingVertical: '2%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <StatusComponent status={status} />
+                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontWeight: '600' }} onPress={() => navigate('orderDetails')}>View Details</Text>
+                    </View>
 
-                    {/* Cancel  */}
-                    {status == 'Cancel' && <View style={{ paddingVertical: '2%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <View style={{ backgroundColor: theme.lightOrange, height: 24, paddingVertical: 5, width: 100, borderRadius: 45, alignItems: 'center', flexDirection: 'row' }}>
-                            <View style={{ backgroundColor: theme.White, width: 18, height: 18, borderRadius: 90, marginLeft: 4, alignItems: 'center', justifyContent: 'center' }}>
-                                <FastImage source={require('../../../assets/images/close.png')} style={{ width: 10, height: 10 }} />
-                            </View>
-                            <View style={{ paddingLeft: 6 }}>
-                                <Text style={{ fontFamily: theme.Poppins.regular,fontSize: 11, color: theme.orange }}>Cancelled</Text>
-                            </View>
-                        </View>
-                        <Text style={{ textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.regular,fontWeight: '600' }}>View Details</Text>
-                    </View>}
                 </View>
             </View>
         </CardComponent>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import TextInputWithLabel from '../../../components/inputWithLabel';
 import { Formik } from 'formik';
 import FooterButton from '../../../components/footerButton';
@@ -7,19 +7,18 @@ import Header from '../../../components/header';
 import { deviceWidth } from '../../../utils/device';
 import { addAddressValidationSchema } from '../../../utils/formvalidation';
 import MainContainer from '../../../components/mainContainer';
+import CheckboxComponent from '../../../components/checkbox';
 import theme from '../../../theme/resources';
-import FastImage from 'react-native-fast-image';
 
 
 function EditAddressScreen() {
-    const [checked, setChecked] = React.useState(false);
-
+    const [checked, setChecked] = useState(false);
     const onSubmit = (values) => {
         // const { username, bio } = values;
         console.log("values", values)
     }
     return (
-        <MainContainer>
+        <MainContainer style={{ flex: 1 }}>
             <Header />
 
             <View style={styles.container}>
@@ -143,6 +142,14 @@ function EditAddressScreen() {
                                             </TouchableOpacity>
                                             <View style={styles.checkBoxTextContainer}>
                                                 <Text style={styles.checkBoxTextStyle}>Make this my default address.</Text>
+                                            </View>
+                                            <View style={{ flexDirection: 'row', paddingHorizontal: 11, alignItems: 'center', width: '100%', borderRadius:4,backgroundColor: theme.background, height: 50, marginVertical: 7, marginBottom: 8 }}>
+                                                <CheckboxComponent checked={checked} handleCheckbox={() => {
+                                                    setChecked(!checked);
+                                                }} />
+                                                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 15 }}>
+                                                    <Text style={{ color: theme.TextBlack, fontSize: 14 }}>Make this my default address.</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </ScrollView>

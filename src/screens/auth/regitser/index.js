@@ -15,6 +15,9 @@ import IconComponent from '../../../components/icon';
 import styles from './styles';
 import { navigate } from '../../../services/NavigationService';
 import FastImage from 'react-native-fast-image';
+import BottomSheet from '../../../components/bottomSheet';
+import EmailIcon from '../../../assets/svg/mailSent.svg';
+import CheckboxComponent from '../../../components/checkbox';
 
 
 
@@ -24,11 +27,17 @@ function RegisterScreen() {
     const [password, setPassword] = useState({ value: '', error: '' });
     const [eyeView, setEyeView] = useState(true);
     const [confirmEyeView, setconfirmEyeView] = useState(true);
-    const [checked, setChecked] = React.useState(false);
+    const [checked, setChecked] = useState(false);
+    const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
 
     const onSubmit = (values) => {
         const { email, password } = values;
-        navigate('Home')
+        // navigate('Home')
+        handleConfirm();
+    }
+
+    const handleConfirm = () => {
+        setIsConfirmationVisible(!isConfirmationVisible);
     }
     return (
         <View>
@@ -86,7 +95,7 @@ function RegisterScreen() {
                                             isIcon={true}
                                             isIconToggle={eyeView}
                                             handleToggleIcon={() => setEyeView(!eyeView)}
-                                            // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={eyeView ? "eye" : 'eye-off'} onPress={() => setEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View>
@@ -102,17 +111,14 @@ function RegisterScreen() {
                                             isIcon={true}
                                             isIconToggle={confirmEyeView}
                                             handleToggleIcon={() => setconfirmEyeView(!confirmEyeView)}
-                                            // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
+                                        // right={<Input.Icon icon={confirmEyeView ? "eye" : 'eye-off'} onPress={() => setconfirmEyeView(!eyeView)} />}
                                         />
                                     </View>
                                     <View style={{ flexDirection: 'row', alignItems: 'flex-start', width: '80%', marginVertical: 7, marginBottom: 8 }}>
                                         {/* <View style={{borderWidth:2,borderColor:theme.TextBlack ,backgroundColor:checked ? theme.Primary :theme.White,width:20,height:20 }}> */}
-                                        <TouchableOpacity onPress={() => {
+                                        <CheckboxComponent checked={checked} handleCheckbox={() => {
                                             setChecked(!checked);
-                                        }} >
-                                            {checked && <FastImage source={require('../../../assets/images/selectedCheck.png')} style={{ width: 20, height: 20 }} />}
-                                            {!checked && <FastImage source={require('../../../assets/images/unSelected.png')} style={{ width: 20, height: 20 }} />}
-                                        </TouchableOpacity>
+                                        }}/>
                                         <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 5 }}>
                                             <Text>I accept</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontFamily: theme.Poppins.regular, fontWeight: '600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>Privacy Policy</Text>
                                         </View>
@@ -146,6 +152,27 @@ function RegisterScreen() {
                     </View>
                 </View>
             </ScrollView>
+            {isConfirmationVisible &&
+                <BottomSheet bottomSheetHeigh={'55%'} title={"Email Verification"} setIsSettingIcon={setIsConfirmationVisible} actionHandler={handleConfirm} >
+                    <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
+                        <View style={{ flex: 1, alignItems: 'center' }}>
+                            <EmailIcon />
+                            <View style={{ marginHorizontal: 18, marginTop: 16, marginBottom:10,alignItems: 'center' }}>
+                                <Text style={{ textAlign: 'center', fontSize: 14 }}>We have sent you a link on <Text style={{ color: theme.Purple }}>heena@gmail.com.</Text> </Text>
+                                <Text>Click on the link to verify the email.</Text>
+                            </View>
+                            <View style={{ alignItems: 'center' }}>
+                                <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => console.log("resend mail")}>Resend Link</Button>
+                            </View>
+                            <View style={{ alignItems: 'center' }}>
+                                <Button mode="contained" style={styles.loginBtnStyle} onPress={() => {
+                                    handleConfirm()
+                                    navigate('login') 
+                                    }}>Log In</Button>
+                            </View>
+                        </View>
+                    </View>
+                </BottomSheet>}
         </View>
 
     )
