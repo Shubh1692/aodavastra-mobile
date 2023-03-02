@@ -64,7 +64,7 @@ function ReedemCoins() {
                 </Container>
             </MainContainer>
             {isCongrtsVisible &&
-                <BottomSheet bottomSheetHeigh={'50%'} title={"Congratulations!"} setIsSettingIcon={setIsCongrtsVisible} actionHandler={handleCongrtes} >
+                <BottomSheet title={"Congratulations!"} actionHandler={handleCongrtes} >
                     <View style={{ marginTop: '5%', flex: 1,alignItems:'center' }}>
                         <View style={{  flex: 1, alignItems:'center'}}>
                             <CashOnDeliveryIcon />

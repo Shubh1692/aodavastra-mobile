@@ -63,7 +63,7 @@ function Orders() {
                 </View>
             </MainContainer>
             {isFilterVisible &&
-                <BottomSheet bottomSheetHeigh={'45%'} title={"APPLY FILTER"} setIsSettingIcon={handleFilterSection} actionHandler={handleFilterSection} >
+                <BottomSheet title={"APPLY FILTER"} actionHandler={handleFilterSection} >
                     <View style={{ marginTop: '5%', flex: 1, marginLeft: 10 }}>
                         <Heading title="Order Status" textStyle={{ color: theme.TextBlack, fontSize: 16, fontWeight: '500' }} />
                         <View style={{ flex: 1, }}>

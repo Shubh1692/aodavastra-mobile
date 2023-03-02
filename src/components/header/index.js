@@ -5,7 +5,7 @@ import { Image, StyleSheet, View } from 'react-native';
 import Logo from '../../assets/images/logo2.png';
 import closet from '../../assets/images/closet-black.png';
 import theme from '../../theme/resources';
-import { goBack, navigate } from '../../services/NavigationService';
+import { goBack, navigate, replace } from '../../services/NavigationService';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
@@ -15,6 +15,7 @@ function Header({ isLogout = false, isBack = true, isShopNow = false}) {
 
     function handleLogout() {
         console.log("hiii logout")
+        replace('login')
     }
 
     function handleShopNow() {

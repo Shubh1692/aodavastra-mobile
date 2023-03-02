@@ -122,7 +122,7 @@ function InfluencerMyAccount() {
 
             </MainContainer>
             {isSettingIcon &&
-                <BottomSheet bottomSheetHeigh={'66%'} title={"SETTINGS"} bottomSheetModalRef={bottomSheetModalRef} setIsSettingIcon={setIsSettingIcon} actionHandler={handleSettingIcon} >
+                <BottomSheet title={"SETTINGS"} bottomSheetModalRef={bottomSheetModalRef} actionHandler={handleSettingIcon} >
                     <View style={{ marginTop: '5%', flex: 1 }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <Heading
@@ -145,7 +145,7 @@ function InfluencerMyAccount() {
                     </View>
                 </BottomSheet>}
             {isAddCategory &&
-                <BottomSheet bottomSheetHeigh={'54%'} title={"Add new Category"} setIsSettingIcon={setIsAddCategory} actionHandler={handleAddCategory} >
+                <BottomSheet title={"Add new Category"} actionHandler={handleAddCategory} >
                     <View style={{ marginTop: '5%', height: '60%', }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <TextInputWithLabel
@@ -162,7 +162,7 @@ function InfluencerMyAccount() {
                     </View>
                 </BottomSheet>}
                 {isUpdateCategory &&
-                <BottomSheet bottomSheetHeigh={'54%'} title={"Edit Category"} setIsSettingIcon={setIsUpdateCategory} actionHandler={handleUpdateCategory} >
+                <BottomSheet title={"Edit Category"} actionHandler={handleUpdateCategory} >
                     <View style={{ marginTop: '5%', height: '60%', }}>
                         <View style={{ backgroundColor: theme.background, flex: 1, }}>
                             <TextInputWithLabel

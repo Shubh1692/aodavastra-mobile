@@ -153,7 +153,7 @@ function RegisterScreen() {
                 </View>
             </ScrollView>
             {isConfirmationVisible &&
-                <BottomSheet bottomSheetHeigh={'55%'} title={"Email Verification"} setIsSettingIcon={setIsConfirmationVisible} actionHandler={handleConfirm} >
+                <BottomSheet title={"Email Verification"} actionHandler={handleConfirm} >
                     <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
                         <View style={{ flex: 1, alignItems: 'center' }}>
                             <EmailIcon />

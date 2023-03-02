@@ -150,7 +150,7 @@ function CartPayment({ navigation }) {
                 </View>
             </MainContainer>
             {isConfirmationVisible &&
-                <BottomSheet bottomSheetHeigh={'55%'} title={"Order Placed Successfully"} setIsSettingIcon={setIsConfirmationVisible} actionHandler={handleConfirm} >
+                <BottomSheet title={"Order Placed Successfully"} actionHandler={handleConfirm} >
                     <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
                         <View style={{ flex: 1, alignItems: 'center' }}>
                             <BagIcon />

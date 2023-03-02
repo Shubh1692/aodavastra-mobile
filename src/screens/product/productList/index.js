@@ -86,7 +86,7 @@ function ProductList() {
                 </Container>
             </MainContainer>
             {isFilterVisible &&
-                <BottomSheet bottomSheetHeigh={'75%'} title={"APPLY FILTER"} setIsSettingIcon={handleFilterSection} actionHandler={handleFilterSection} >
+                <BottomSheet title={"APPLY FILTER"} actionHandler={handleFilterSection} >
                     <View style={{ marginTop: '5%', flex: 1, marginLeft: 10 }}>
                         <View style={{ }}>
                             <Heading title="Categories" textStyle={{ color: theme.TextBlack, fontSize: 16, fontWeight: '500' }} />
