@@ -11,7 +11,7 @@ function AddressDetailComponent({ firstName, lastName, address1, address2, city,
             <View style={styles.mainContainer}>
                 <View style={styles.nameSection}>
                     <Title viewStyle={styles.textViewStyle} textStyle={styles.titleText} name={firstName} />
-                    <Title viewStyle={[styles.textViewStyle,{paddingLeft: 3}]}  textStyle={styles.titleText} name={lastName} />
+                    <Title viewStyle={[styles.textViewStyle, { paddingLeft: 3 }]} textStyle={styles.titleText} name={lastName} />
                 </View>
                 <View>
                     <Title viewStyle={styles.textViewStyle} textStyle={styles.textAddressStyle} name={address1} />
@@ -42,18 +42,18 @@ const styles = StyleSheet.create({
     nameSection: {
         flexDirection: 'row'
     },
-    textViewStyle:{ 
-        marginLeft: 0, 
-        marginTop: 0, 
+    textViewStyle: {
+        marginLeft: 0,
+        marginTop: 0,
     },
-    titleText:{ 
-        fontSize: 14, 
-        color: theme.TextBlack, 
+    titleText: {
+        fontSize: 14,
+        color: theme.TextBlack,
     },
-    textAddressStyle:{
-        fontSize: 14, 
-        color: theme.TextBlack, 
-        lineHeight: 21 
+    textAddressStyle: {
+        fontSize: 14,
+        color: theme.TextBlack,
+        lineHeight: 21
     }
 })
 

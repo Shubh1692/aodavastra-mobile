@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     priceTextStyle: {
         color: theme.TextBlack,
         fontSize: 14,
-        fontFamily: 'Poppins-Regular',
+        fontFamily: theme.Poppins.regular,
     },
 });
 

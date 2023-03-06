@@ -15,10 +15,12 @@ const paperTheme = {
       background:'#fff'
     },
     fonts: {
-      regular: { fontFamily: 'Poppins-Regular' },
       light: { fontFamily: 'Poppins-Light' },
-      medium: { fontFamily: 'Poppins-Medium' },
       thin: { fontFamily: 'Poppins-Thin' },
+      regular: { fontFamily: 'Poppins-Regular' },
+      medium: { fontFamily: 'Poppins-Medium' },
+      semiBold: { fontFamily: 'Poppins-SemiBold' },
+      bold: { fontFamily: 'Poppins-Bold' },
     },
   };
 

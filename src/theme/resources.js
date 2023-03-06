@@ -29,13 +29,13 @@ const theme = {
 
 
     Poppins: {
-        thin: 'Poppins-Thin',
-        regular: 'Poppins-Regular',
-        light: 'Poppins-Light',
-        medium: 'Poppins-Medium',
-        semiBold: 'Poppins-SemiBold',
-        bold: 'Poppins-Bold',
-      },
+      light: 'Poppins-Light',
+      thin: 'Poppins-Thin',
+      regular: 'Poppins-Regular',
+      medium: 'Poppins-Medium',
+      semiBold: 'Poppins-SemiBold',
+      bold: 'Poppins-Bold',
+    },
 }
 
 

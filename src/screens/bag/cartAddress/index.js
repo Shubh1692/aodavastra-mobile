@@ -13,12 +13,12 @@ import CartListComponents from '../../../screens/bag/cart/components/cartListCom
 import AddressListComponent from '../../address/addressList/components/addressListComponents';
 import AddAddress from '../../address/addAddress';
 import AddressPlaceholder from '../../../assets/images/AddressPlaceholder.svg'
-import {useRoute} from '@react-navigation/native'
+import { useRoute } from '@react-navigation/native'
 import CartIndecatorComponents, { AddressIndecator, CartAddressIndecator } from '../cart/components/cartIndecatorComponent';
 
 function CartAddress({ navigation }) {
     const route = useRoute()
-    const {listItems} = route.params;
+    const { listItems } = route.params;
     const list = listItems.map((item, index) => {
         return (
             <CartListComponents item={item} key={index.toString()} />
@@ -32,38 +32,32 @@ function CartAddress({ navigation }) {
     return (
         <MainContainer>
             <Header />
-            <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
-                <View style={{ flex: 1, marginTop: '8%' }}>
+            <View style={styles.container}>
+                <View style={styles.subContainer}>
                     <CartAddressIndecator />
-                    <Text style={{ marginTop: '6%', fontFamily: theme.Poppins.regular, fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
+                    <Text style={styles.title}>{listItems.length} item(s) in bag:</Text>
                     <ScrollView
                         // horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                     >
-                        <View style={{ flex: 1, marginBottom: 90, }}>
+                        <View style={styles.listContainer}>
                             {list}
-                            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Text style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 18, color: theme.TextBlack }}>Address</Text>
-                                <Text onPress={() => {navigation.navigate('addAddress')}} style={{ marginTop: '4%', fontFamily: theme.Poppins.semiBold, fontSize: 14, textDecorationLine:'underline', color: theme.Purple, }}>Add Address</Text>
+                            <View style={styles.addressContainer}>
+                                <Text style={styles.addressText}>Address</Text>
+                                <Text onPress={() => { navigation.navigate('addAddress') }} style={styles.addAddressText}>Add Address</Text>
                             </View>
                             {addressList.length > 0 ?
-                                <AddressListComponent isCheckShow={true}/>
-                                : <View style={ {
-                                    marginTop: '3%', 
-                                    backgroundColor: theme.background,
-                                    minHeight: 120,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
+                                <AddressListComponent isCheckShow={true} />
+                                : <View style={styles.emptyAddressContainer}>
                                     <AddressPlaceholder />
-                                    <Text onPress={() => console.log("hii")} style={{ marginTop: '4%', fontFamily: theme.Poppins.regular, fontSize: 14, color: theme.textGrey, }}>Please add your delivery address </Text>
+                                    <Text onPress={() => console.log("hii")} style={styles.emptyAddressText}>Please add your delivery address </Text>
                                 </View>}
                         </View>
                     </ScrollView>
                 </View>
-                <View style={{ flex: 1, width: '100%', alignItems: 'center', position: 'absolute', bottom: 10 }}>
-                    <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => { navigation.navigate('cartPayment',{listItems}) }}>Proceed to Checkout</Button>
+                <View style={styles.btnContainer}>
+                    <Button mode="contained" textStyle={styles.btnTextStyle} style={styles.btnStyle} onPress={() => { navigation.navigate('cartPayment', { listItems }) }}>Proceed to Checkout</Button>
                 </View>
             </View>
 

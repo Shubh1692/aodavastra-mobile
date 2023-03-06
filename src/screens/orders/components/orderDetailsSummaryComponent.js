@@ -16,18 +16,13 @@ function OrderDetailsSummaryComponent({ summaryItem,setSummaryItem }) {
                 }
                 return (
                     <View key={index.toString()}>
-                        <View style={{
-                            backgroundColor: theme.background,
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            paddingHorizontal: '4%',
-                        }}>
-                            <Heading viewStyle={{ marginVertical: '1%', width: '50%', paddingVertical: 0, }} textStyle={{ fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.TextBlack, }} title={item.title} />
+                        <View style={styles.container}>
+                            <Heading viewStyle={styles.headingStyle} textStyle={styles.headingTextStyle} title={item.title} />
                             {item.title == 'Order Total: '
                                 ?
-                                <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={{ fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.Purple, }} price={item.price} />
+                                <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={styles.totalPriceTextStyle} price={item.price} />
                                 :
-                                <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={{ fontFamily: 'Poppins-Regular', fontSize: 14, color: theme.TextBlack, }} price={item.price} />
+                                <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={styles.priceTextStyle} price={item.price} />
                             }
                         </View>
                     </View>
@@ -38,3 +33,34 @@ function OrderDetailsSummaryComponent({ summaryItem,setSummaryItem }) {
 }
 
 export default OrderDetailsSummaryComponent;
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: theme.background,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: '4%',
+    },
+    headingStyle: { 
+        marginVertical: '1%', 
+        width: '50%', 
+        paddingVertical: 0, 
+    },
+    headingTextStyle: { 
+        fontFamily: theme.Poppins.medium, 
+        fontSize: 14, 
+        color: theme.TextBlack, 
+    },
+
+    totalPriceTextStyle: {
+        fontFamily: theme.Poppins.medium,
+        fontSize: 14,
+        color: theme.Purple,
+    },
+
+    priceTextStyle: {
+        fontFamily: theme.Poppins.regular,
+        fontSize: 14,
+        color: theme.TextBlack,
+    },
+})

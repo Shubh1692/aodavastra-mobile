@@ -70,7 +70,7 @@ function ProductList() {
                 <Header />
                 <Container >
                     <View>
-                        <Text onPress={handleFilterSection} style={{ textAlign: 'right', textDecorationLine: 'underline', color: theme.Purple, fontFamily: 'Poppins-SemiBold' }}>Apply Filters</Text>
+                        <Text onPress={handleFilterSection} style={{ textAlign: 'right', textDecorationLine: 'underline', color: theme.Purple, fontFamily: theme.Poppins.semiBold }}>Apply Filters</Text>
                     </View>
                     <FlatList
                         refreshing

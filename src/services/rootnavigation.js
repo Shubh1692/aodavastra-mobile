@@ -13,7 +13,7 @@ import FollowingList from '../screens/nonInfluencer/followingList';
 import Wishlist from '../screens/wishlist';
 import AddressList from '../screens/address/addressList';
 import Orders from '../screens/orders';
-import {HomeTabs} from './BottomNavigation';
+import { HomeTabs } from './BottomNavigation';
 import BecomeInfluencerProfile from '../screens/Influencer/becomeInfuencerProfile';
 import InfluencerMyAccount from '../screens/Influencer/myAccount';
 import TagPeopleList from '../screens/Influencer/tagPeople';

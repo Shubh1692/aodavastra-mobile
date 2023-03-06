@@ -47,14 +47,8 @@ function CartPayment({ navigation }) {
     const payment = ['PayTM', 'Cash on Delivery'].map((item, index) => {
         return (
             <View key={index.toString()}>
-                <View style={{
-                    backgroundColor: theme.background,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingHorizontal: '4%',
-                }}>
-                    <Text onPress={() => console.log("hii")} style={{ marginVertical: '4%', fontFamily: theme.Poppins.regular, fontSize: 14, color: theme.TextBlack, }}>{item}</Text>
+                <View style={styles.paymentOptionContainer}>
+                    <Text onPress={() => console.log("hii")} style={styles.paymentOptionTextStyle}>{item}</Text>
                     <Select />
                 </View>
                 <LineDivider />
@@ -77,19 +71,13 @@ function CartPayment({ navigation }) {
         }
         return (
             <View key={index.toString()}>
-                <View style={{
-                    backgroundColor: theme.background,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    // justifyContent: 'space-between',
-                    paddingHorizontal: '4%',
-                }}>
-                    <Heading viewStyle={{marginVertical: '1%',width:'50%',paddingVertical:0,}} textStyle={{ fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.TextBlack, }} title={item.title} />
+                <View style={styles.orderSummaryContainer}>
+                    <Heading viewStyle={styles.orderSummaryHeading} textStyle={styles.orderSummaryHeadingTextStyle} title={item.title} />
                     {item.title == 'Order Total: '
                         ?
-                        <PriceText viewStyle={{marginVertical: '1%',}} textStyle={{fontFamily: 'Poppins-Medium', fontSize: 14, color: theme.Purple, }} price={item.price} />
+                        <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={styles.orderSummaryTotalTextStyle} price={item.price} />
                         :
-                        <PriceText viewStyle={{marginVertical: '1%',}} textStyle={{  fontFamily: 'Poppins-Regular', fontSize: 14, color: theme.TextBlack, }} price={item.price} />
+                        <PriceText viewStyle={{ marginVertical: '1%', }} textStyle={styles.orderSummaryTextStyle} price={item.price} />
                     }
                 </View>
             </View>
@@ -103,36 +91,36 @@ function CartPayment({ navigation }) {
         <>
             <MainContainer>
                 <Header />
-                <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
-                    <View style={{ flex: 1, marginTop: '8%' }}>
+                <View style={styles.container}>
+                    <View style={styles.subContainer}>
                         <CartPaymentIndecator isComplete={isComplete} />
-                        <Heading title={`${listItems.length} item(s) in bag:`} viewStyle={{marginTop: '6%',}}  textStyle={{  fontFamily: 'Poppins-Regular', fontSize: 16, color: theme.TextBlack }} />
+                        <Heading title={`${listItems.length} item(s) in bag:`} viewStyle={{ marginTop: '6%', }} style={styles.title} />
                         <ScrollView
                             // horizontal={true}
                             showsHorizontalScrollIndicator={false}
                             showsVerticalScrollIndicator={false}
                         >
-                            <View style={{ flex: 1, marginBottom: 90, }}>
+                            <View style={styles.listContainer}>
                                 {list}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <Heading title={'Choose Payment Mode'} viewStyle={{ marginTop: '4%', }} textStyle={{ fontFamily: 'Poppins-Regular', fontSize: 18, color: theme.TextBlack }} />
+                                <View style={styles.choosePaymentModeContainer}>
+                                    <Heading title={'Choose Payment Mode'} viewStyle={{ marginTop: '4%', }} style={styles.choosePaymentModeText} />
                                 </View>
                                 {/* payment options */}
                                 <PaymentCard>
                                     {payment}
                                 </PaymentCard>
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                                    <Text style={{ marginTop: '1%', fontFamily: 'Poppins-Regular', fontSize: 12, color: theme.TextBlack }}>
-                                        Estimated Delivery by <Text style={{ fontFamily: 'Poppins-SemiBold', fontSize: 12, color: theme.TextBlack }}>
+                                <View style={styles.estimateDeliveryContainer}>
+                                    <Text style={styles.estimateDeliveryText}>
+                                        Estimated Delivery by <Text style={{ fontFamily: theme.Poppins.semiBold, }}>
                                             25th February, 2022
                                         </Text>
                                     </Text>
                                 </View>
 
                                 {/* order summery */}
-                                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                                <View style={styles.orderSummaryContainer}>
                                     <Heading title={'Order Summary'} viewStyle={{ marginTop: '4%', }} />
-                                    <TextWithUnderline title="Apply Coupon" textStyle={{ marginTop: '4%', fontFamily: 'Poppins-SemiBold', fontSize: 14, textDecorationLine: 'underline', color: theme.Purple, }} onPress={() => navigate('coupon')} />
+                                    <TextWithUnderline title="Apply Coupon" textStyle={styles.applyCouponText} onPress={() => navigate('coupon')} />
                                 </View>
 
                                 <PaymentCard>
@@ -141,8 +129,8 @@ function CartPayment({ navigation }) {
                             </View>
                         </ScrollView>
                     </View>
-                    <View style={{ flex: 1, width: '100%', alignItems: 'center', position: 'absolute', bottom: 10 }}>
-                        <Button mode="contained" textStyle={{ lineHeight: 18, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => {
+                    <View style={styles.placeOrderBtnContiner}>
+                        <Button mode="contained" textStyle={styles.placeOrderBtnTextStyle} style={styles.placeOrderBtnStyle} onPress={() => {
                             setIsComplete(true)
                             handleConfirm()
                         }}>Place Your Order</Button>
@@ -150,22 +138,25 @@ function CartPayment({ navigation }) {
                 </View>
             </MainContainer>
             {isConfirmationVisible &&
-                <BottomSheet title={"Order Placed Successfully"} actionHandler={handleConfirm} >
-                    <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
-                        <View style={{ flex: 1, alignItems: 'center' }}>
+                <BottomSheet title={"Order Placed Successfully"} actionHandler={() => {
+                    handleConfirm()
+                    popToTop()
+                }} >
+                    <View style={styles.orderPlacedContainer}>
+                        <View style={styles.orderPlacedSubContainer}>
                             <BagIcon />
-                            <View style={{ marginHorizontal: 18, marginTop: 16, marginBottom: 10, alignItems: 'center' }}>
-                                <Text style={{ textAlign: 'center', fontSize: 14 }}>You’ll receive a confirmation email shortly with expected delivery date.</Text>
+                            <View style={styles.orderPlacedConfirmationView}>
+                                <Text style={styles.orderPlacedConfirmationTextStyle}>You’ll receive a confirmation email shortly with expected delivery date.</Text>
                             </View>
                             <View style={{ alignItems: 'center' }}>
-                                <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => {
+                                <Button mode="outlined" textStyle={styles.btnReviewTextStyle} style={styles.reviewBtnStyle} onPress={() => {
                                     handleConfirm()
                                     popToTop()
                                     navigate("orderDetails")
-                                    }}>Review Your Order</Button>
+                                }}>Review Your Order</Button>
                             </View>
                             <View style={{ alignItems: 'center' }}>
-                                <Button mode="contained" textStyle={{ fontSize: 14, }} style={styles.loginBtnStyle} onPress={() => {
+                                <Button mode="contained" textStyle={{ fontSize: 14, }} style={styles.shoppingBtnStyle} onPress={() => {
                                     handleConfirm()
                                     popToTop()
                                     navigate('shopNow')

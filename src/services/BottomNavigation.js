@@ -17,7 +17,7 @@ import theme from "../theme/resources";
 const screenOptions = ({ route, navigation }) => ({
     tabBarShowLabel: false,
     tabBarItemStyle: {
-        flex:1,
+        flex: 1,
         backgroundColor: "#fff",
     },
     tabBarStyle: {
@@ -29,7 +29,7 @@ const screenOptions = ({ route, navigation }) => ({
     },
     tabBarIcon: ({ focused }) => {
         // console.log("route",route.name)
-        //   const iconName = getKeyValue(IconRouteMap)(route.name);
+        // const iconName = getKeyValue(IconRouteMap)(route.name);
         return <BottomTabIcon icon={route.name} isActive={focused} />;
     },
 

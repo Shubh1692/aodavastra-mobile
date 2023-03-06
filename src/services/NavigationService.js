@@ -25,7 +25,7 @@ export function reset(
   name,
   params,
 ) {
-    navigationRef.current?.reset(name, params);
+  navigationRef.current?.reset(name, params);
 }
 export function push(name, params) {
   navigationRef.current?.dispatch(StackActions.push(name, params));

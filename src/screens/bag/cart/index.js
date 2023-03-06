@@ -17,7 +17,7 @@ function Cart({ navigation }) {
     const emptyCart = false
 
     const listItems = [
-        { id:1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
+        { id: 1, name: 'Net Multi Work Saree', price: '2,099.00', outOfStock: false },
         // { id:2, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:false}, 
         // { id:3, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:true}, 
         // { id:4, name:'Net Multi Work Saree', price:'2,099.00', outOfStock:false},
@@ -33,24 +33,24 @@ function Cart({ navigation }) {
             <Header isBack={false} />
             {listItems.length == 0
                 ?
-                <DefaultEmpty containerStyle={{marginTop: '8%', }} description={'Your Shopping Bag is \nEmpty Right Now'} buttonTitle={'Shop Now'} buttonCallBack={() => { navigate('shopNow') }}/>
+                <DefaultEmpty containerStyle={{ marginTop: '8%', }} description={'Your Shopping Bag is \nEmpty Right Now'} buttonTitle={'Shop Now'} buttonCallBack={() => { navigate('shopNow') }} />
                 :
-                <View style={{ marginTop: '8%', marginHorizontal: '4%', flex: 1 }}>
-                    <View style={{ flex: 1, marginTop: '8%' }}>
+                <View style={styles.container}>
+                    <View style={styles.subContainer}>
                         <CartBagIndecator />
-                        <Text style={{ marginTop: '6%', fontFamily: theme.Poppins.regular, fontSize: 16, color: theme.TextBlack }}>{listItems.length} item(s) in bag:</Text>
+                        <Text style={styles.title}>{listItems.length} item(s) in bag:</Text>
                         <ScrollView
                             // horizontal={true}
                             showsHorizontalScrollIndicator={false}
                             showsVerticalScrollIndicator={false}
                         >
-                            <View style={{ flex: 1, marginBottom: 90,}}>
+                            <View style={styles.listContainer}>
                                 {list}
                             </View>
                         </ScrollView>
                     </View>
-                    <View style={{ flex: 1, width: '100%', alignItems: 'center', position: 'absolute', bottom: 10 }}>
-                        <Button mode="contained" textStyle={{ lineHeight: 18,fontFamily: theme.Poppins.regular, fontSize: 14 }} style={{ width: 250, height: 40 }} onPress={() => { navigation.navigate('cartAddress', {listItems}) }}>Proceed to Checkout</Button>
+                    <View style={styles.btnContainer}>
+                        <Button mode="contained" textStyle={styles.btnTextStyle} style={styles.btnStyle} onPress={() => { navigation.navigate('cartAddress', { listItems }) }}>Proceed to Checkout</Button>
                     </View>
                 </View>
             }

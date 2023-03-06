@@ -10,20 +10,20 @@ export const BottomTabIcon = (props) => {
     return (
         <View flex={1} style={{ justifyContent: 'center', }}>
             {icon == 'home' && <View style={styles.iconView} >
-                {icon == 'home' && isActive == false && <FastImage source={require('../assets/images/home.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
-                {icon == 'home' && isActive == true && <FastImage source={require('../assets/images/home1.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
+                {icon == 'home' && isActive == false && <FastImage source={require('../assets/images/home.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
+                {icon == 'home' && isActive == true && <FastImage source={require('../assets/images/home1.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
             </View>}
             {icon == 'shopping-bag' && <View style={styles.iconView}>
-                {icon == 'shopping-bag' && isActive == false && <FastImage source={require('../assets/images/shopping-bag.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
-                {icon == 'shopping-bag' && isActive == true && <FastImage source={require('../assets/images/shopping-bag1.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
+                {icon == 'shopping-bag' && isActive == false && <FastImage source={require('../assets/images/shopping-bag.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
+                {icon == 'shopping-bag' && isActive == true && <FastImage source={require('../assets/images/shopping-bag1.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
             </View>}
             {icon == 'search' && <View style={styles.iconView}>
-                {icon == 'search' && isActive == false && <FastImage source={require('../assets/images/search.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
-                {icon == 'search' && isActive == true && <FastImage source={require('../assets/images/search1.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
+                {icon == 'search' && isActive == false && <FastImage source={require('../assets/images/search.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
+                {icon == 'search' && isActive == true && <FastImage source={require('../assets/images/search1.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
             </View>}
             {icon == 'profile' && <View style={styles.iconView}>
-                {icon == 'profile' && isActive == false && <FastImage source={require('../assets/images/profile.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
-                {icon == 'profile' && isActive == true && <FastImage source={require('../assets/images/profile1.png')} color={theme.TextBlack} size={26} style={{width: 26, height: 26, }} />}
+                {icon == 'profile' && isActive == false && <FastImage source={require('../assets/images/profile.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
+                {icon == 'profile' && isActive == true && <FastImage source={require('../assets/images/profile1.png')} color={theme.TextBlack} size={26} style={styles.indicator} />}
             </View>}
 
         </View>
@@ -38,5 +38,5 @@ const styles = StyleSheet.create({
     iconView: {
         width: deviceWidth / 4,
         alignItems: 'center'
-    }
+    },
 });

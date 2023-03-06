@@ -33,6 +33,8 @@ function RegisterScreen() {
     const onSubmit = (values) => {
         const { email, password } = values;
         // navigate('Home')
+        setEmail(email)
+        setPassword(password)
         handleConfirm();
     }
 
@@ -48,7 +50,7 @@ function RegisterScreen() {
                 <Logo />
                 <Formik
                     validationSchema={registerValidationSchema}
-                    initialValues={{ userName: '', email: '', password: '', confirmPassword: '' }}
+                    initialValues={{ userName: 'Surya', email: 'surya@mail.com', password: '12345678', confirmPassword: '12345678' }}
                     onSubmit={onSubmit}>
                     {({ handleSubmit, isValid, dirty, errors, touched, handleChange, handleBlur, values }) => {
                         return (
@@ -118,7 +120,7 @@ function RegisterScreen() {
                                         {/* <View style={{borderWidth:2,borderColor:theme.TextBlack ,backgroundColor:checked ? theme.Primary :theme.White,width:20,height:20 }}> */}
                                         <CheckboxComponent checked={checked} handleCheckbox={() => {
                                             setChecked(!checked);
-                                        }}/>
+                                        }} />
                                         <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginLeft: 5 }}>
                                             <Text>I accept</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontFamily: theme.Poppins.regular, fontWeight: '600' }}>{'Terms & Conditions'}</Text><Text>and</Text><Text style={{ color: theme.Primary, paddingHorizontal: 4, fontWeight: '600' }}>Privacy Policy</Text>
                                         </View>
@@ -148,33 +150,40 @@ function RegisterScreen() {
                         <Text style={{ fontFamily: theme.Poppins.regular, color: theme.TextBlack }}>Already have an account?</Text>
                     </View>
                     <View style={{ alignItems: 'center' }}>
-                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontFamily: theme.Poppins.regular,fontSize: 14, }} style={styles.loginBtn} onPress={() => navigate('login')}> Log in </Button>
+                        <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontFamily: theme.Poppins.regular, fontSize: 14, }} style={styles.loginBtn} onPress={() => navigate('login')}> Log in </Button>
                     </View>
                 </View>
             </ScrollView>
             {isConfirmationVisible &&
                 <BottomSheet title={"Email Verification"} actionHandler={handleConfirm} >
-                    <View style={{ marginTop: '5%', flex: 1, alignItems: 'center' }}>
-                        <View style={{ flex: 1, alignItems: 'center' }}>
-                            <EmailIcon />
-                            <View style={{ marginHorizontal: 18, marginTop: 16, marginBottom:10,alignItems: 'center' }}>
-                                <Text style={{ textAlign: 'center', fontSize: 14 }}>We have sent you a link on <Text style={{ color: theme.Purple }}>heena@gmail.com.</Text> </Text>
-                                <Text>Click on the link to verify the email.</Text>
-                            </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <Button mode="outlined" textStyle={{ color: theme.TextBlack, fontSize: 14, }} style={styles.loginBtn} onPress={() => console.log("resend mail")}>Resend Link</Button>
-                            </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <Button mode="contained" style={styles.loginBtnStyle} onPress={() => {
-                                    handleConfirm()
-                                    navigate('login') 
-                                    }}>Log In</Button>
-                            </View>
-                        </View>
-                    </View>
+                    <EmailVerification email={email} onPress={() => {
+                        handleConfirm()
+                        navigate('login')
+                    }} />
                 </BottomSheet>}
         </View>
 
+    )
+}
+
+
+const EmailVerification = ({ email, onPress }) => {
+    return (
+        <View style={styles.verifyContainer}>
+            <View style={styles.verifySubContainer}>
+                <EmailIcon />
+                <View style={styles.verifyTextContainerView}>
+                    <Text style={styles.verifyTextStyle}>We have sent you a link on <Text style={{ color: theme.Purple }}>{email}.</Text> </Text>
+                    <Text>Click on the link to verify the email.</Text>
+                </View>
+                <View style={{ alignItems: 'center' }}>
+                    <Button mode="outlined" textStyle={styles.verifyResndText} style={styles.loginBtn} onPress={() => console.log("resend mail")}>Resend Link</Button>
+                </View>
+                <View style={{ alignItems: 'center' }}>
+                    <Button mode="contained" style={styles.loginBtnStyle} onPress={onPress}>Log In</Button>
+                </View>
+            </View>
+        </View>
     )
 }
 
