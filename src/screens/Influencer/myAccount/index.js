@@ -46,8 +46,6 @@ function InfluencerMyAccount() {
     const [posts, setPosts] = useState([1]);
     const [likes, setLikes] = useState([1]);
 
-    
-
     const handleSegment = (index) => {
         console.log("hii", index)
         setSelectedIndex(index);

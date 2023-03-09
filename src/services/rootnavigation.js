@@ -35,6 +35,7 @@ import EndorseProductList from '../screens/Influencer/endoresProductList';
 import CouponScreen from '../screens/bag/coupon';
 import OrderDetails from '../screens/orders/orderDetails';
 import ProductDetailsScreen from '../screens/product/productDetails';
+import FeedScreen from '../screens/feed';
 
 
 const MainStack = createStackNavigator();
@@ -43,7 +44,7 @@ const MainStack = createStackNavigator();
 export const Main = () => {
     return (
         <MainStack.Navigator
-            initialRouteName="login"
+            initialRouteName="feed"
             screenOptions={{
                 headerShown: false,
             }}>
@@ -81,6 +82,7 @@ export const Main = () => {
             <MainStack.Screen name="coupon" component={CouponScreen} />
             <MainStack.Screen name="orderDetails" component={OrderDetails} />
             <MainStack.Screen name="productDetails" component={ProductDetailsScreen} />
+            <MainStack.Screen name="feed" component={FeedScreen} />
         </MainStack.Navigator>
     )
 }
